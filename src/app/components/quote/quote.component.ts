@@ -18,11 +18,12 @@ export class QuoteComponent implements OnInit {
   ngOnInit(): void {
     this.quoteService.getDailyQuote().subscribe({
       next: (data) => {
+        console.log('Quote Data:', data);
         this.quote = data.content;
         this.author = data.author;
       },
-      error: () => {
-        console.error('Failed to fetch quote. Using fallback quote.');
+      error: (err) => {
+        console.error('Error fetching quote:', err);
       },
     });
   }
