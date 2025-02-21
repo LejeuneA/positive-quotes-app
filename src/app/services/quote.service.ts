@@ -11,6 +11,7 @@ export class QuoteService {
   constructor(private http: HttpClient) {}
 
   getDailyQuote(): Observable<any> {
+    console.log('Fetching quote from API...');
     return this.http.get(this.apiUrl);
   }
 }
