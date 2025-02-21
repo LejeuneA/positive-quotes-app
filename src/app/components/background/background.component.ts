@@ -1,11 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BackgroundService } from '../../services/background.service';
 
 @Component({
   selector: 'app-background',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './background.component.html',
-  styleUrl: './background.component.scss'
+  styleUrls: ['./background.component.scss'],
 })
-export class BackgroundComponent {
+export class BackgroundComponent implements OnInit {
+  backgroundImage: string = '';
 
+  constructor(private backgroundService: BackgroundService) {}
+
+  ngOnInit(): void {
+    this.backgroundService
+      .getBackgroundImage()
+      .subscribe((imageUrl: string) => {
+        this.backgroundImage = imageUrl;
+      });
+  }
 }
