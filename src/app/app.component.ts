@@ -19,7 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
     QuoteComponent,
     BackgroundComponent,
     MatButtonModule,
-  ], // Add RouterModule here
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
