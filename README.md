@@ -64,15 +64,15 @@ cd positive-quotes-app
 ng add @angular/material
 
 ng generate component app/components/background
-ng g c app/components/categories
-ng g c app/components/quote
-ng g c app/components/quote-history
-ng g c app/components/search
-ng g c app/components/settings
-ng g c app/components/share
-ng generate service app/services/background
-ng generate service app/services/categories
-ng generate service app/services/quote
-ng generate service app/services/share
-ng generate service app/services/theme
+ng g c components/categories
+ng g c components/quote
+ng g c components/quote-history
+ng g c components/search
+ng g c components/settings
+ng g c components/share
+ng generate service services/background
+ng generate service services/categories
+ng generate service services/quote
+ng generate service services/share
+ng generate service services/theme
 ng serve
