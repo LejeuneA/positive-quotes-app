@@ -1,0 +1,66 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Main container */
+.main-container {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  text-align: center;
+  color: #333; // Default text color for light mode
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+
+  /* Dark mode styles */
+  &.dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
+  }
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  button {
+    color: inherit; // Inherit text color from parent
+  }
+}
+
+/* Navigation styles */
+nav {
+  margin-top: 20px;
+
+  a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: inherit; // Inherit text color from parent
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 20px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+}
