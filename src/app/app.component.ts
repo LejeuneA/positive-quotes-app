@@ -1,14 +1,25 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router'; // Import RouterModule
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 import { ThemeService } from './services/theme.service';
 import { SearchComponent } from './components/search/search.component';
 import { QuoteComponent } from './components/quote/quote.component';
 import { BackgroundComponent } from './components/background/background.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
   standalone: true, // Mark the component as standalone
-  imports: [RouterModule, SearchComponent, QuoteComponent, BackgroundComponent], // Add RouterModule here
+  imports: [
+    CommonModule,
+    RouterModule,
+    MatIconModule,
+    SearchComponent,
+    QuoteComponent,
+    BackgroundComponent,
+    MatButtonModule,
+  ], // Add RouterModule here
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
