@@ -1,11 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { QuoteService } from '../../services/quote.service';
 
 @Component({
   selector: 'app-quote',
-  imports: [],
   templateUrl: './quote.component.html',
-  styleUrl: './quote.component.scss'
+  styleUrls: ['./quote.component.scss'],
 })
-export class QuoteComponent {
+export class QuoteComponent implements OnInit {
+  quote: string = '';
+  author: string = '';
 
+  constructor(private quoteService: QuoteService) {}
+
+  ngOnInit(): void {
+    this.quoteService.getDailyQuote().subscribe((data: any) => {
+      this.quote = data.content;
+      this.author = data.author;
+    });
+  }
 }
