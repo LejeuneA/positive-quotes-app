@@ -57,3 +57,22 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+cd /c/xampp/htdocs/dashboard/PROJECTS
+ng new positive-quotes-app --routing --style=scss
+cd positive-quotes-app
+ng add @angular/material
+
+ng generate component app/components/background
+ng g c app/components/categories
+ng g c app/components/quote
+ng g c app/components/quote-history
+ng g c app/components/search
+ng g c app/components/settings
+ng g c app/components/share
+ng generate service app/services/background
+ng generate service app/services/categories
+ng generate service app/services/quote
+ng generate service app/services/share
+ng generate service app/services/theme
+ng serve
