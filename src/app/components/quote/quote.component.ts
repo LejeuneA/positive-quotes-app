@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { QuoteService } from '../../services/quote.service';
 
+interface Quote {
+  content: string;
+  author: string;
+}
+
 @Component({
   selector: 'app-quote',
   standalone: true,
@@ -17,13 +22,12 @@ export class QuoteComponent implements OnInit {
 
   ngOnInit(): void {
     this.quoteService.getDailyQuote().subscribe({
-      next: (data) => {
-        console.log('Quote Data:', data);
-        this.quote = data.content;
-        this.author = data.author;
+      next: (data: Quote) => {
+        this.quote = data.content || this.quote;
+        this.author = data.author || 'Unknown';
       },
       error: (err) => {
-        console.error('Error fetching quote:', err);
+        console.error('Failed to fetch quote:', err);
       },
     });
   }
