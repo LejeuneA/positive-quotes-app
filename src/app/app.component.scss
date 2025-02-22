@@ -30,9 +30,24 @@ header {
   margin-bottom: 1rem;
   background-color: inherit;
 
-  h1 {
-    font-size: 1.2rem;
-    font-weight: 500;
+  .header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .header-icon {
+      width: 40px;
+      height: auto;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $primary-color;
+      margin: 0;
+    }
   }
 
   button {

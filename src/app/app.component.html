@@ -3,9 +3,13 @@
 
 <!-- Main content container -->
 <div class="main-container" [ngClass]="{ 'dark-mode': isDarkMode }">
+
   <!-- Header with theme toggle button -->
   <header>
-    <h1>Stay Positive and Happy</h1>
+    <div class="header-content">
+      <img src="assets/logo/pqa_logo.png" alt="Quote Icon" class="header-icon">
+      <h1>STAY POSITIVE AND HAPPY</h1>
+    </div>
     <button mat-icon-button (click)="toggleTheme()">
       <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
     </button>
