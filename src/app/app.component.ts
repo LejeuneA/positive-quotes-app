@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
-  standalone: true, // Mark the component as standalone
+  standalone: true,
   imports: [
     CommonModule,
     RouterModule,
@@ -24,17 +24,10 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'positive-quotes-app';
+  isDarkMode = false;
 
-  constructor(private themeService: ThemeService) {}
-
-  // Toggle between light and dark mode
-  toggleTheme() {
-    this.themeService.toggleTheme();
-  }
-
-  // Check if dark mode is enabled
-  get isDarkMode(): boolean {
-    return this.themeService.isDarkMode();
+  toggleTheme(): void {
+    this.isDarkMode = !this.isDarkMode;
+    document.body.classList.toggle('dark-mode', this.isDarkMode);
   }
 }

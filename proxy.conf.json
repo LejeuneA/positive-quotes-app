@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://api.quotable.io",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

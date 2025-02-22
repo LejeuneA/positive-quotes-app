@@ -1,10 +1,3 @@
-@use "./components/quote/quote.component.scss" as *;
-@use "./components/search/search.component.scss" as *;
-@use "./components/quote-history/quote-history.component.scss" as *;
-@use "./components/settings/settings.component.scss" as *;
-@use "./components/share/share.component.scss" as *;
-@use "./components/categories/categories.component.scss" as *;
-
 /* Global styles */
 body {
   margin: 0;
@@ -17,7 +10,7 @@ body {
   z-index: 1;
   padding: 20px;
   text-align: center;
-  color: #333; // Default text color for light mode
+  color: #333;
   transition:
     background-color 0.3s,
     color 0.3s;
@@ -42,7 +35,7 @@ header {
   }
 
   button {
-    color: inherit; // Inherit text color from parent
+    color: inherit;
   }
 }
 
@@ -53,7 +46,7 @@ nav {
   a {
     margin: 0 10px;
     text-decoration: none;
-    color: inherit; // Inherit text color from parent
+    color: inherit;
 
     &:hover {
       text-decoration: underline;
