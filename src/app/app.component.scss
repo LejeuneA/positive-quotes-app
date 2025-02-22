@@ -29,11 +29,13 @@ header {
   align-items: center;
   margin-bottom: 1rem;
   background-color: inherit;
+  border-bottom: 1px solid $primary-color;
 
   .header-content {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding-bottom: 1rem;
 
     .header-icon {
       width: 40px;
