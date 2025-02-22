@@ -6,12 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class QuoteService {
-  private apiUrl = '/api/random';
+  private apiUrl = 'https://api.quotable.io/random';
 
   constructor(private http: HttpClient) {}
 
   getDailyQuote(): Observable<any> {
-    console.log('Fetching quote from API...');
     return this.http.get(this.apiUrl);
   }
 }
