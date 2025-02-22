@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import { ThemeService } from './services/theme.service';
 import { SearchComponent } from './components/search/search.component';
 import { QuoteComponent } from './components/quote/quote.component';
 import { BackgroundComponent } from './components/background/background.component';
@@ -19,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
     QuoteComponent,
     BackgroundComponent,
     MatButtonModule,
+    RouterModule,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
