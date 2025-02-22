@@ -3,12 +3,7 @@ import { QuoteService } from '../../services/quote.service';
 
 @Component({
   selector: 'app-quote',
-  template: `
-    <div class="quote-container">
-      <p class="quote-text">{{ quote }}</p>
-      <p class="quote-author">- {{ author }}</p>
-    </div>
-  `,
+  templateUrl: './quote.component.html',
   styleUrls: ['./quote.component.scss'],
 })
 export class QuoteComponent implements OnInit {

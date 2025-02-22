@@ -1,17 +1,36 @@
+@use "../../scss/_variables" as *;
+
 .quote-container {
   text-align: center;
-  padding: 1.5rem;
+  padding: 0.8rem;
   font-family: "Poppins", sans-serif;
-  background-color: $dark-background;
-}
+  background-color: inherit;
 
-.quote-text {
-  font-size: 24px;
-  font-weight: 500;
-  color: $light-background;
-}
+  .quote-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: inherit;
+    margin-top: 0;
 
-.quote-author {
-  font-size: 18px;
-  color: $light-grey;
+    .quote-icon {
+      font-size: 24px;
+      color: $dark-background;
+      font-family: "Biz UDGothic", sans-serif;
+    }
+
+    .quote-icon.start {
+      margin-right: 0.1rem;
+      font-size: 3rem;
+    }
+
+    .quote-icon.end {
+      margin-left: 0.1rem;
+      font-size: 3rem;
+    }
+  }
+
+  .quote-author {
+    font-size: 1rem;
+    color: $light-grey;
+  }
 }
