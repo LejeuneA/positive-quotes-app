@@ -12,7 +12,6 @@ import { MatButtonModule } from '@angular/material/button';
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule,
     MatIconModule,
     SearchComponent,
     QuoteComponent,
@@ -24,6 +23,9 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   isDarkMode = false;
 
   toggleTheme(): void {

@@ -1,16 +1,17 @@
 .quote-container {
   text-align: center;
-  padding: 20px;
-  font-family: "Roboto", sans-serif;
+  padding: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  background-color: $dark-background;
 }
 
 .quote-text {
   font-size: 24px;
   font-weight: 500;
-  color: black;
+  color: $light-background;
 }
 
 .quote-author {
   font-size: 18px;
-  color: #666;
+  color: $light-grey;
 }

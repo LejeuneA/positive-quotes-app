@@ -1,24 +1,24 @@
+@use "./scss/_variables" as *;
+
 /* Global styles */
-body {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-}
 
 /* Main container */
 .main-container {
   position: relative;
   z-index: 1;
-  padding: 20px;
+  padding-bottom: 1.1rem;
   text-align: center;
-  color: #333;
+  color: $dark-background;
+  background-color: $light-background;
+  width: 100%;
   transition:
     background-color 0.3s,
     color 0.3s;
 
   /* Dark mode styles */
   &.dark-mode {
-    background-color: #1e1e1e;
-    color: #ffffff;
+    background-color: $dark-background;
+    color: $light-background;
   }
 }
 
@@ -27,11 +27,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
+  background-color: inherit;
+  padding: 1.2rem;
 
   h1 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 1.2rem;
+    font-weight: 500;
   }
 
   button {
@@ -41,10 +43,10 @@ header {
 
 /* Navigation styles */
 nav {
-  margin-top: 20px;
+  margin: 1.2rem 0 0rem;
 
   a {
-    margin: 0 10px;
+    margin: 0 1.8rem;
     text-decoration: none;
     color: inherit;
 
@@ -57,10 +59,10 @@ nav {
 /* Responsive design */
 @media (max-width: 600px) {
   header h1 {
-    font-size: 20px;
+    font-size: 1rem;
   }
 
   nav a {
-    font-size: 14px;
+    font-size: 0.9rem;
   }
 }
