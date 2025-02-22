@@ -1,3 +1,10 @@
+@use "./components/quote/quote.component.scss" as *;
+@use "./components/search/search.component.scss" as *;
+@use "./components/quote-history/quote-history.component.scss" as *;
+@use "./components/settings/settings.component.scss" as *;
+@use "./components/share/share.component.scss" as *;
+@use "./components/categories/categories.component.scss" as *;
+
 /* Global styles */
 body {
   margin: 0;
