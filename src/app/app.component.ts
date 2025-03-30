@@ -1,4 +1,3 @@
-// app.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -28,7 +27,7 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(public router: Router, private authService: AuthService) {}
 
   isDarkMode = false;
   currentUser: any;
@@ -45,7 +44,7 @@ export class AppComponent implements OnInit {
   }
 
   isHomePage(): boolean {
-    return this.router.url === '/';
+    return this.router.url === '/home' || this.router.url === '/';
   }
 
   logout(): void {

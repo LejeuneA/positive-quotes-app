@@ -6,19 +6,16 @@
   <!-- Header with theme toggle button -->
   <header>
     <div class="header-content">
-      <!-- Clickable logo -->
-      <a routerLink="/" class="logo-link">
+      <a routerLink="/home" class="logo-link">
         <img src="assets/logo/pqa_logo.png" alt="Quote Icon" class="header-icon" />
       </a>
-      <!-- Clickable title -->
-      <h1><a routerLink="/">STAY POSITIVE AND HAPPY</a></h1>
+      <h1><a routerLink="/home">STAY POSITIVE AND HAPPY</a></h1>
     </div>
 
     <button mat-icon-button (click)="toggleTheme()">
       <mat-icon>{{ isDarkMode ? "light_mode" : "dark_mode" }}</mat-icon>
     </button>
 
-    <!-- Show user info if logged in, otherwise show login/register -->
     <ng-container *ngIf="currentUser; else authButtons">
       <div class="user-info">
         <span>Welcome, {{ currentUser.username }}</span>
@@ -37,9 +34,9 @@
     <app-search></app-search>
   </ng-container>
 
-  <!-- Navigation links (always visible) -->
+  <!-- Navigation links -->
   <nav>
-    <a mat-button routerLink="/">Home</a>
+    <a mat-button routerLink="/home">Home</a>
     <a mat-button routerLink="/categories">Categories</a>
     <a mat-button routerLink="/history">History</a>
     <a mat-button routerLink="/settings">Settings</a>
