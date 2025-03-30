@@ -14,6 +14,7 @@ export const routes: Routes = [
   { path: 'settings', component: SettingsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

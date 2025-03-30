@@ -6,27 +6,29 @@
   <!-- Header with theme toggle button -->
   <header>
     <div class="header-content">
-      <img
-        src="assets/logo/pqa_logo.png"
-        alt="Quote Icon"
-        class="header-icon"
-      />
+      <a routerLink="/"> <!-- ✅ Clicking the logo goes to Home -->
+        <img src="assets/logo/pqa_logo.png" alt="Quote Icon" class="header-icon" />
+      </a>
       <h1>STAY POSITIVE AND HAPPY</h1>
     </div>
     <button mat-icon-button (click)="toggleTheme()">
       <mat-icon>{{ isDarkMode ? "light_mode" : "dark_mode" }}</mat-icon>
     </button>
-    <button mat-button routerLink="/login">Login</button>
-    <button mat-button routerLink="/register">Register</button>
+
+    <!-- Show login/register only when NOT on login or register pages -->
+    <ng-container *ngIf="!isAuthPage()">
+      <button mat-button routerLink="/login">Login</button>
+      <button mat-button routerLink="/register">Register</button>
+    </ng-container>
   </header>
 
-  <!-- Quote component -->
-  <app-quote></app-quote>
+  <!-- Show Quote & Search only when NOT on login/register pages -->
+  <ng-container *ngIf="!isAuthPage()">
+    <app-quote></app-quote> <!-- ✅ Only one instance of app-quote -->
+    <app-search></app-search>
+  </ng-container>
 
-  <!-- Search component -->
-  <app-search></app-search>
-
-  <!-- Navigation links -->
+  <!-- Navigation bar (always visible) -->
   <nav>
     <a mat-button routerLink="/">Home</a>
     <a mat-button routerLink="/categories">Categories</a>
@@ -34,6 +36,6 @@
     <a mat-button routerLink="/settings">Settings</a>
   </nav>
 
-  <!-- Router outlet for additional components -->
-  <!-- <router-outlet></router-outlet> -->
+  <!-- Router outlet for other pages -->
+  <router-outlet></router-outlet>
 </div>
