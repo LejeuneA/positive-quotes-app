@@ -6,26 +6,29 @@
   <!-- Header with theme toggle button -->
   <header>
     <div class="header-content">
-      <a routerLink="/home" class="logo-link">
+      <a routerLink="/home">
         <img src="assets/logo/pqa_logo.png" alt="Quote Icon" class="header-icon" />
       </a>
-      <h1><a routerLink="/home">STAY POSITIVE AND HAPPY</a></h1>
+      <a class="logo-link" routerLink="/home">STAY POSITIVE AND HAPPY</a>
     </div>
 
-    <button mat-icon-button (click)="toggleTheme()">
-      <mat-icon>{{ isDarkMode ? "light_mode" : "dark_mode" }}</mat-icon>
-    </button>
+    <div class="buttons">
+      <button mat-icon-button (click)="toggleTheme()">
+        <mat-icon>{{ isDarkMode ? "light_mode" : "dark_mode" }}</mat-icon>
+      </button>
 
-    <ng-container *ngIf="currentUser; else authButtons">
-      <div class="user-info">
-        <span>Welcome, {{ currentUser.username }}</span>
-        <button mat-button (click)="logout()">Logout</button>
-      </div>
-    </ng-container>
-    <ng-template #authButtons>
-      <button mat-button routerLink="/login">Login</button>
-      <button mat-button routerLink="/register">Register</button>
-    </ng-template>
+      <ng-container *ngIf="currentUser; else authButtons">
+        <div class="user-info">
+          <span>Welcome, {{ currentUser.username }}</span>
+          <button mat-button (click)="logout()">Logout</button>
+        </div>
+      </ng-container>
+      <ng-template #authButtons>
+        <button mat-button routerLink="/login">Login</button>
+        <button mat-button routerLink="/register">Register</button>
+      </ng-template>
+    </div>
+
   </header>
 
   <!-- Show quote and search only on the home page -->
