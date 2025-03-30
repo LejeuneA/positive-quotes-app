@@ -6,29 +6,38 @@
   <!-- Header with theme toggle button -->
   <header>
     <div class="header-content">
-      <a routerLink="/"> <!-- ✅ Clicking the logo goes to Home -->
+      <!-- Clickable logo -->
+      <a routerLink="/" class="logo-link">
         <img src="assets/logo/pqa_logo.png" alt="Quote Icon" class="header-icon" />
       </a>
-      <h1>STAY POSITIVE AND HAPPY</h1>
+      <!-- Clickable title -->
+      <h1><a routerLink="/">STAY POSITIVE AND HAPPY</a></h1>
     </div>
+
     <button mat-icon-button (click)="toggleTheme()">
       <mat-icon>{{ isDarkMode ? "light_mode" : "dark_mode" }}</mat-icon>
     </button>
 
-    <!-- Show login/register only when NOT on login or register pages -->
-    <ng-container *ngIf="!isAuthPage()">
+    <!-- Show user info if logged in, otherwise show login/register -->
+    <ng-container *ngIf="currentUser; else authButtons">
+      <div class="user-info">
+        <span>Welcome, {{ currentUser.username }}</span>
+        <button mat-button (click)="logout()">Logout</button>
+      </div>
+    </ng-container>
+    <ng-template #authButtons>
       <button mat-button routerLink="/login">Login</button>
       <button mat-button routerLink="/register">Register</button>
-    </ng-container>
+    </ng-template>
   </header>
 
-  <!-- Show Quote & Search only when NOT on login/register pages -->
-  <ng-container *ngIf="!isAuthPage()">
-    <app-quote></app-quote> <!-- ✅ Only one instance of app-quote -->
+  <!-- Show quote and search only on the home page -->
+  <ng-container *ngIf="isHomePage()">
+    <app-quote></app-quote>
     <app-search></app-search>
   </ng-container>
 
-  <!-- Navigation bar (always visible) -->
+  <!-- Navigation links (always visible) -->
   <nav>
     <a mat-button routerLink="/">Home</a>
     <a mat-button routerLink="/categories">Categories</a>
@@ -36,6 +45,6 @@
     <a mat-button routerLink="/settings">Settings</a>
   </nav>
 
-  <!-- Router outlet for other pages -->
+  <!-- Dynamic content -->
   <router-outlet></router-outlet>
 </div>

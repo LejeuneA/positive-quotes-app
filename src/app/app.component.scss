@@ -73,6 +73,17 @@ nav {
   }
 }
 
+// app.component.scss
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  span {
+    font-size: 0.9rem;
+  }
+}
+
 /* Responsive design */
 @media (max-width: 600px) {
   header h1 {

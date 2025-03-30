@@ -6,12 +6,21 @@ import { QuoteHistoryComponent } from './components/quote-history/quote-history.
 import { SettingsComponent } from './components/settings/settings.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-  { path: '', component: QuoteComponent },
-  { path: 'categories', component: CategoriesComponent },
-  { path: 'history', component: QuoteHistoryComponent },
-  { path: 'settings', component: SettingsComponent },
+  { path: '', component: QuoteComponent, canActivate: [AuthGuard] },
+  {
+    path: 'categories',
+    component: CategoriesComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'history',
+    component: QuoteHistoryComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: '**', redirectTo: '' },
