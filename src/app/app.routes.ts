@@ -9,43 +9,59 @@ import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home',
+    data: { fullBackground: false },
+  },
   {
     path: 'home',
     component: HomeComponent,
     canActivate: [AuthGuard],
+    data: { fullBackground: false },
   },
   {
     path: 'categories',
     component: CategoriesComponent,
     canActivate: [AuthGuard],
+    data: { fullBackground: false },
   },
   {
     path: 'history',
     component: QuoteHistoryComponent,
     canActivate: [AuthGuard],
+    data: { fullBackground: false },
   },
   {
     path: 'settings',
     component: SettingsComponent,
     canActivate: [AuthGuard],
+    data: { fullBackground: false },
   },
   {
     path: 'login',
     component: LoginComponent,
+    data: { fullBackground: true },
   },
   {
     path: 'register',
     component: RegisterComponent,
+    data: { fullBackground: true },
   },
   {
     path: '**',
     redirectTo: 'home',
+    data: { fullBackground: false },
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      onSameUrlNavigation: 'reload',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

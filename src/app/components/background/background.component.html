@@ -1,1 +1,6 @@
-<div class="background" [ngStyle]="{ 'background-image': 'url(' + backgroundImage + ')' }"></div>
+<div class="background" [ngStyle]="{
+       'background-image': 'url(' + backgroundImage + ')',
+       'height': fullHeight ? '100vh' : '50vh',
+       'top': fullHeight ? '0' : '50vh'
+     }">
+</div>
