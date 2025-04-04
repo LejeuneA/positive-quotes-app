@@ -62,11 +62,10 @@ export class AuthService {
 
   logout(): void {
     this.clearUserData();
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
 
   private setCurrentUser(user: User): void {
-    // Remove password before storing
     const { password, ...userWithoutPassword } = user;
     localStorage.setItem('currentUser', JSON.stringify(userWithoutPassword));
     this.currentUserSubject.next(userWithoutPassword);
