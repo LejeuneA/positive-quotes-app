@@ -25,7 +25,7 @@ export const routes: Routes = [
     path: 'categories',
     component: CategoriesComponent,
     canActivate: [AuthGuard],
-    data: { fullBackground: false },
+    data: { fullBackground: true },
   },
   {
     path: 'history',

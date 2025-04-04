@@ -2,30 +2,29 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon'; // Add this import
 
 @Component({
   selector: 'app-categories',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatListModule],
+  imports: [CommonModule, MatCardModule, MatListModule, MatIconModule],
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.scss'],
 })
 export class CategoriesComponent {
   categories = [
-    'Motivational',
-    'Inspirational',
-    'Life',
-    'Success',
-    'Happiness',
-    'Wisdom',
-    'Friendship',
-    'Love',
+    'motivational',
+    'inspirational',
+    'success',
+    'happiness',
+    'wisdom',
+    'love',
+    'friendship',
+    'life',
   ];
-
   selectedCategory: string | null = null;
 
   selectCategory(category: string): void {
     this.selectedCategory = category;
-    // You can add navigation or service call here to fetch quotes by category
   }
 }
