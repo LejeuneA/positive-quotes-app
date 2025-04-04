@@ -1,4 +1,5 @@
 @use "../../scss/_variables" as *;
+@use "sass:color"; // Add this for modern color functions
 
 .categories-container {
   min-height: 100vh;
@@ -64,7 +65,7 @@
           font-weight: 500;
 
           .category-name {
-            color: $primary-dark-color;
+            color: color.adjust($primary-color, $lightness: -10%);
           }
 
           mat-icon {
@@ -88,17 +89,17 @@
 
 .dark-mode {
   .categories-container {
-    background-color: darken($dark-background, 5%);
+    background-color: color.adjust($dark-background, $lightness: -5%);
 
     .categories-card {
       background-color: $dark-background;
 
       mat-card-title {
-        color: lighten($primary-color, 10%);
+        color: color.adjust($primary-color, $lightness: 10%);
       }
 
       mat-card-subtitle {
-        color: lighten($light-grey, 20%);
+        color: color.adjust($light-grey, $lightness: 20%);
       }
 
       .categories-list {
@@ -113,7 +114,7 @@
             background-color: rgba($primary-color, 0.25);
 
             .category-name {
-              color: lighten($primary-color, 10%);
+              color: color.adjust($primary-color, $lightness: 10%);
             }
           }
         }
