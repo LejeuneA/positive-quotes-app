@@ -1,102 +1,141 @@
 @use "./scss/_variables" as *;
-
-/* Global styles */
+@use "sass:color";
 
 /* Main container */
 .main-container {
   position: relative;
   z-index: 1;
-  padding: 1.2rem;
-  text-align: center;
-  color: $dark-background;
-  background-color: $light-background;
-  width: 100%;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, $light-background 0%, $light-background 50%, transparent 50%);
 
-  /* Dark mode styles */
   &.dark-mode {
-    background-color: $dark-background;
-    color: $light-background;
+    background: linear-gradient(to bottom, $dark-background 0%, $dark-background 50%, transparent 50%);
   }
 }
 
-/* Header styles */
-header {
+/* Navbar styles */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
-  background-color: inherit;
+  padding: 1rem 2rem;
+  background-color: rgba($light-background, 0.95);
   border-bottom: 1px solid $primary-color;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 
-  .header-content {
+  .dark-mode & {
+    background-color: rgba($dark-background, 0.95);
+    border-bottom-color: color.adjust($primary-color, $lightness: 10%);
+  }
+
+  &-brand {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    padding-bottom: 1rem;
+    gap: 1rem;
+    text-decoration: none;
 
-    .header-icon {
+    .logo {
       width: 40px;
       height: auto;
-      vertical-align: middle;
-      margin-right: 10px;
     }
 
-    .logo-link {
-      text-decoration: none;
+    .logo-text {
       font-size: 1.5rem;
       font-weight: 700;
       color: $primary-color;
-      margin: 0;
+      font-family: "Poppins", sans-serif;
+      text-decoration: none;
     }
   }
 
-  .buttons {
+  &-actions {
     display: flex;
-    gap: 1rem;
-  }
+    align-items: center;
+    gap: 1.5rem;
 
-  button {
-    color: inherit;
-  }
-}
+    .theme-toggle {
+      color: inherit;
+      transition: transform 0.2s;
 
-/* Navigation styles */
-nav {
-  margin: 1.5rem 0 0rem;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
 
-  a {
-    margin: 0 1.8rem;
-    text-decoration: none;
-    color: inherit;
-    font-family: "Poppins", sans-serif;
+    button.mat-button {
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.5px;
 
-    &:hover {
-      text-decoration: underline;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+
+      span {
+        color: inherit;
+      }
     }
   }
 }
 
-// app.component.scss
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  span {
-    font-size: 0.9rem;
-  }
+/* Content area */
+.content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Responsive design */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1rem;
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem 1rem;
+    flex-direction: column;
+    gap: 1rem;
+
+    &-brand {
+      .logo-text {
+        font-size: 1.2rem;
+      }
+    }
+
+    &-actions {
+      width: 100%;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
   }
 
-  nav a {
-    font-size: 0.9rem;
+  .content {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    &-brand {
+      .logo-text {
+        font-size: 1rem;
+      }
+    }
+
+    &-actions {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .user-info {
+        width: 100%;
+        justify-content: center;
+        margin-top: 0.5rem;
+      }
+    }
   }
 }

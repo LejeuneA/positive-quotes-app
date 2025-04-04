@@ -16,13 +16,14 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { AuthService } from '../../services/auth.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
-interface LoginForm {
+interface RegisterForm {
+  username: FormControl<string | null>;
   email: FormControl<string | null>;
   password: FormControl<string | null>;
 }
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-register',
   standalone: true,
   imports: [
     CommonModule,
@@ -33,11 +34,15 @@ interface LoginForm {
     ReactiveFormsModule,
     MatSnackBarModule,
   ],
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss'],
 })
-export class LoginComponent {
-  loginForm: FormGroup<LoginForm> = new FormGroup({
+export class RegisterComponent {
+  registerForm: FormGroup<RegisterForm> = new FormGroup({
+    username: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [
       Validators.required,
@@ -53,37 +58,42 @@ export class LoginComponent {
     private snackBar: MatSnackBar
   ) {}
 
-  onLogin(formDirective?: FormGroupDirective): void {
-    if (this.loginForm.invalid || this.isLoading) {
+  onRegister(formDirective?: FormGroupDirective): void {
+    if (this.registerForm.invalid || this.isLoading) {
       return;
     }
 
     this.isLoading = true;
-    const { email, password } = this.loginForm.value;
 
-    this.authService.login(email!, password!).subscribe({
-      next: (user) => {
+    // Create a properly typed registration object
+    const registrationData = {
+      username: this.registerForm.value.username!,
+      email: this.registerForm.value.email!,
+      password: this.registerForm.value.password!,
+    };
+
+    this.authService.register(registrationData).subscribe({
+      next: () => {
         this.isLoading = false;
-        this.showSnackbar('Login successful!');
-        this.router.navigate(['/']);
-        formDirective?.resetForm();
+        this.showSnackbar('Registration successful!');
+        this.router.navigate(['/home']);
       },
       error: (error: HttpErrorResponse) => {
         this.isLoading = false;
-        this.handleLoginError(error);
+        this.handleRegistrationError(error);
       },
     });
   }
 
-  private handleLoginError(error: HttpErrorResponse): void {
-    console.error('Login error:', error);
+  private handleRegistrationError(error: HttpErrorResponse): void {
+    console.error('Registration error:', error);
 
     if (error.status === 0) {
       this.showSnackbar('Network error - please check your connection');
-    } else if (error.status >= 400 && error.status < 500) {
-      this.showSnackbar('Invalid email or password');
+    } else if (error.status === 400) {
+      this.showSnackbar('Email already exists');
     } else {
-      this.showSnackbar('Login failed - please try again later');
+      this.showSnackbar('Registration failed - please try again later');
     }
   }
 
@@ -94,11 +104,15 @@ export class LoginComponent {
     });
   }
 
+  get username() {
+    return this.registerForm.get('username');
+  }
+
   get email() {
-    return this.loginForm.get('email');
+    return this.registerForm.get('email');
   }
 
   get password() {
-    return this.loginForm.get('password');
+    return this.registerForm.get('password');
   }
 }

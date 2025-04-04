@@ -1,22 +1,21 @@
-<!-- Background component -->
-<app-background></app-background>
-
 <!-- Main content container -->
 <div class="main-container" [ngClass]="{ 'dark-mode': isDarkMode }">
-  <!-- Header with theme toggle button -->
-  <header>
-    <div class="header-content">
+  <!-- Navigation bar - always visible -->
+  <nav class="navbar">
+    <div class="navbar-brand">
       <a routerLink="/home">
-        <img src="assets/logo/pqa_logo.png" alt="Quote Icon" class="header-icon" />
+        <img src="assets/logo/pqa_logo.png" alt="Quote Icon" class="logo" />
+        <span class="logo-text">STAY POSITIVE AND HAPPY</span>
       </a>
-      <a class="logo-link" routerLink="/home">STAY POSITIVE AND HAPPY</a>
     </div>
 
-    <div class="buttons">
-      <button mat-icon-button (click)="toggleTheme()">
+    <div class="navbar-actions">
+      <!-- Theme toggle - always visible -->
+      <button mat-icon-button (click)="toggleTheme()" class="theme-toggle">
         <mat-icon>{{ isDarkMode ? "light_mode" : "dark_mode" }}</mat-icon>
       </button>
 
+      <!-- Show user info if logged in, otherwise show auth buttons -->
       <ng-container *ngIf="currentUser; else authButtons">
         <div class="user-info">
           <span>Welcome, {{ currentUser.username }}</span>
@@ -28,23 +27,11 @@
         <button mat-button routerLink="/register">Register</button>
       </ng-template>
     </div>
-
-  </header>
-
-  <!-- Show quote and search only on the home page -->
-  <ng-container *ngIf="isHomePage()">
-    <app-quote></app-quote>
-    <app-search></app-search>
-  </ng-container>
-
-  <!-- Navigation links -->
-  <nav>
-    <a mat-button routerLink="/home">Home</a>
-    <a mat-button routerLink="/categories">Categories</a>
-    <a mat-button routerLink="/history">History</a>
-    <a mat-button routerLink="/settings">Settings</a>
   </nav>
 
-  <!-- Dynamic content -->
+  <!-- Router outlet for all pages -->
   <router-outlet></router-outlet>
+
+  <!-- Background component -->
+  <app-background></app-background>
 </div>
