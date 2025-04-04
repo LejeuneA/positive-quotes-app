@@ -1,26 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { QuoteService } from '../../services/quote.service';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-quote',
+  standalone: true,
+  imports: [CommonModule, MatProgressSpinnerModule],
   templateUrl: './quote.component.html',
   styleUrls: ['./quote.component.scss'],
 })
-export class QuoteComponent implements OnInit {
-  quote: string = 'Stay positive and happy. Work hard and don’t give up hope.'; // Fallback quote
-  author: string = 'Anonymous'; // Fallback author
+export class QuoteComponent {
+  @Input() quote?: string;
+  @Input() author?: string;
+  @Input() isLoading: boolean = false;
 
-  constructor(private quoteService: QuoteService) {}
+  get displayQuote(): string {
+    return this.quote || 'No quote available';
+  }
 
-  ngOnInit(): void {
-    this.quoteService.getDailyQuote().subscribe({
-      next: (data) => {
-        this.quote = data.content;
-        this.author = data.author;
-      },
-      error: () => {
-        console.error('Failed to fetch quote. Using fallback quote.');
-      },
-    });
+  get displayAuthor(): string {
+    return this.author ? `- ${this.author}` : '';
   }
 }
