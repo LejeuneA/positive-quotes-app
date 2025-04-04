@@ -1,33 +1,9 @@
 <!-- Main content container -->
 <div class="main-container" [ngClass]="{ 'dark-mode': isDarkMode }">
-  <!-- Navigation bar - always visible -->
-  <nav class="navbar">
-    <div class="navbar-brand">
-      <a routerLink="/home">
-        <img src="assets/logo/pqa_logo.png" alt="Quote Icon" class="logo" />
-        <span class="logo-text">STAY POSITIVE AND HAPPY</span>
-      </a>
-    </div>
 
-    <div class="navbar-actions">
-      <!-- Theme toggle - always visible -->
-      <button mat-icon-button (click)="toggleTheme()" class="theme-toggle">
-        <mat-icon>{{ isDarkMode ? "light_mode" : "dark_mode" }}</mat-icon>
-      </button>
-
-      <!-- Show user info if logged in, otherwise show auth buttons -->
-      <ng-container *ngIf="currentUser; else authButtons">
-        <div class="user-info">
-          <span>Welcome, {{ currentUser.username }}</span>
-          <button mat-button (click)="logout()">Logout</button>
-        </div>
-      </ng-container>
-      <ng-template #authButtons>
-        <button mat-button routerLink="/login">Login</button>
-        <button mat-button routerLink="/register">Register</button>
-      </ng-template>
-    </div>
-  </nav>
+  <!--Navbar component-->
+  <app-navbar [isDarkMode]="isDarkMode" [currentUser]="currentUser" (themeToggled)="onThemeToggled($event)">
+  </app-navbar>
 
   <!-- Router outlet for all pages -->
   <router-outlet></router-outlet>

@@ -1,58 +1,44 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatMenuModule } from '@angular/material/menu';
 import { BackgroundComponent } from './components/background/background.component';
-import { AuthService } from './services/auth.service';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    CommonModule,
-    MatIconModule,
-    MatButtonModule,
-    RouterModule,
-    BackgroundComponent,
-    MatMenuModule,
-  ],
+  imports: [CommonModule, RouterModule, BackgroundComponent, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  constructor(public router: Router, private authService: AuthService) {}
-
   isDarkMode = false;
-  currentUser: any;
+  currentUser: any = null;
+
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.authService.currentUser$.subscribe((user) => {
-      this.currentUser = user;
-    });
-
-    // Check for saved theme preference
+    // Check for saved theme
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       this.isDarkMode = savedTheme === 'dark';
-      document.body.classList.toggle('dark-mode', this.isDarkMode);
+      this.updateDarkMode(this.isDarkMode);
     }
+
+    // Subscribe to user changes
+    this.authService.currentUser$.subscribe((user) => {
+      this.currentUser = user;
+    });
   }
 
-  toggleTheme(): void {
-    this.isDarkMode = !this.isDarkMode;
-    document.body.classList.toggle('dark-mode', this.isDarkMode);
-    // Save theme preference
-    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
+  onThemeToggled(isDark: boolean) {
+    this.isDarkMode = isDark;
+    this.updateDarkMode(isDark);
   }
 
-  logout(): void {
-    this.authService.logout();
-  }
-
-  isHomePage(): boolean {
-    return this.router.url === '/home' || this.router.url === '/';
+  private updateDarkMode(isDark: boolean) {
+    document.body.classList.toggle('dark-mode', isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
   }
 }

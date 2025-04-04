@@ -65,7 +65,7 @@ export class LoginComponent {
       next: (user) => {
         this.isLoading = false;
         this.showSnackbar('Login successful!');
-        this.router.navigate(['/home']); // Changed from '/' to '/home'
+        this.router.navigate(['/home']);
         formDirective?.resetForm();
       },
       error: (error: HttpErrorResponse) => {
