@@ -1,60 +1,69 @@
 @use "../../scss/_variables" as *;
 @use "sass:color";
 
-.categories-title {
-  text-align: center;
-  margin: 1.2rem;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: $primary-color;
-}
-
-.categories-container {
+.home-container {
+  padding: 0.5rem;
+  background-color: $light-background;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-  gap: 0.5rem;
-  margin: 1.5rem auto;
-  max-width: 800px;
-}
+  align-items: center;
 
-.category-pill {
-  padding: 0.5rem 1rem;
-  background-color: rgba($primary-color, 0.1);
-  border-radius: 2rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 0.9rem;
-  color: $primary-color;
-
-  &:hover {
-    background-color: rgba($primary-color, 0.2);
+  .categories-title {
+    text-align: center;
+    margin-top: 1.7rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $primary-color;
   }
 
-  &.active {
-    background-color: $primary-color;
-    color: white;
-    font-weight: 500;
+  .categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0.5rem auto 0;
+    max-width: 800px;
   }
-}
 
-/* Dark mode styles */
-.dark-mode {
   .category-pill {
-    background-color: rgba($primary-color, 0.2);
-    color: color.adjust($primary-color, $lightness: 15%);
+    padding: 0.5rem 1rem;
+    background-color: rgba($primary-color, 0.1);
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    color: $primary-color;
 
     &:hover {
-      background-color: rgba($primary-color, 0.3);
+      background-color: rgba($primary-color, 0.2);
     }
 
     &.active {
       background-color: $primary-color;
-      color: $dark-background;
+      color: white;
+      font-weight: 500;
     }
   }
 
-  .next-quote {
-    color: color.adjust($primary-color, $lightness: 15%);
+  /* Dark mode styles */
+  .dark-mode {
+    .category-pill {
+      background-color: rgba($primary-color, 0.2);
+      color: color.adjust($primary-color, $lightness: 15%);
+
+      &:hover {
+        background-color: rgba($primary-color, 0.3);
+      }
+
+      &.active {
+        background-color: $primary-color;
+        color: $dark-background;
+      }
+    }
+
+    .next-quote {
+      color: color.adjust($primary-color, $lightness: 15%);
+    }
   }
 }
