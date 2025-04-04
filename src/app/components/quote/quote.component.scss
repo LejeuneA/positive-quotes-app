@@ -7,15 +7,15 @@
   background-color: inherit;
 
   .quote-text {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 300;
     color: inherit;
     margin-top: 0;
+    line-height: 1.2rem;
 
     .quote-icon {
-      font-size: 24px;
-      color: $primary-color;
-      font-family: "Biz UDGothic", sans-serif;
+      width: 24px;
+      height: 24px;
     }
 
     .quote-icon.start {
@@ -26,6 +26,7 @@
     .quote-icon.end {
       margin-left: 0.1rem;
       font-size: 3rem;
+      transform: rotate(180deg);
     }
   }
 
