@@ -19,6 +19,7 @@ export class QuoteComponent {
   }
 
   get displayAuthor(): string {
-    return this.author ? `- ${this.author}` : '';
+    if (!this.author) return '';
+    return this.author === 'Unknown' ? '- Unknown' : `- ${this.author}`;
   }
 }
