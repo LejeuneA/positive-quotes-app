@@ -26,6 +26,9 @@ export class AppComponent implements OnInit {
       this.updateDarkMode(this.isDarkMode);
     }
 
+    // Initialize current user
+    this.currentUser = this.authService.currentUserValue;
+
     // Subscribe to user changes
     this.authService.currentUser$.subscribe((user) => {
       this.currentUser = user;

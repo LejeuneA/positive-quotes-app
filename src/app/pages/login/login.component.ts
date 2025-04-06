@@ -13,9 +13,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AuthService } from '../../services/auth.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
+// Move the interface BEFORE the component
 interface LoginForm {
   email: FormControl<string | null>;
   password: FormControl<string | null>;
@@ -32,6 +34,7 @@ interface LoginForm {
     MatButtonModule,
     ReactiveFormsModule,
     MatSnackBarModule,
+    MatProgressSpinnerModule,
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
@@ -62,36 +65,40 @@ export class LoginComponent {
     const { email, password } = this.loginForm.value;
 
     this.authService.login(email!, password!).subscribe({
-      next: (user) => {
+      next: () => {
         this.isLoading = false;
-        this.showSnackbar('Login successful!');
-        this.router.navigate(['/home']);
+        this.showSnackbar('Login successful!', 'success');
         formDirective?.resetForm();
       },
       error: (error: HttpErrorResponse) => {
         this.isLoading = false;
         this.handleLoginError(error);
+        this.loginForm.get('password')?.reset();
       },
+    });
+  }
+
+  private showSnackbar(message: string, type: 'success' | 'error'): void {
+    this.snackBar.open(message, 'Close', {
+      duration: 5000,
+      panelClass: [`snackbar-${type}`],
+      verticalPosition: 'top',
     });
   }
 
   private handleLoginError(error: HttpErrorResponse): void {
     console.error('Login error:', error);
 
+    let errorMessage = 'Login failed - please try again later';
     if (error.status === 0) {
-      this.showSnackbar('Network error - please check your connection');
+      errorMessage = 'Network error - please check your connection';
+    } else if (error.status === 401) {
+      errorMessage = 'Invalid email or password';
     } else if (error.status >= 400 && error.status < 500) {
-      this.showSnackbar('Invalid email or password');
-    } else {
-      this.showSnackbar('Login failed - please try again later');
+      errorMessage = 'Invalid request - please check your input';
     }
-  }
 
-  private showSnackbar(message: string): void {
-    this.snackBar.open(message, 'Close', {
-      duration: 3000,
-      panelClass: ['snackbar-success'],
-    });
+    this.showSnackbar(errorMessage, 'error');
   }
 
   get email() {
