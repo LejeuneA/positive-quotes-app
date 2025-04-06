@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { QuoteHistoryComponent } from './components/quote-history/quote-history.component';
-import { SettingsComponent } from './components/settings/settings.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
@@ -37,7 +37,7 @@ export const routes: Routes = [
     path: 'settings',
     component: SettingsComponent,
     canActivate: [AuthGuard],
-    data: { fullBackground: false },
+    data: { fullBackground: true },
   },
   {
     path: 'login',
@@ -48,6 +48,12 @@ export const routes: Routes = [
     path: 'register',
     component: RegisterComponent,
     data: { fullBackground: true },
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent,
+    canActivate: [AuthGuard],
+    data: { fullBackground: false },
   },
   {
     path: '**',

@@ -10,6 +10,7 @@ import {
   throwError,
 } from 'rxjs';
 import { Router } from '@angular/router';
+import { UpdateUser } from '@app/models/user.interface';
 
 interface User {
   id: number;
@@ -91,6 +92,20 @@ export class AuthService {
 
   setRedirectUrl(url: string): void {
     this.redirectUrl = url;
+  }
+
+  updateUser(userData: UpdateUser): Observable<User> {
+    return this.http.patch<User>(`${this.apiUrl}/users/update`, userData).pipe(
+      tap((updatedUser) => {
+        this.setCurrentUser(updatedUser);
+      }),
+      catchError((error) => {
+        console.error('Update failed', error);
+        return throwError(
+          () => new Error(error.error?.message || 'Failed to update profile')
+        );
+      })
+    );
   }
 
   private setCurrentUser(user: User): void {
