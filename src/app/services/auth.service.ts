@@ -11,6 +11,7 @@ import {
 } from 'rxjs';
 import { Router } from '@angular/router';
 import { UpdateUser } from '@app/models/user.interface';
+import { MatSnackBar } from '@angular/material/snack-bar'; // Added missing import
 
 interface User {
   id: number;
@@ -28,7 +29,11 @@ export class AuthService {
   public currentUser$ = this.currentUserSubject.asObservable();
   private redirectUrl: string | null = null;
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private snackBar: MatSnackBar // Added to constructor
+  ) {
     this.initializeCurrentUser();
   }
 
@@ -49,7 +54,7 @@ export class AuthService {
     return this.http.post<User>(this.apiUrl, user).pipe(
       tap((response: User) => {
         this.setCurrentUser(response);
-        this.router.navigate(['/home']); // Redirect after registration
+        this.router.navigate(['/home']);
       }),
       catchError((error) => {
         console.error('Registration failed', error);
@@ -95,17 +100,43 @@ export class AuthService {
   }
 
   updateUser(userData: UpdateUser): Observable<User> {
-    return this.http.patch<User>(`${this.apiUrl}/users/update`, userData).pipe(
-      tap((updatedUser) => {
-        this.setCurrentUser(updatedUser);
-      }),
-      catchError((error) => {
-        console.error('Update failed', error);
-        return throwError(
-          () => new Error(error.error?.message || 'Failed to update profile')
-        );
-      })
-    );
+    const currentUser = this.currentUserValue;
+    if (!currentUser) {
+      return throwError(() => new Error('No user logged in'));
+    }
+
+    // Verify current password if changing password
+    if (userData.newPassword && !userData.currentPassword) {
+      return throwError(
+        () => new Error('Current password is required to change password')
+      );
+    }
+
+    const updatedUser = {
+      ...currentUser,
+      username: userData.username || currentUser.username,
+      email: userData.email || currentUser.email,
+      password: userData.newPassword || currentUser.password,
+    };
+
+    return this.http
+      .put<User>(`${this.apiUrl}/${currentUser.id}`, updatedUser)
+      .pipe(
+        tap((user) => {
+          this.setCurrentUser(user);
+          this.snackBar.open('Profile updated successfully!', 'Close', {
+            duration: 3000,
+          });
+        }),
+        catchError((error) => {
+          console.error('Update failed', error);
+          let errorMessage = 'Failed to update profile';
+          if (error.status === 400) {
+            errorMessage = error.error?.message || errorMessage;
+          }
+          return throwError(() => new Error(errorMessage));
+        })
+      );
   }
 
   private setCurrentUser(user: User): void {

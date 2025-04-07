@@ -1,118 +1,133 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import {
-  FormControl,
+  FormBuilder,
   FormGroup,
-  ReactiveFormsModule,
   Validators,
-  FormGroupDirective,
+  ReactiveFormsModule,
 } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { UpdateUser } from '../../models/user.interface';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { AuthService } from '../../services/auth.service';
-import { HttpErrorResponse } from '@angular/common/http';
-
-interface SettingsForm {
-  username: FormControl<string | null>;
-  email: FormControl<string | null>;
-  currentPassword: FormControl<string | null>;
-  newPassword: FormControl<string | null>;
-  confirmPassword: FormControl<string | null>;
-}
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-settings',
   standalone: true,
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    MatProgressSpinnerModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    ReactiveFormsModule,
-    MatSnackBarModule,
-    MatProgressSpinnerModule,
   ],
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss'],
 })
-export class SettingsComponent {
-  settingsForm: FormGroup<SettingsForm> = new FormGroup({
-    username: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-    ]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    currentPassword: new FormControl(''),
-    newPassword: new FormControl('', [Validators.minLength(6)]),
-    confirmPassword: new FormControl(''),
-  });
-
-  isLoading = false;
+export class SettingsComponent implements OnInit {
+  settingsForm: FormGroup;
+  isSubmitting = false;
+  currentUser: any;
+  showPasswordFields = false;
 
   constructor(
+    private fb: FormBuilder,
     private authService: AuthService,
+    private router: Router,
     private snackBar: MatSnackBar
-  ) {}
+  ) {
+    this.settingsForm = this.fb.group(
+      {
+        username: ['', [Validators.required, Validators.minLength(3)]],
+        email: ['', [Validators.required, Validators.email]],
+        currentPassword: [''],
+        newPassword: ['', [Validators.minLength(8)]],
+        confirmPassword: [''],
+      },
+      { validator: this.passwordMatchValidator }
+    );
+  }
 
-  onSubmit(formDirective?: FormGroupDirective): void {
-    if (this.settingsForm.invalid || this.isLoading) {
+  ngOnInit(): void {
+    this.currentUser = this.authService.currentUserValue;
+    if (this.currentUser) {
+      this.settingsForm.patchValue({
+        username: this.currentUser.username,
+        email: this.currentUser.email,
+      });
+    }
+  }
+
+  passwordMatchValidator(form: FormGroup) {
+    const newPassword = form.get('newPassword')?.value;
+    const confirmPassword = form.get('confirmPassword')?.value;
+
+    if (newPassword && confirmPassword && newPassword !== confirmPassword) {
+      form.get('confirmPassword')?.setErrors({ passwordMismatch: true });
+      return { passwordMismatch: true };
+    }
+    return null;
+  }
+
+  togglePasswordFields() {
+    this.showPasswordFields = !this.showPasswordFields;
+    if (!this.showPasswordFields) {
+      this.settingsForm.patchValue({
+        currentPassword: '',
+        newPassword: '',
+        confirmPassword: '',
+      });
+    }
+  }
+
+  onSubmit() {
+    if (this.settingsForm.invalid) {
       return;
     }
 
-    this.isLoading = true;
-    const formValue = this.settingsForm.value;
+    this.isSubmitting = true;
 
-    // In a real app, call your authService.updateUser() here
-    setTimeout(() => {
-      this.isLoading = false;
-      this.showSnackbar('Settings updated successfully!', 'success');
-      formDirective?.resetForm();
-    }, 1000);
-  }
+    const formData = this.settingsForm.value;
+    const updateData: UpdateUser = {
+      username: formData.username,
+      email: formData.email,
+    };
 
-  private showSnackbar(message: string, type: 'success' | 'error'): void {
-    this.snackBar.open(message, 'Close', {
-      duration: 5000,
-      panelClass: [`snackbar-${type}`],
-      verticalPosition: 'top',
+    // Only include password fields if they're being changed
+    if (formData.newPassword) {
+      updateData.currentPassword = formData.currentPassword;
+      updateData.newPassword = formData.newPassword;
+    }
+
+    this.authService.updateUser(updateData).subscribe({
+      next: () => {
+        this.snackBar.open('Settings updated successfully!', 'Close', {
+          duration: 3000,
+        });
+        this.isSubmitting = false;
+        this.showPasswordFields = false;
+      },
+      error: (error) => {
+        this.snackBar.open(
+          error.message || 'Failed to update settings',
+          'Close',
+          {
+            duration: 3000,
+          }
+        );
+        this.isSubmitting = false;
+      },
     });
   }
 
-  private handleError(error: HttpErrorResponse): void {
-    console.error('Settings error:', error);
-    let errorMessage = 'Update failed - please try again later';
-
-    if (error.status === 0) {
-      errorMessage = 'Network error - please check your connection';
-    } else if (error.status >= 400 && error.status < 500) {
-      errorMessage = 'Invalid request - please check your input';
-    }
-
-    this.showSnackbar(errorMessage, 'error');
-  }
-
-  get username() {
-    return this.settingsForm.get('username');
-  }
-
-  get email() {
-    return this.settingsForm.get('email');
-  }
-
-  get currentPassword() {
-    return this.settingsForm.get('currentPassword');
-  }
-
-  get newPassword() {
-    return this.settingsForm.get('newPassword');
-  }
-
-  get confirmPassword() {
-    return this.settingsForm.get('confirmPassword');
+  onCancel() {
+    this.router.navigate(['/home']);
   }
 }
