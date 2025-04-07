@@ -7,10 +7,21 @@
   </div>
 
   <div class="navbar-actions">
-    <!-- Theme toggle -->
+    <!-- Theme toggle (always visible) -->
     <button mat-icon-button (click)="toggleTheme()" class="theme-toggle">
       <mat-icon>{{ isDarkMode ? "light_mode" : "dark_mode" }}</mat-icon>
     </button>
+
+    <!-- Home and Settings buttons - only shown when logged in -->
+    <ng-container *ngIf="currentUser">
+      <button mat-icon-button routerLink="/home" class="home-button">
+        <mat-icon>home</mat-icon>
+      </button>
+
+      <button mat-icon-button routerLink="/settings" class="settings-button">
+        <mat-icon>settings</mat-icon>
+      </button>
+    </ng-container>
 
     <!-- User/auth buttons -->
     <ng-container *ngIf="currentUser; else authButtons">
