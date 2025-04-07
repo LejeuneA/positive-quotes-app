@@ -1,44 +1,33 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
-import { Quote, QuoteResponse } from '../models/quote.model';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class QuoteService {
-  private apiUrl = '/api'; // Using proxy path
+  private apiUrl = '/api';
 
   constructor(private http: HttpClient) {}
 
   getRandomQuote(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/random`).pipe(
-      tap((response) => console.log('Quote API Response:', response)),
-      catchError((error) => {
-        console.error('Error fetching quote:', error);
-        return of(this.getFallbackQuote());
-      })
-    );
+    return this.http
+      .get(`${this.apiUrl}/random`)
+      .pipe(catchError(() => of(this.getFallbackQuote())));
   }
 
-  getQuotesByCategory(category: string): Observable<any> {
+  getRandomQuoteByCategory(category: string): Observable<any> {
     return this.http
-      .get(`${this.apiUrl}/quotes`, {
+      .get(`${this.apiUrl}/random`, {
         params: {
           tags: category.toLowerCase(),
-          limit: 10,
         },
       })
-      .pipe(
-        catchError((error) => {
-          console.error('Error fetching category quotes:', error);
-          return of({ results: [this.getFallbackQuote()] });
-        })
-      );
+      .pipe(catchError(() => of(this.getFallbackQuote()))); // Added missing closing parenthesis here
   }
 
-  private getFallbackQuote(): any {
+  public getFallbackQuote(): any {
     const fallbacks = [
       {
         content: "Stay positive and happy. Work hard and don't give up hope.",
@@ -48,6 +37,14 @@ export class QuoteService {
         content:
           'Every day may not be good, but there is something good in every day.',
         author: 'Unknown',
+      },
+      {
+        content: 'The only way to do great work is to love what you do.',
+        author: 'Steve Jobs',
+      },
+      {
+        content: "Life is what happens when you're busy making other plans.",
+        author: 'John Lennon',
       },
     ];
     return fallbacks[Math.floor(Math.random() * fallbacks.length)];
