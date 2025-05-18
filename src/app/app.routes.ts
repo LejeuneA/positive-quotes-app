@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoriesComponent } from './components/categories/categories.component';
-import { QuoteHistoryComponent } from './components/quote-history/quote-history.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -27,12 +26,7 @@ export const routes: Routes = [
     canActivate: [AuthGuard],
     data: { fullBackground: true },
   },
-  {
-    path: 'history',
-    component: QuoteHistoryComponent,
-    canActivate: [AuthGuard],
-    data: { fullBackground: false },
-  },
+
   {
     path: 'settings',
     component: SettingsComponent,
