@@ -54,7 +54,7 @@ export class BackgroundComponent implements OnInit {
       },
       error: (error) => {
         console.error('Failed to load background:', error);
-        this.backgroundImage = '/assets/default-background.jpg';
+        this.backgroundImage = '/assets/images/default-background.jpg';
         this.error = true;
         this.isLoading = false;
       },
