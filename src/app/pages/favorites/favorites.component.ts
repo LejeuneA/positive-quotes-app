@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { FavoriteService } from '../../services/favorite.service';
 import { Quote } from '../../models/quote.model';
@@ -7,7 +8,8 @@ import { Quote } from '../../models/quote.model';
   selector: 'app-favorites',
   templateUrl: './favorites.component.html',
   styleUrls: ['./favorites.component.scss'],
-  imports: [MatIconModule],
+  imports: [MatIconModule, CommonModule],
+  standalone: true,
 })
 export class FavoritesComponent {
   favorites: Quote[] = [];

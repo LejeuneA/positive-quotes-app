@@ -9,29 +9,39 @@
   .quote-text {
     font-size: 1rem;
     font-weight: 300;
-    color: inherit;
     margin-top: 0;
     line-height: 1.2rem;
+    color: $dark-background;
 
-    .quote-icon {
-      width: 24px;
-      height: 24px;
-    }
-
-    .quote-icon.start {
-      margin-right: 0.1rem;
-      font-size: 3rem;
-    }
-
-    .quote-icon.end {
-      margin-left: 0.1rem;
-      font-size: 3rem;
-      transform: rotate(180deg);
+    :host-context(.dark-mode) & {
+      color: $light-background;
     }
   }
+  color: $light-background;
 
-  .quote-author {
-    font-size: 1rem;
-    color: $light-grey;
+  .quote-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .quote-icon.start {
+    margin-right: 0.1rem;
+    font-size: 3rem;
+  }
+
+  .quote-icon.end {
+    margin-left: 0.1rem;
+    font-size: 3rem;
+    transform: rotate(180deg);
+  }
+}
+
+.quote-author {
+  font-size: 0.9rem;
+  color: $dark-background;
+  font-style: italic;
+
+  :host-context(.dark-mode) & {
+    color: $light-background;
   }
 }

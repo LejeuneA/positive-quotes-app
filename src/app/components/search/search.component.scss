@@ -3,12 +3,20 @@
 form {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  gap: 1rem;
 
   input {
     padding: 0.8rem;
     width: 30rem;
     border: 1px solid $light-grey;
     border-radius: 4px;
+
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
   }
 
   button {
