@@ -3,6 +3,18 @@
     <app-quote [quote]="currentQuote.content || ''" [author]="currentQuote.author || 'Unknown'" [isLoading]="isLoading">
     </app-quote>
 
+    <div class="action-buttons">
+      <button mat-icon-button (click)="toggleFavorite()" [color]="currentQuote.favorited ? 'warn' : ''">
+        <mat-icon>{{currentQuote.favorited ? 'favorite' : 'favorite_border'}}</mat-icon>
+      </button>
+      <button mat-icon-button (click)="shareQuote()">
+        <mat-icon>share</mat-icon>
+      </button>
+      <button mat-icon-button (click)="refreshQuote()">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+
     <app-search></app-search>
 
     <h1 class="categories-title">Categories</h1>

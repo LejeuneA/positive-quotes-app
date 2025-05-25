@@ -1,0 +1,8 @@
+<div class="history-container">
+  <h2>Your Quote History</h2>
+  <div *ngFor="let quote of history" class="quote-item">
+    <p>"{{quote.content}}"</p>
+    <p>- {{quote.author || 'Unknown'}}</p>
+    <small>Viewed on {{quote.viewedAt | date:'medium'}}</small>
+  </div>
+</div>

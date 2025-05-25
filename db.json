@@ -12,5 +12,56 @@
       "email": "lejeune@mail.com",
       "password": "As130580"
     }
+  ],
+  "favorites": [
+    {
+      "id": "1",
+      "userId": "1",
+      "quoteId": "5d91b45a3f1f9e0017f1e8e5",
+      "content": "Stay positive and happy. Work hard and don't give up hope.",
+      "author": "Anonymous",
+      "tags": ["motivational"],
+      "favoritedAt": "2023-05-15T10:30:00Z"
+    }
+  ],
+  "history": [
+    {
+      "id": "1",
+      "userId": "1",
+      "quoteId": "5d91b45a3f1f9e0017f1e8e5",
+      "content": "Stay positive and happy. Work hard and don't give up hope.",
+      "author": "Anonymous",
+      "tags": ["motivational"],
+      "viewedAt": "2023-05-15T10:30:00Z"
+    },
+    {
+      "id": "2",
+      "userId": "c9ae",
+      "quoteId": "5d91b45a3f1f9e0017f1e8e6",
+      "content": "Every day may not be good, but there is something good in every day.",
+      "author": "Unknown",
+      "tags": ["inspirational"],
+      "viewedAt": "2023-05-16T14:45:00Z"
+    }
+  ],
+  "quotes": [
+    {
+      "id": "5d91b45a3f1f9e0017f1e8e5",
+      "content": "Stay positive and happy. Work hard and don't give up hope.",
+      "author": "Anonymous",
+      "tags": ["motivational"]
+    },
+    {
+      "id": "5d91b45a3f1f9e0017f1e8e6",
+      "content": "Every day may not be good, but there is something good in every day.",
+      "author": "Unknown",
+      "tags": ["inspirational"]
+    },
+    {
+      "id": "5d91b45a3f1f9e0017f1e8e7",
+      "content": "The only way to do great work is to love what you do.",
+      "author": "Steve Jobs",
+      "tags": ["success", "motivational"]
+    }
   ]
 }

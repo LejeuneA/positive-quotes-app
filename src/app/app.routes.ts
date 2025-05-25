@@ -6,53 +6,52 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './pages/home/home.component';
+import { FavoritesComponent } from '../app/pages/favorites/favorites.component';
+import { HistoryComponent } from '../app/pages/history/history.component';
 
 export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
     redirectTo: 'home',
-    data: { fullBackground: false },
   },
   {
     path: 'home',
     component: HomeComponent,
     canActivate: [AuthGuard],
-    data: { fullBackground: false },
   },
   {
     path: 'categories',
     component: CategoriesComponent,
     canActivate: [AuthGuard],
-    data: { fullBackground: true },
   },
 
   {
     path: 'settings',
     component: SettingsComponent,
     canActivate: [AuthGuard],
-    data: { fullBackground: true },
   },
   {
     path: 'login',
     component: LoginComponent,
-    data: { fullBackground: true },
   },
   {
     path: 'register',
     component: RegisterComponent,
-    data: { fullBackground: true },
   },
   {
-    path: 'settings',
-    component: SettingsComponent,
+    path: 'favorites',
+    component: FavoritesComponent,
     canActivate: [AuthGuard],
-    data: { fullBackground: false },
+  },
+  {
+    path: 'history',
+    component: HistoryComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '**',
     redirectTo: 'home',
-    data: { fullBackground: false },
   },
 ];
 

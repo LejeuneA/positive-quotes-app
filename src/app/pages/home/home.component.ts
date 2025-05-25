@@ -7,6 +7,8 @@ import { SearchComponent } from '../../components/search/search.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Quote } from '../../models/quote.model';
+import { FavoriteService } from '../../services/favorite.service';
+import { HistoryService } from '../../services/history.service';
 
 @Component({
   selector: 'app-home',
@@ -40,7 +42,9 @@ export class HomeComponent {
 
   constructor(
     private authService: AuthService,
-    private quoteService: QuoteService
+    private quoteService: QuoteService,
+    private favoriteService: FavoriteService,
+    private historyService: HistoryService
   ) {
     this.authService.currentUser$.subscribe((user) => {
       this.currentUser = user;
@@ -99,5 +103,34 @@ export class HomeComponent {
     } else {
       this.fetchRandomQuote();
     }
+  }
+
+  toggleFavorite() {
+    if (this.currentQuote.favorited) {
+      this.favoriteService
+        .removeFavorite(this.currentQuote._id)
+        .subscribe(() => {
+          this.currentQuote.favorited = false;
+        });
+    } else {
+      this.favoriteService.addFavorite(this.currentQuote).subscribe(() => {
+        this.currentQuote.favorited = true;
+      });
+    }
+  }
+
+  shareQuote() {
+    const text = `"${this.currentQuote.content}" - ${this.currentQuote.author}`;
+    const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+      text
+    )}`;
+    window.open(url, '_blank');
+  }
+
+  // Update fetch methods to track history
+  private handleNewQuote(quote: Quote) {
+    this.currentQuote = quote;
+    this.historyService.addToHistory(quote).subscribe();
+    this.isLoading = false;
   }
 }

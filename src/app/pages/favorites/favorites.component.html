@@ -1,0 +1,10 @@
+<div class="favorites-container">
+  <h2>Your Favorite Quotes</h2>
+  <div *ngFor="let quote of favorites" class="quote-item">
+    <p>"{{quote.content}}"</p>
+    <p>- {{quote.author || 'Unknown'}}</p>
+    <button mat-icon-button (click)="removeFavorite(quote._id)">
+      <mat-icon color="warn">delete</mat-icon>
+    </button>
+  </div>
+</div>
