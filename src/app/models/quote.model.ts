@@ -3,6 +3,8 @@ export interface Quote {
   content: string;
   author: string;
   tags?: string[];
+  favorited?: boolean;
+  viewedAt?: Date;
 }
 
 export interface QuoteResponse {

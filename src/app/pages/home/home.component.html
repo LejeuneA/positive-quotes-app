@@ -1,14 +1,16 @@
-<app-quote [quote]="currentQuote.content || ''" [author]="currentQuote.author || 'Unknown'" [isLoading]="isLoading">
-</app-quote>
+<div class="home-container">
+  <div class="content-container">
+    <app-quote [quote]="currentQuote.content || ''" [author]="currentQuote.author || 'Unknown'" [isLoading]="isLoading">
+    </app-quote>
 
-<app-search></app-search>
+    <app-search></app-search>
 
-<!-- Categories Pills - Only show when logged in -->
-
-<h1 class="categories-title">Categories</h1>
-<div class="categories-container" *ngIf="currentUser">
-  <div class="category-pill" *ngFor="let category of categories" (click)="selectCategory(category)"
-    [class.active]="selectedCategory === category">
-    {{ category }}
+    <h1 class="categories-title">Categories</h1>
+    <div class="categories-container" *ngIf="currentUser">
+      <div class="category-pill" *ngFor="let category of categories" (click)="selectCategory(category)"
+        [class.active]="selectedCategory === category">
+        {{ category }}
+      </div>
+    </div>
   </div>
 </div>
