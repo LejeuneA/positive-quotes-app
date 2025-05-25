@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-background',
@@ -11,33 +9,13 @@ import { filter } from 'rxjs/operators';
   templateUrl: './background.component.html',
   styleUrls: ['./background.component.scss'],
 })
-export class BackgroundComponent implements OnInit {
+export class BackgroundComponent {
   backgroundImage: string = '';
-  fullHeight = false;
   isLoading = true;
   error = false;
 
-  constructor(private http: HttpClient, private router: Router) {}
-
-  ngOnInit(): void {
+  constructor(private http: HttpClient) {
     this.fetchBackgroundImage();
-    this.setupRouteListener();
-  }
-
-  private setupRouteListener(): void {
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe(() => {
-        this.updateBackgroundHeight();
-      });
-    this.updateBackgroundHeight();
-  }
-
-  private updateBackgroundHeight(): void {
-    const currentRoute = this.router.url;
-    this.fullHeight = ['/login', '/register', '/settings'].includes(
-      currentRoute
-    );
   }
 
   fetchBackgroundImage(): void {

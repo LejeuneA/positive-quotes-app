@@ -24,7 +24,7 @@ export class QuoteService {
           tags: category.toLowerCase(),
         },
       })
-      .pipe(catchError(() => of(this.getFallbackQuote()))); // Added missing closing parenthesis here
+      .pipe(catchError(() => of(this.getFallbackQuote())));
   }
 
   public getFallbackQuote(): any {
