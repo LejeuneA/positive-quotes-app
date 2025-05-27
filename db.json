@@ -15,33 +15,34 @@
   ],
   "favorites": [
     {
-      "id": "03a7",
-      "_id": "_dfC0aL_AGD4",
-      "content": "Great ideas often receive violent opposition from mediocre minds.",
-      "author": "Albert Einstein",
+      "id": "ffd9",
+      "quoteId": "Z5FIvoa4U1f-",
+      "content": "We must be as courteous to a man as we are to a picture, which we are willing to give the advantage of a good light.",
+      "author": "Ralph Waldo Emerson",
       "tags": [
-        "Famous Quotes",
-        "Technology"
+        "Famous Quotes"
       ],
-      "authorSlug": "albert-einstein",
-      "length": 65,
-      "dateAdded": "2019-08-03",
-      "dateModified": "2023-04-14",
-      "favorited": true
+      "favoritedAt": "2025-05-27T19:41:32.273Z"
     },
     {
-      "id": "88e4",
-      "_id": "DgPQoKY7nq",
-      "author": "Winston Churchill",
-      "content": "History is written by the victors.",
+      "id": "928f",
+      "quoteId": "nifHXWvxPYj",
+      "content": "People don't notice whether it's winter or summer when they're happy.",
+      "author": "Anton Chekhov",
       "tags": [
-        "History"
+        "Wisdom"
       ],
-      "authorSlug": "winston-churchill",
-      "length": 34,
-      "dateAdded": "2022-03-12",
-      "dateModified": "2023-04-14",
-      "favorited": true
+      "favoritedAt": "2025-05-27T19:42:55.117Z"
+    },
+    {
+      "id": "683e",
+      "quoteId": "s_ab52HQE-FL",
+      "content": "The only way to tell the truth is to speak with kindness. Only the words of a loving man can be heard.",
+      "author": "Henry David Thoreau",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "favoritedAt": "2025-05-27T19:43:56.216Z"
     }
   ],
   "history": [

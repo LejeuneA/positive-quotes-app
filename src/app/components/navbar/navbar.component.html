@@ -7,11 +7,15 @@
   </div>
 
   <div class="navbar-actions">
-
     <!-- Home and Settings buttons - only shown when logged in -->
     <ng-container *ngIf="currentUser">
       <button mat-icon-button routerLink="/home" class="home-button">
         <mat-icon>home</mat-icon>
+      </button>
+
+      <!-- Favorites button -->
+      <button mat-icon-button routerLink="/favorites" class="favorites-button">
+        <mat-icon>favorite</mat-icon>
       </button>
 
       <!-- Theme toggle (always visible) -->
@@ -22,7 +26,6 @@
       <button mat-icon-button routerLink="/settings" class="settings-button">
         <mat-icon>settings</mat-icon>
       </button>
-
     </ng-container>
 
     <!-- User/auth buttons -->
