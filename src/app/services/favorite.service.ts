@@ -6,7 +6,7 @@ import { Quote } from '../models/quote.model';
   providedIn: 'root',
 })
 export class FavoriteService {
-  private apiUrl = '/api/favorites';
+  private apiUrl = 'http://localhost:3000/favorites';
 
   constructor(private http: HttpClient) {}
 

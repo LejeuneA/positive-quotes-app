@@ -6,7 +6,7 @@ import { Quote } from '../models/quote.model';
   providedIn: 'root',
 })
 export class HistoryService {
-  private apiUrl = '/api/history';
+  private apiUrl = 'http://localhost:3000/history';
 
   constructor(private http: HttpClient) {}
 
