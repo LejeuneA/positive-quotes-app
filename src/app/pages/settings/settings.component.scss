@@ -1,13 +1,33 @@
 @use "../../scss/_variables" as *;
 @use "sass:color";
 
-.settings-container {
+.settings-container,
+.password-card {
   max-width: 600px;
   margin: 2rem auto;
   padding: 2rem;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  :host-context(.dark-mode) & {
+    color: $light-background;
+
+    button {
+      color: $light-background;
+      background-color: rgba($primary-color, 0.4);
+    }
+
+    input {
+      color: $light-background;
+    }
+
+    mat-label {
+      color: rgba($light-background, 0.6);
+    }
+
+    background-color: rgba($dark-background, 0.8);
+  }
 
   h1 {
     text-align: center;
@@ -17,7 +37,7 @@
 
   h3 {
     margin: 1.5rem 0 1rem;
-    color: #555;
+    color: $light-grey;
   }
 }
 
@@ -28,6 +48,10 @@
 
   mat-form-field {
     width: 100%;
+
+    :host-context(.dark-mode) & {
+      color: $light-background;
+    }
   }
 }
 

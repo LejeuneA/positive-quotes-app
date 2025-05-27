@@ -20,8 +20,59 @@
       "quoteId": "5d91b45a3f1f9e0017f1e8e5",
       "content": "Stay positive and happy. Work hard and don't give up hope.",
       "author": "Anonymous",
-      "tags": ["motivational"],
+      "tags": [
+        "motivational"
+      ],
       "favoritedAt": "2023-05-15T10:30:00Z"
+    },
+    {
+      "id": "a042",
+      "content": "The only way to do great work is to love what you do.",
+      "author": "Steve Jobs",
+      "favorited": true
+    },
+    {
+      "id": "a8fc",
+      "_id": "nLhl7ASoLK",
+      "content": "By failing to prepare, you are preparing to fail.",
+      "author": "Benjamin Franklin",
+      "tags": [
+        "Inspirational"
+      ],
+      "authorSlug": "benjamin-franklin",
+      "length": 49,
+      "dateAdded": "2020-10-29",
+      "dateModified": "2023-04-14",
+      "favorited": true
+    },
+    {
+      "id": "03a7",
+      "_id": "_dfC0aL_AGD4",
+      "content": "Great ideas often receive violent opposition from mediocre minds.",
+      "author": "Albert Einstein",
+      "tags": [
+        "Famous Quotes",
+        "Technology"
+      ],
+      "authorSlug": "albert-einstein",
+      "length": 65,
+      "dateAdded": "2019-08-03",
+      "dateModified": "2023-04-14",
+      "favorited": true
+    },
+    {
+      "id": "88e4",
+      "_id": "DgPQoKY7nq",
+      "author": "Winston Churchill",
+      "content": "History is written by the victors.",
+      "tags": [
+        "History"
+      ],
+      "authorSlug": "winston-churchill",
+      "length": 34,
+      "dateAdded": "2022-03-12",
+      "dateModified": "2023-04-14",
+      "favorited": true
     }
   ],
   "history": [
@@ -31,7 +82,9 @@
       "quoteId": "5d91b45a3f1f9e0017f1e8e5",
       "content": "Stay positive and happy. Work hard and don't give up hope.",
       "author": "Anonymous",
-      "tags": ["motivational"],
+      "tags": [
+        "motivational"
+      ],
       "viewedAt": "2023-05-15T10:30:00Z"
     },
     {
@@ -40,7 +93,9 @@
       "quoteId": "5d91b45a3f1f9e0017f1e8e6",
       "content": "Every day may not be good, but there is something good in every day.",
       "author": "Unknown",
-      "tags": ["inspirational"],
+      "tags": [
+        "inspirational"
+      ],
       "viewedAt": "2023-05-16T14:45:00Z"
     }
   ],
@@ -49,19 +104,26 @@
       "id": "5d91b45a3f1f9e0017f1e8e5",
       "content": "Stay positive and happy. Work hard and don't give up hope.",
       "author": "Anonymous",
-      "tags": ["motivational"]
+      "tags": [
+        "motivational"
+      ]
     },
     {
       "id": "5d91b45a3f1f9e0017f1e8e6",
       "content": "Every day may not be good, but there is something good in every day.",
       "author": "Unknown",
-      "tags": ["inspirational"]
+      "tags": [
+        "inspirational"
+      ]
     },
     {
       "id": "5d91b45a3f1f9e0017f1e8e7",
       "content": "The only way to do great work is to love what you do.",
       "author": "Steve Jobs",
-      "tags": ["success", "motivational"]
+      "tags": [
+        "success",
+        "motivational"
+      ]
     }
   ]
 }
