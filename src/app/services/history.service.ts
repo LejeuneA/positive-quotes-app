@@ -7,7 +7,7 @@ import { Quote } from '../models/quote.model';
   providedIn: 'root',
 })
 export class HistoryService {
-  private apiUrl = 'http://localhost:3000/favorites';
+  private apiUrl = 'http://localhost:3000/history';
 
   constructor(private http: HttpClient) {}
 
@@ -27,6 +27,6 @@ export class HistoryService {
   }
 
   clearHistory(): Observable<any> {
-    return this.http.delete(this.apiUrl);
+    return this.http.put(this.apiUrl, []);
   }
 }

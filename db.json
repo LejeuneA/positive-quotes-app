@@ -65,17 +65,6 @@
       "viewedAt": "2025-06-02T18:01:34.005Z"
     },
     {
-      "id": "ce1e",
-      "quoteId": "kJ_kF7p8jpS",
-      "content": "The inherent vice of capitalism is the unequal sharing of blessings; the inherent virtue of socialism is the equal sharing of miseries.",
-      "author": "Winston Churchill",
-      "tags": [
-        "Politics",
-        "Conservative"
-      ],
-      "viewedAt": "2025-06-02T18:02:13.434Z"
-    },
-    {
       "id": "bc76",
       "quoteId": "quo0uRjP__",
       "content": "Sir, my concern is not whether God is on our side; my greatest concern is to be on God's side, for God is always right.",
@@ -95,53 +84,11 @@
         "Friendship"
       ],
       "viewedAt": "2025-06-02T18:03:40.388Z"
-    },
-    {
-      "id": "e3af",
-      "quoteId": "aHkP5uuUCRvX",
-      "content": "You need chaos in your soul to give birth to a dancing star.",
-      "author": "Friedrich Nietzsche",
-      "tags": [
-        "Famous Quotes"
-      ],
-      "viewedAt": "2025-06-02T18:04:37.026Z"
-    },
-    {
-      "id": "3ec0",
-      "quoteId": "Q5QkyjYFY5s",
-      "content": "Nothing strengthens authority so much as silence.",
-      "author": "Leonardo da Vinci",
-      "tags": [
-        "Famous Quotes"
-      ],
-      "viewedAt": "2025-06-02T18:08:31.372Z"
-    },
-    {
-      "id": "b6b4",
-      "quoteId": "NcbrYrPkqmiL",
-      "content": "But man is not made for defeat. A man can be destroyed but not defeated.",
-      "author": "Ernest Hemingway",
-      "tags": [
-        "Famous Quotes",
-        "Wisdom"
-      ],
-      "viewedAt": "2025-06-02T18:08:39.205Z"
-    },
-    {
-      "id": "2949",
-      "quoteId": "m8q1pMkFz_jV",
-      "content": "Wherever a man may happen to turn, whatever a man may undertake, he will always end up by returning to the path which nature has marked out for him.",
-      "author": "Johann Wolfgang von Goethe",
-      "tags": [
-        "Famous Quotes"
-      ],
-      "viewedAt": "2025-06-02T18:08:41.811Z"
     }
   ],
   "history": [
     {
       "id": "1",
-      "userId": "1",
       "quoteId": "5d91b45a3f1f9e0017f1e8e5",
       "content": "Stay positive and happy. Work hard and don't give up hope.",
       "author": "Anonymous",
@@ -151,36 +98,215 @@
       "viewedAt": "2023-05-15T10:30:00Z"
     },
     {
-      "id": "2",
-      "userId": "c9ae",
-      "quoteId": "5d91b45a3f1f9e0017f1e8e6",
-      "content": "Every day may not be good, but there is something good in every day.",
-      "author": "Unknown",
+      "id": "6f6d",
+      "quoteId": "yneGpf4E4Rud",
+      "content": "It is common sense to take a method and try it. If it fails, admit it frankly and try another. But above all, try something.",
+      "author": "Franklin D. Roosevelt",
       "tags": [
-        "inspirational"
+        "Famous Quotes"
       ],
-      "viewedAt": "2023-05-16T14:45:00Z"
+      "viewedAt": "2025-06-02T18:15:42.505Z"
     },
     {
-      "id": "c7d1",
-      "quoteId": "0Ny0rPtnM3",
-      "content": "Winners never quit and quitters never win.",
-      "author": "Vince Lombardi",
+      "id": "b96d",
+      "quoteId": "DDXEefPfw0",
+      "content": "All I required to be happy was friendship and people I could admire.",
+      "author": "Christian Dior",
       "tags": [
-        "Sports",
-        "Competition"
+        "Friendship"
       ],
-      "viewedAt": "2025-06-02T18:06:35.392Z"
+      "viewedAt": "2025-06-02T18:15:59.369Z"
     },
     {
-      "id": "66d7",
-      "quoteId": "PyTByAKIPh",
-      "content": "Cunning... is but the low mimic of wisdom.",
-      "author": "Plato",
+      "id": "1b19",
+      "quoteId": "ZPXK5l0nL9m",
+      "content": "All know the way; few actually walk it.",
+      "author": "Bodhidharma",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-02T18:16:12.468Z"
+    },
+    {
+      "id": "9687",
+      "quoteId": "yB3XFMWEvsyz",
+      "content": "Never say there is nothing beautiful in the world anymore. There is always something to make you wonder in the shape of a tree, the trembling of a leaf.",
+      "author": "Albert Schweitzer",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-02T18:20:39.820Z"
+    },
+    {
+      "id": "4372",
+      "quoteId": "nqL_gAih-vsp",
+      "content": "Give whatever you are doing and whoever you are with the gift of your attention.",
+      "author": "Jim Rohn",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-02T18:20:41.614Z"
+    },
+    {
+      "id": "57ef",
+      "quoteId": "NXFzDIOw6GZ",
+      "content": "Nothing in life is so exhilarating as to be shot at without result.",
+      "author": "Winston Churchill",
+      "tags": [
+        "War"
+      ],
+      "viewedAt": "2025-06-02T18:20:45.551Z"
+    },
+    {
+      "id": "0b2b",
+      "quoteId": "HrDfFDfT_HDs",
+      "content": "Beauty is not in the face; beauty is a light in the heart.",
+      "author": "Kahlil Gibran",
+      "tags": [
+        "Life"
+      ],
+      "viewedAt": "2025-06-02T18:20:48.717Z"
+    },
+    {
+      "id": "b1d0",
+      "quoteId": "nbzh5SVWhy",
+      "content": "Friendships are the family we make - not the one we inherit. I've always been someone to whom friendship, elective affinities, is as important as family.",
+      "author": "Salman Rushdie",
+      "tags": [
+        "Friendship"
+      ],
+      "viewedAt": "2025-06-02T18:23:44.314Z"
+    },
+    {
+      "id": "3e08",
+      "quoteId": "rWlO2ihzqhk",
+      "content": "Better be ignorant of a matter than half know it.",
+      "author": "Publilius Syrus",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-02T18:24:06.011Z"
+    },
+    {
+      "id": "648a",
+      "quoteId": "zEEnS1yT_mN0",
+      "content": "We should all be thankful for those people who rekindle the inner spirit.",
+      "author": "Albert Schweitzer",
+      "tags": [
+        "Famous Quotes",
+        "Friendship"
+      ],
+      "viewedAt": "2025-06-02T18:25:18.325Z"
+    },
+    {
+      "id": "a7a7",
+      "quoteId": "h5zTqgsw84t",
+      "content": "Don't compromise yourself. You are all you've got.",
+      "author": "Janis Joplin",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-02T18:30:08.482Z"
+    },
+    {
+      "id": "fcc7",
+      "quoteId": "51SwnjMnK0Qy",
+      "content": "A successful person is one who can lay a firm foundation with the bricks that others throw at him or her.",
+      "author": "David Brinkley",
+      "tags": [
+        "Success"
+      ],
+      "viewedAt": "2025-06-02T18:30:18.734Z"
+    },
+    {
+      "id": "aaf8",
+      "quoteId": "G-_PvlkQWjzs",
+      "content": "Experience is not what happens to a man. It is what a man does with what happens to him.",
+      "author": "Aldous Huxley",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-02T18:30:24.474Z"
+    },
+    {
+      "id": "b6a0",
+      "quoteId": "64iqW6Q_Bg",
+      "content": "A friend is, as it were, a second self.",
+      "author": "Cicero",
+      "tags": [
+        "Friendship"
+      ],
+      "viewedAt": "2025-06-02T18:31:19.480Z"
+    },
+    {
+      "id": "2b60",
+      "quoteId": "GQl3vxcYr-",
+      "content": "Beware of false knowledge; it is more dangerous than ignorance.",
+      "author": "Bernard Shaw",
       "tags": [
         "Wisdom"
       ],
-      "viewedAt": "2025-06-02T18:06:44.155Z"
+      "viewedAt": "2025-06-02T18:32:34.554Z"
+    },
+    {
+      "id": "f584",
+      "quoteId": "2wYjTZiTUSgQ",
+      "content": "The things that one most wants to do are the things that are probably most worth doing.",
+      "author": "Winifred Holtby",
+      "tags": [
+        "Wisdom"
+      ],
+      "viewedAt": "2025-06-02T18:54:18.642Z"
+    },
+    {
+      "id": "bb87",
+      "quoteId": "Rx5_LAiVmhoP",
+      "content": "Do not scorn what you have received, nor envy the gains of others. He who envies others does not obtain peace of mind.",
+      "author": "The Buddha",
+      "tags": [
+        "Wisdom"
+      ],
+      "viewedAt": "2025-06-02T18:56:33.101Z"
+    },
+    {
+      "id": "d79d",
+      "quoteId": "iXtSYIGVbm",
+      "content": "The strong bond of friendship is not always a balanced equation; friendship is not always about giving and taking in equal shares. Instead, friendship is grounded in a feeling that you know exactly who will be there for you when you need something, no matter what or when.",
+      "author": "Simon Sinek",
+      "tags": [
+        "Friendship"
+      ],
+      "viewedAt": "2025-06-02T18:56:42.903Z"
+    },
+    {
+      "id": "1826",
+      "quoteId": "yq5LCWQjDJU",
+      "content": "No enterprise is more likely to succeed than one concealed from the enemy until it is ripe for execution.",
+      "author": "Niccolò Machiavelli",
+      "tags": [
+        "Business"
+      ],
+      "viewedAt": "2025-06-02T18:56:57.551Z"
+    },
+    {
+      "id": "3a77",
+      "quoteId": "puOWR0I5qnC",
+      "content": "Much wisdom often goes with fewest words.",
+      "author": "Sophocles",
+      "tags": [
+        "Wisdom"
+      ],
+      "viewedAt": "2025-06-02T19:01:16.786Z"
+    },
+    {
+      "id": "0cf9",
+      "quoteId": "Hd53FX7J_U",
+      "content": "It is the nature of the wise to resist pleasures, but the foolish to be a slave to them.",
+      "author": "Epictetus",
+      "tags": [
+        "Wisdom"
+      ],
+      "viewedAt": "2025-06-02T19:01:20.893Z"
     }
   ],
   "quotes": [

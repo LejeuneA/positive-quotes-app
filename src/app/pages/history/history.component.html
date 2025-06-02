@@ -19,9 +19,9 @@
     </mat-card>
 
     <div *ngIf="history.length > 0" class="actions">
-      <button mat-raised-button color="warn" (click)="clearHistory()">
+      <button mat-raised-button color="warn" (click)="clearHistory()" [disabled]="isLoading">
         <mat-icon>delete</mat-icon>
-        Clear All History
+        {{ isLoading ? 'Clearing...' : 'Clear All History' }}
       </button>
     </div>
   </div>
