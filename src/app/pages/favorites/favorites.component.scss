@@ -35,6 +35,11 @@
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
+    :host-context(.dark-mode) & {
+      color: $light-background;
+      background-color: rgba($dark-background, 0.8);
+    }
+
     &:hover {
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -46,11 +51,16 @@
       color: color.scale($light-grey, $lightness: -20%);
       margin-bottom: 0.5rem;
       font-style: italic;
+      font-weight: 200;
+
+      :host-context(.dark-mode) & {
+        color: $light-background;
+      }
     }
 
     p:last-child {
-      color: $primary-dark-color;
-      font-weight: 500;
+      color: $dark-background;
+      font-weight: 100;
       text-align: right;
       margin-bottom: 0;
     }
@@ -64,23 +74,6 @@
 
       &:hover {
         opacity: 1;
-      }
-    }
-  }
-}
-
-/* Dark mode styles */
-.dark-mode {
-  .favorites-container {
-    .quote-item {
-      background: color.scale($dark-background, $lightness: 5%);
-
-      p:first-child {
-        color: rgba(white, 0.9);
-      }
-
-      p:last-child {
-        color: color.scale($primary-color, $lightness: 10%);
       }
     }
   }
