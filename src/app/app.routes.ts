@@ -1,13 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CategoriesComponent } from './components/categories/categories.component';
-import { SettingsComponent } from './pages/settings/settings.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
-import { HomeComponent } from './pages/home/home.component';
-import { FavoritesComponent } from '../app/pages/favorites/favorites.component';
-import { HistoryComponent } from '../app/pages/history/history.component';
 
 export const routes: Routes = [
   {
@@ -17,36 +10,52 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent,
+    loadComponent: () =>
+      import('./pages/home/home.component').then((mod) => mod.HomeComponent),
     canActivate: [AuthGuard],
   },
   {
     path: 'categories',
-    component: CategoriesComponent,
+    loadComponent: () =>
+      import('./components/categories/categories.component').then(
+        (mod) => mod.CategoriesComponent
+      ),
     canActivate: [AuthGuard],
   },
-
   {
     path: 'settings',
-    component: SettingsComponent,
+    loadComponent: () =>
+      import('./pages/settings/settings.component').then(
+        (mod) => mod.SettingsComponent
+      ),
     canActivate: [AuthGuard],
   },
   {
     path: 'login',
-    component: LoginComponent,
+    loadComponent: () =>
+      import('./pages/login/login.component').then((mod) => mod.LoginComponent),
   },
   {
     path: 'register',
-    component: RegisterComponent,
+    loadComponent: () =>
+      import('./pages/register/register.component').then(
+        (mod) => mod.RegisterComponent
+      ),
   },
   {
     path: 'favorites',
-    component: FavoritesComponent,
+    loadComponent: () =>
+      import('./pages/favorites/favorites.component').then(
+        (mod) => mod.FavoritesComponent
+      ),
     canActivate: [AuthGuard],
   },
   {
     path: 'history',
-    component: HistoryComponent,
+    loadComponent: () =>
+      import('./pages/history/history.component').then(
+        (mod) => mod.HistoryComponent
+      ),
     canActivate: [AuthGuard],
   },
   {
