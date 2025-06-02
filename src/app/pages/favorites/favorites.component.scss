@@ -51,10 +51,11 @@
       color: color.scale($light-grey, $lightness: -20%);
       margin-bottom: 0.5rem;
       font-style: italic;
-      font-weight: 200;
+      font-weight: 300;
 
       :host-context(.dark-mode) & {
         color: $light-background;
+        font-weight: 200;
       }
     }
 
