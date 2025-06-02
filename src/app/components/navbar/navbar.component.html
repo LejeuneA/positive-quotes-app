@@ -18,6 +18,11 @@
         <mat-icon>favorite</mat-icon>
       </button>
 
+      <!-- History button -->
+      <button mat-icon-button routerLink="/history" class="history-button">
+        <mat-icon>history</mat-icon>
+      </button>
+
       <!-- Theme toggle (always visible) -->
       <button mat-icon-button (click)="toggleTheme()" class="theme-toggle">
         <mat-icon>{{ isDarkMode ? "light_mode" : "dark_mode" }}</mat-icon>
