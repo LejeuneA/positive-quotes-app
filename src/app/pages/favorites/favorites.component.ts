@@ -20,7 +20,6 @@ export class FavoritesComponent {
 
   loadFavorites() {
     this.favoriteService.getFavorites().subscribe((favs) => {
-      // Get the full favorite objects including their IDs
       this.favoriteService.getFavorites().subscribe((favorites) => {
         this.favorites = favorites;
       });
