@@ -76,3 +76,5 @@ ng generate service services/quote
 ng generate service services/share
 ng generate service services/theme
 ng serve
+
+https://www.lejeunedesign.be/portfolio/positive-quotes/index.html
