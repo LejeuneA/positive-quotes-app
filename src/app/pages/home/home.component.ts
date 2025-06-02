@@ -86,10 +86,7 @@ export class HomeComponent {
   fetchRandomQuote(): void {
     this.isLoading = true;
     this.quoteService.getRandomQuote().subscribe({
-      next: (quote) => {
-        this.currentQuote = quote;
-        this.isLoading = false;
-      },
+      next: (quote) => this.handleNewQuote(quote),
       error: () => {
         this.currentQuote = this.quoteService.getFallbackQuote();
         this.isLoading = false;
@@ -127,10 +124,11 @@ export class HomeComponent {
     window.open(url, '_blank');
   }
 
-  // Update fetch methods to track history
   private handleNewQuote(quote: Quote) {
     this.currentQuote = quote;
-    this.historyService.addToHistory(quote).subscribe();
+    if (this.authService.isAuthenticated()) {
+      this.historyService.addToHistory(quote).subscribe();
+    }
     this.isLoading = false;
   }
 }

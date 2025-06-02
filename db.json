@@ -33,6 +33,109 @@
         "Wisdom"
       ],
       "favoritedAt": "2025-05-27T19:42:55.117Z"
+    },
+    {
+      "id": "a98d",
+      "quoteId": "nr2GQYc-Hg",
+      "content": "If I were two-faced, would I be wearing this one?",
+      "author": "Abraham Lincoln",
+      "tags": [
+        "Humorous"
+      ],
+      "viewedAt": "2025-06-02T18:00:52.726Z"
+    },
+    {
+      "id": "b9b4",
+      "quoteId": "bhseVu9PSh1I",
+      "content": "Accept the things to which fate binds you and love the people with whom fate brings you together but do so with all your heart.",
+      "author": "Marcus Aurelius",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-02T18:00:54.477Z"
+    },
+    {
+      "id": "c7bc",
+      "quoteId": "uPuUG-KkA",
+      "content": "Whenever you find yourself on the side of the majority, it is time to pause and reflect.",
+      "author": "Mark Twain",
+      "tags": [
+        "Business"
+      ],
+      "viewedAt": "2025-06-02T18:01:34.005Z"
+    },
+    {
+      "id": "ce1e",
+      "quoteId": "kJ_kF7p8jpS",
+      "content": "The inherent vice of capitalism is the unequal sharing of blessings; the inherent virtue of socialism is the equal sharing of miseries.",
+      "author": "Winston Churchill",
+      "tags": [
+        "Politics",
+        "Conservative"
+      ],
+      "viewedAt": "2025-06-02T18:02:13.434Z"
+    },
+    {
+      "id": "bc76",
+      "quoteId": "quo0uRjP__",
+      "content": "Sir, my concern is not whether God is on our side; my greatest concern is to be on God's side, for God is always right.",
+      "author": "Abraham Lincoln",
+      "tags": [
+        "Spirituality",
+        "History"
+      ],
+      "viewedAt": "2025-06-02T18:03:35.888Z"
+    },
+    {
+      "id": "aafc",
+      "quoteId": "fVw-EgYyOW",
+      "content": "He has no enemies, but is intensely disliked by his friends.",
+      "author": "Oscar Wilde",
+      "tags": [
+        "Friendship"
+      ],
+      "viewedAt": "2025-06-02T18:03:40.388Z"
+    },
+    {
+      "id": "e3af",
+      "quoteId": "aHkP5uuUCRvX",
+      "content": "You need chaos in your soul to give birth to a dancing star.",
+      "author": "Friedrich Nietzsche",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-02T18:04:37.026Z"
+    },
+    {
+      "id": "3ec0",
+      "quoteId": "Q5QkyjYFY5s",
+      "content": "Nothing strengthens authority so much as silence.",
+      "author": "Leonardo da Vinci",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-02T18:08:31.372Z"
+    },
+    {
+      "id": "b6b4",
+      "quoteId": "NcbrYrPkqmiL",
+      "content": "But man is not made for defeat. A man can be destroyed but not defeated.",
+      "author": "Ernest Hemingway",
+      "tags": [
+        "Famous Quotes",
+        "Wisdom"
+      ],
+      "viewedAt": "2025-06-02T18:08:39.205Z"
+    },
+    {
+      "id": "2949",
+      "quoteId": "m8q1pMkFz_jV",
+      "content": "Wherever a man may happen to turn, whatever a man may undertake, he will always end up by returning to the path which nature has marked out for him.",
+      "author": "Johann Wolfgang von Goethe",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-02T18:08:41.811Z"
     }
   ],
   "history": [
@@ -57,6 +160,27 @@
         "inspirational"
       ],
       "viewedAt": "2023-05-16T14:45:00Z"
+    },
+    {
+      "id": "c7d1",
+      "quoteId": "0Ny0rPtnM3",
+      "content": "Winners never quit and quitters never win.",
+      "author": "Vince Lombardi",
+      "tags": [
+        "Sports",
+        "Competition"
+      ],
+      "viewedAt": "2025-06-02T18:06:35.392Z"
+    },
+    {
+      "id": "66d7",
+      "quoteId": "PyTByAKIPh",
+      "content": "Cunning... is but the low mimic of wisdom.",
+      "author": "Plato",
+      "tags": [
+        "Wisdom"
+      ],
+      "viewedAt": "2025-06-02T18:06:44.155Z"
     }
   ],
   "quotes": [
