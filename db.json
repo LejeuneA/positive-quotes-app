@@ -13,19 +13,19 @@
       "password": "As130580"
     }
   ],
-  "favorites": [
+  "favorites": [],
+  "history": [
     {
-      "id": "2450",
-      "quoteId": "qnHNh4SbqhSR",
-      "content": "To be fully alive, fully human, and completely awake is to be continually thrown out of the nest.",
-      "author": "Pema Chödrön",
+      "id": "8cdf",
+      "quoteId": "JfTBllGjt7L",
+      "content": "Love all, trust a few, do wrong to none.",
+      "author": "William Shakespeare",
       "tags": [
         "Famous Quotes"
       ],
-      "favoritedAt": "2025-06-02T19:32:19.834Z"
+      "viewedAt": "2025-06-09T07:33:07.731Z"
     }
   ],
-  "history": [],
   "quotes": [
     {
       "id": "5d91b45a3f1f9e0017f1e8e5",
