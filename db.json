@@ -14,7 +14,20 @@
     }
   ],
   "favorites": [],
-  "history": [],
+  "history": [
+    {
+      "id": "838c",
+      "content": "Stay positive and happy. Work hard and don't give up hope.",
+      "author": "Anonymous",
+      "viewedAt": "2025-06-09T12:36:42.113Z"
+    },
+    {
+      "id": "5412",
+      "content": "Stay positive and happy. Work hard and don't give up hope.",
+      "author": "Anonymous",
+      "viewedAt": "2025-06-09T12:39:09.797Z"
+    }
+  ],
   "quotes": [
     {
       "id": "5d91b45a3f1f9e0017f1e8e5",
