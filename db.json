@@ -23,59 +23,113 @@
         "Wisdom"
       ],
       "favoritedAt": "2025-06-09T13:03:56.412Z"
+    },
+    {
+      "id": "bb26",
+      "quoteId": "R1DmP1kYtW",
+      "content": "Reflect on your present blessings, of which every man has many; not on your past misfortunes, of which all men have some.",
+      "author": "Charles Dickens",
+      "tags": [
+        "Gratitude"
+      ],
+      "favoritedAt": "2025-06-09T15:45:03.610Z"
     }
   ],
   "history": [
     {
-      "id": "57c3",
+      "id": "96c7",
+      "quoteId": "NNRKhkipf13G",
+      "content": "Keep your eyes on the stars and your feet on the ground.",
+      "author": "Theodore Roosevelt",
+      "tags": [
+        "Famous Quotes",
+        "Inspirational"
+      ],
+      "viewedAt": "2025-06-09T15:44:54.162Z"
+    },
+    {
+      "id": "f19e",
+      "quoteId": "R1DmP1kYtW",
+      "content": "Reflect on your present blessings, of which every man has many; not on your past misfortunes, of which all men have some.",
+      "author": "Charles Dickens",
+      "tags": [
+        "Gratitude"
+      ],
+      "viewedAt": "2025-06-09T15:44:59.776Z"
+    },
+    {
+      "id": "e998",
+      "quoteId": "y4rjpOn-joW",
+      "content": "Courage is rightly esteemed the first of human qualities... because it is the quality which guarantees all others.",
+      "author": "Winston Churchill",
+      "tags": [
+        "Courage"
+      ],
+      "viewedAt": "2025-06-09T15:45:12.806Z"
+    },
+    {
+      "id": "7975",
+      "content": "The only way to do great work is to love what you do.",
+      "author": "Steve Jobs",
+      "viewedAt": "2025-06-09T15:45:21.063Z"
+    },
+    {
+      "id": "2c4f",
+      "content": "The only way to do great work is to love what you do.",
+      "author": "Steve Jobs",
+      "viewedAt": "2025-06-09T15:45:25.710Z"
+    },
+    {
+      "id": "43d9",
+      "content": "Stay positive and happy. Work hard and don't give up hope.",
+      "author": "Anonymous",
+      "viewedAt": "2025-06-09T15:45:54.319Z"
+    },
+    {
+      "id": "31be",
       "content": "Life is what happens when you're busy making other plans.",
       "author": "John Lennon",
-      "viewedAt": "2025-06-09T13:57:25.926Z"
+      "viewedAt": "2025-06-09T15:45:59.252Z"
     },
     {
-      "id": "dbc6",
-      "content": "The only way to do great work is to love what you do.",
-      "author": "Steve Jobs",
-      "viewedAt": "2025-06-09T13:58:17.991Z"
-    },
-    {
-      "id": "6b5b",
+      "id": "baab",
       "content": "Every day may not be good, but there is something good in every day.",
       "author": "Unknown",
-      "viewedAt": "2025-06-09T13:58:25.497Z"
+      "viewedAt": "2025-06-09T15:46:16.443Z"
     },
     {
-      "id": "a35e",
+      "id": "22d2",
       "content": "Every day may not be good, but there is something good in every day.",
       "author": "Unknown",
-      "viewedAt": "2025-06-09T13:58:27.512Z"
+      "viewedAt": "2025-06-09T15:46:34.048Z"
     },
     {
-      "id": "8603",
-      "quoteId": "4Fw5Fu7aOG",
-      "content": "Dost thou love life? Then do not squander time, for that is the stuff life is made of.",
-      "author": "Benjamin Franklin",
+      "id": "c8f8",
+      "content": "Life is what happens when you're busy making other plans.",
+      "author": "John Lennon",
+      "viewedAt": "2025-06-09T15:49:02.584Z"
+    },
+    {
+      "id": "3fc0",
+      "quoteId": "Nz3BafiyALJ",
+      "content": "Pain and foolishness lead to great bliss and complete knowledge, for Eternal Wisdom created nothing under the sun in vain.",
+      "author": "Kahlil Gibran",
       "tags": [
         "Wisdom"
       ],
-      "viewedAt": "2025-06-09T13:58:33.156Z"
+      "viewedAt": "2025-06-09T15:49:21.513Z"
     },
     {
-      "id": "8113",
-      "quoteId": "wcJ4LawApuWM",
-      "content": "You cannot change anything in your life with intention alone, which can become a watered-down, occasional hope that you'll get to tomorrow. Intention without action is useless.",
-      "author": "Caroline Myss",
-      "tags": [
-        "Change",
-        "Wisdom"
-      ],
-      "viewedAt": "2025-06-09T14:10:08.367Z"
+      "id": "0281",
+      "content": "Every day may not be good, but there is something good in every day.",
+      "author": "Unknown",
+      "viewedAt": "2025-06-09T15:49:34.631Z"
     },
     {
-      "id": "6afd",
-      "content": "The only way to do great work is to love what you do.",
-      "author": "Steve Jobs",
-      "viewedAt": "2025-06-09T14:10:15.056Z"
+      "id": "a209",
+      "content": "Every day may not be good, but there is something good in every day.",
+      "author": "Unknown",
+      "viewedAt": "2025-06-09T15:50:43.263Z"
     }
   ],
   "quotes": [
