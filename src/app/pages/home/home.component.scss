@@ -2,15 +2,12 @@
 @use "sass:color";
 
 .home-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  min-height: 50vh;
+  position: relative;
+  margin-top: $navbar-height;
   width: 60%;
   padding: 2rem;
+  margin-left: auto;
+  margin-right: auto;
   background-color: rgba($light-background, 0.8);
   color: $light-background;
   border-radius: 8px;
@@ -77,6 +74,12 @@
         box-shadow: 0 2px 8px rgba($primary-color, 0.3);
       }
     }
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    margin-top: 2rem;
+    margin-bottom: auto;
+    width: 90%;
   }
 }
 

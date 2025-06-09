@@ -13,17 +13,48 @@
       "password": "As130580"
     }
   ],
-  "favorites": [],
-  "history": [
+  "favorites": [
     {
-      "id": "8cdf",
-      "quoteId": "JfTBllGjt7L",
-      "content": "Love all, trust a few, do wrong to none.",
-      "author": "William Shakespeare",
+      "id": "c774",
+      "quoteId": "0zPVpv3bI",
+      "content": "You can't cross the sea merely by standing and staring at the water.",
+      "author": "Rabindranath Tagore",
+      "tags": [
+        "Inspirational"
+      ],
+      "favoritedAt": "2025-06-09T08:32:01.744Z"
+    },
+    {
+      "id": "fb25",
+      "quoteId": "VBpJtm9T-tAs",
+      "content": "There is no need for temples, no need for complicated philosophies. My brain and my heart are my temples; my philosophy is kindness.",
+      "author": "Dalai Lama",
       "tags": [
         "Famous Quotes"
       ],
-      "viewedAt": "2025-06-09T07:33:07.731Z"
+      "favoritedAt": "2025-06-09T08:32:05.523Z"
+    }
+  ],
+  "history": [
+    {
+      "id": "9390",
+      "quoteId": "cz9a9Ioqgp0Z",
+      "content": "There are people who have money and people who are rich.",
+      "author": "Coco Chanel",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-09T08:40:32.337Z"
+    },
+    {
+      "id": "39af",
+      "quoteId": "S6XZ0bE2Jy",
+      "content": "We the people are the rightful masters of both Congress and the courts, not to overthrow the Constitution but to overthrow the men who pervert the Constitution.",
+      "author": "Abraham Lincoln",
+      "tags": [
+        "Politics"
+      ],
+      "viewedAt": "2025-06-09T08:41:09.326Z"
     }
   ],
   "quotes": [

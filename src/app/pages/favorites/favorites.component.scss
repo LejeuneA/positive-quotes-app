@@ -57,6 +57,10 @@
         color: $light-background;
         font-weight: 200;
       }
+
+      @media screen and (max-width: $screen-sm) {
+        margin-top: 3rem;
+      }
     }
 
     p:last-child {

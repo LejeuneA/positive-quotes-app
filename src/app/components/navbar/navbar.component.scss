@@ -2,6 +2,7 @@
 @use "sass:color";
 
 .navbar {
+  height: $navbar-height;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -110,10 +111,12 @@
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
+@media screen and (max-width: $screen-sm) {
   .navbar {
+    height: $navbar-mobile-height;
     padding: 0.8rem 1rem;
     flex-direction: column;
+    justify-content: center;
     gap: 1rem;
 
     &-brand {
