@@ -13,29 +13,25 @@
       "password": "As130580"
     }
   ],
-  "favorites": [
+  "favorites": [],
+  "history": [
     {
-      "id": "fb25",
-      "quoteId": "VBpJtm9T-tAs",
-      "content": "There is no need for temples, no need for complicated philosophies. My brain and my heart are my temples; my philosophy is kindness.",
-      "author": "Dalai Lama",
+      "id": "8f3c",
+      "quoteId": "q3SfzGZd2iGb",
+      "content": "The most complicated achievements of thought are possible without the assistance of consciousness.",
+      "author": "Sigmund Freud",
       "tags": [
         "Famous Quotes"
       ],
-      "favoritedAt": "2025-06-09T08:32:05.523Z"
+      "viewedAt": "2025-06-09T11:59:20.455Z"
     },
     {
-      "id": "bdcf",
-      "quoteId": "CqBZakh58pRs",
-      "content": "Let me tell you the secret that has led me to my goal: my strength lies solely in my tenacity.",
-      "author": "Louis Pasteur",
-      "tags": [
-        "Famous Quotes"
-      ],
-      "favoritedAt": "2025-06-09T09:08:48.580Z"
+      "id": "889f",
+      "content": "Stay positive and happy. Work hard and don't give up hope.",
+      "author": "Anonymous",
+      "viewedAt": "2025-06-09T12:00:36.617Z"
     }
   ],
-  "history": [],
   "quotes": [
     {
       "id": "5d91b45a3f1f9e0017f1e8e5",
