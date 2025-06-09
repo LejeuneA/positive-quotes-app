@@ -11,6 +11,24 @@
       "username": "Lejeune",
       "email": "lejeune@mail.com",
       "password": "As130580"
+    },
+    {
+      "id": "282f",
+      "username": "Acelya Lejeune",
+      "email": "acelya@mail.com",
+      "password": "As130580"
+    },
+    {
+      "id": "3432",
+      "username": "Acelya Lejeune",
+      "email": "acelyalejeune@gmail.com",
+      "password": "As130580"
+    },
+    {
+      "id": "904d",
+      "username": "Acelya Lejeune",
+      "email": "acelyalejeune@gmail.com",
+      "password": "As130580"
     }
   ],
   "favorites": [
@@ -130,6 +148,38 @@
       "content": "Every day may not be good, but there is something good in every day.",
       "author": "Unknown",
       "viewedAt": "2025-06-09T15:50:43.263Z"
+    },
+    {
+      "id": "5eb9",
+      "quoteId": "89tyQf_NKq3f",
+      "content": "Life without love is like a tree without blossoms or fruit.",
+      "author": "Kahlil Gibran",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-09T15:59:37.924Z"
+    },
+    {
+      "id": "363a",
+      "quoteId": "GQ8whOuPGD8Z",
+      "content": "The beginning of wisdom is found in doubting; by doubting we come to the question, and by seeking we may come upon the truth.",
+      "author": "Peter Abelard",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-09T16:00:00.961Z"
+    },
+    {
+      "id": "8af0",
+      "content": "Life is what happens when you're busy making other plans.",
+      "author": "John Lennon",
+      "viewedAt": "2025-06-09T16:00:30.424Z"
+    },
+    {
+      "id": "c8c9",
+      "content": "The only way to do great work is to love what you do.",
+      "author": "Steve Jobs",
+      "viewedAt": "2025-06-09T16:01:00.114Z"
     }
   ],
   "quotes": [
