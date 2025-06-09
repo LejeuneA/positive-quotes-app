@@ -17,7 +17,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AuthService } from '../../services/auth.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
-// Move the interface BEFORE the component
 interface LoginForm {
   email: FormControl<string | null>;
   password: FormControl<string | null>;
