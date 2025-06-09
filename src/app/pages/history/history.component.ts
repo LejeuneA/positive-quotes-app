@@ -43,7 +43,10 @@ export class HistoryComponent {
     this.isLoading = true;
     this.historyService.getHistory().subscribe({
       next: (history) => {
-        this.history = history;
+        this.history = history.sort(
+          (a, b) =>
+            new Date(b.viewedAt).getTime() - new Date(a.viewedAt).getTime()
+        );
         this.isLoading = false;
       },
       error: (error) => {
@@ -69,16 +72,31 @@ export class HistoryComponent {
         },
         error: (error) => {
           console.error('Error clearing history:', error);
-          this.snackBar.open('Failed to clear history', 'Close', {
-            duration: 3000,
-          });
+          this.snackBar.open(
+            'Failed to clear history. Please try again.',
+            'Close',
+            {
+              duration: 5000,
+            }
+          );
           this.isLoading = false;
+        },
+        complete: () => {
+          // Reload history to ensure UI is in sync
+          this.loadHistory();
         },
       });
     }
   }
 
   formatDate(dateString: string): string {
-    return new Date(dateString).toLocaleString();
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+    };
+    return new Date(dateString).toLocaleString(undefined, options);
   }
 }
