@@ -87,12 +87,17 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+
+      :host-context(.dark-mode) & {
+        background-color: rgba($primary-color, 0.8);
+        color: $light-background;
+      }
     }
   }
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media screen and (max-width: $screen-md) {
   .history-container {
     padding: 1rem;
 

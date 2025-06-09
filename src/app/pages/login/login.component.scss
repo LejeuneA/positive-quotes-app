@@ -9,7 +9,7 @@
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  background: $light-background;
+  background-color: rgba($light-background, 0.8);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,6 +17,11 @@
 
   &:hover {
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  :host-context(.dark-mode) & {
+    background-color: rgba($dark-background, 0.8);
+    color: $light-background;
   }
 
   mat-card-title {
@@ -50,8 +55,8 @@
   button[type="submit"] {
     margin-top: 1rem;
     padding: 0.75rem;
-    background-color: $primary-color;
-    color: white;
+    background-color: rgba($primary-color, 0.8);
+    color: $light-background;
     font-weight: 500;
     font-size: 1rem;
     border-radius: 4px;
@@ -71,10 +76,18 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 600px) {
+@media screen and (max-width: $screen-md) {
   .container {
     width: 95%;
     padding: 1.5rem;
     margin: 1rem auto;
+  }
+}
+
+@media screen and (max-width: $screen-sm) {
+  .container {
+    width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
   }
 }

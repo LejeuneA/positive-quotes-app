@@ -15,16 +15,6 @@
   ],
   "favorites": [
     {
-      "id": "c774",
-      "quoteId": "0zPVpv3bI",
-      "content": "You can't cross the sea merely by standing and staring at the water.",
-      "author": "Rabindranath Tagore",
-      "tags": [
-        "Inspirational"
-      ],
-      "favoritedAt": "2025-06-09T08:32:01.744Z"
-    },
-    {
       "id": "fb25",
       "quoteId": "VBpJtm9T-tAs",
       "content": "There is no need for temples, no need for complicated philosophies. My brain and my heart are my temples; my philosophy is kindness.",
@@ -33,28 +23,48 @@
         "Famous Quotes"
       ],
       "favoritedAt": "2025-06-09T08:32:05.523Z"
+    },
+    {
+      "id": "bdcf",
+      "quoteId": "CqBZakh58pRs",
+      "content": "Let me tell you the secret that has led me to my goal: my strength lies solely in my tenacity.",
+      "author": "Louis Pasteur",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "favoritedAt": "2025-06-09T09:08:48.580Z"
     }
   ],
   "history": [
     {
-      "id": "9390",
-      "quoteId": "cz9a9Ioqgp0Z",
-      "content": "There are people who have money and people who are rich.",
-      "author": "Coco Chanel",
+      "id": "b304",
+      "quoteId": "M_3sjCS_e7k2",
+      "content": "Life is a gift, and it offers us the privilege, opportunity, and responsibility to give something back by becoming more",
+      "author": "Tony Robbins",
       "tags": [
         "Famous Quotes"
       ],
-      "viewedAt": "2025-06-09T08:40:32.337Z"
+      "viewedAt": "2025-06-09T09:08:44.877Z"
     },
     {
-      "id": "39af",
-      "quoteId": "S6XZ0bE2Jy",
-      "content": "We the people are the rightful masters of both Congress and the courts, not to overthrow the Constitution but to overthrow the men who pervert the Constitution.",
-      "author": "Abraham Lincoln",
+      "id": "103d",
+      "quoteId": "CqBZakh58pRs",
+      "content": "Let me tell you the secret that has led me to my goal: my strength lies solely in my tenacity.",
+      "author": "Louis Pasteur",
       "tags": [
-        "Politics"
+        "Famous Quotes"
       ],
-      "viewedAt": "2025-06-09T08:41:09.326Z"
+      "viewedAt": "2025-06-09T09:08:47.686Z"
+    },
+    {
+      "id": "832c",
+      "quoteId": "qXO3CA1R5kmS",
+      "content": "Take up one idea. Make that one idea your life - think of it, dream of it, live on that idea. Let the brain, muscles, nerves, every part of your body, be full of that idea, and just leave every other idea alone. This is the way to success.",
+      "author": "Swami Vivekananda",
+      "tags": [
+        "Success"
+      ],
+      "viewedAt": "2025-06-09T09:08:55.513Z"
     }
   ],
   "quotes": [

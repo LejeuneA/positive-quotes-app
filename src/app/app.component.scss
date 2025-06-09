@@ -63,13 +63,13 @@ body.dark-mode {
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+@media screen and (max-width: $screen-md) {
   .content {
     padding: 1.5rem 1rem;
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: $screen-sm) {
   .content {
     padding: 1rem 0.5rem;
   }

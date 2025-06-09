@@ -124,7 +124,7 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media screen and (max-width: $screen-md) {
   .categories-container {
     padding: 1rem;
 

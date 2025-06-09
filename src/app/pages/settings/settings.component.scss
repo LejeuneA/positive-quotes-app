@@ -6,7 +6,7 @@
   max-width: 600px;
   margin: 2rem auto;
   padding: 2rem;
-  background: $light-background;
+  background-color: rgba($light-background, 0.8);
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
@@ -15,7 +15,7 @@
 
     button {
       color: $light-background;
-      background-color: rgba($primary-color, 0.4);
+      background-color: rgba($primary-color, 0.8);
     }
 
     input {
@@ -39,6 +39,10 @@
     margin: 1.5rem 0 1rem;
     color: $light-grey;
   }
+
+  @media screen and (max-width: $screen-sm) {
+    padding: 1rem;
+  }
 }
 
 .settings-form {
@@ -53,6 +57,10 @@
       color: $light-background;
     }
   }
+
+  @media screen and (max-width: $screen-sm) {
+    gap: 0.5rem;
+  }
 }
 
 .form-actions {
@@ -60,4 +68,11 @@
   justify-content: flex-end;
   gap: 1rem;
   margin-top: 1rem;
+
+  @media screen and (max-width: $screen-sm) {
+    gap: 0.5rem;
+    font-size: small;
+    justify-content: center;
+    flex-direction: column;
+  }
 }

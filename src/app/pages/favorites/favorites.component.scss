@@ -85,7 +85,7 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media screen and (max-width: $screen-md) {
   .favorites-container {
     padding: 1rem;
 
