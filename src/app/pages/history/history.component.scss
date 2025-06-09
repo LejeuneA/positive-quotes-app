@@ -35,12 +35,8 @@
     text-align: center;
     padding: 2rem;
     color: color.scale($light-grey, $lightness: -20%);
-    font-size: 1.1rem;
-
-    p {
-      font-size: 1.5rem;
-      font-weight: 500;
-    }
+    font-size: 1.5rem;
+    font-weight: 500;
 
     :host-context(.dark-mode) & {
       color: $light-background;
