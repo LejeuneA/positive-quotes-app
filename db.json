@@ -13,31 +13,28 @@
       "password": "As130580"
     }
   ],
-  "favorites": [],
+  "favorites": [
+    {
+      "id": "9957",
+      "quoteId": "tfo24zWoAJ",
+      "content": "It requires wisdom to understand wisdom: the music is nothing if the audience is deaf.",
+      "author": "Walter Lippmann",
+      "tags": [
+        "Wisdom"
+      ],
+      "favoritedAt": "2025-06-09T13:03:56.412Z"
+    }
+  ],
   "history": [
     {
-      "id": "838c",
-      "content": "Stay positive and happy. Work hard and don't give up hope.",
-      "author": "Anonymous",
-      "viewedAt": "2025-06-09T12:36:42.113Z"
-    },
-    {
-      "id": "5412",
-      "content": "Stay positive and happy. Work hard and don't give up hope.",
-      "author": "Anonymous",
-      "viewedAt": "2025-06-09T12:39:09.797Z"
-    },
-    {
-      "id": "eec4",
-      "content": "The only way to do great work is to love what you do.",
-      "author": "Steve Jobs",
-      "viewedAt": "2025-06-09T12:39:28.712Z"
-    },
-    {
-      "id": "6dc0",
-      "content": "Stay positive and happy. Work hard and don't give up hope.",
-      "author": "Anonymous",
-      "viewedAt": "2025-06-09T12:39:36.900Z"
+      "id": "b692",
+      "quoteId": "yNsOlf1OVa12",
+      "content": "You do not become good by trying to be good, but by finding the goodness that is already within you.",
+      "author": "Eckhart Tolle",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-09T13:08:20.888Z"
     }
   ],
   "quotes": [
