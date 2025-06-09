@@ -35,38 +35,7 @@
       "favoritedAt": "2025-06-09T09:08:48.580Z"
     }
   ],
-  "history": [
-    {
-      "id": "b304",
-      "quoteId": "M_3sjCS_e7k2",
-      "content": "Life is a gift, and it offers us the privilege, opportunity, and responsibility to give something back by becoming more",
-      "author": "Tony Robbins",
-      "tags": [
-        "Famous Quotes"
-      ],
-      "viewedAt": "2025-06-09T09:08:44.877Z"
-    },
-    {
-      "id": "103d",
-      "quoteId": "CqBZakh58pRs",
-      "content": "Let me tell you the secret that has led me to my goal: my strength lies solely in my tenacity.",
-      "author": "Louis Pasteur",
-      "tags": [
-        "Famous Quotes"
-      ],
-      "viewedAt": "2025-06-09T09:08:47.686Z"
-    },
-    {
-      "id": "832c",
-      "quoteId": "qXO3CA1R5kmS",
-      "content": "Take up one idea. Make that one idea your life - think of it, dream of it, live on that idea. Let the brain, muscles, nerves, every part of your body, be full of that idea, and just leave every other idea alone. This is the way to success.",
-      "author": "Swami Vivekananda",
-      "tags": [
-        "Success"
-      ],
-      "viewedAt": "2025-06-09T09:08:55.513Z"
-    }
-  ],
+  "history": [],
   "quotes": [
     {
       "id": "5d91b45a3f1f9e0017f1e8e5",
