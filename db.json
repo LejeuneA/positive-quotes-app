@@ -33,16 +33,6 @@
   ],
   "favorites": [
     {
-      "id": "bb26",
-      "quoteId": "R1DmP1kYtW",
-      "content": "Reflect on your present blessings, of which every man has many; not on your past misfortunes, of which all men have some.",
-      "author": "Charles Dickens",
-      "tags": [
-        "Gratitude"
-      ],
-      "favoritedAt": "2025-06-09T15:45:03.610Z"
-    },
-    {
       "id": "2134",
       "quoteId": "Qkl55U0twCr",
       "content": "Don't cry because it's over. Smile because it happened.",
@@ -55,24 +45,64 @@
   ],
   "history": [
     {
-      "id": "1781",
-      "quoteId": "2hAS8ixh02",
-      "content": "The greater danger for most of us lies not in setting our aim too high and falling short; but in setting our aim too low and achieving our mark.",
-      "author": "Michelangelo",
-      "tags": [
-        "Wisdom"
-      ],
-      "viewedAt": "2025-06-11T12:15:28.005Z"
-    },
-    {
-      "id": "ab6f",
-      "quoteId": "Qkl55U0twCr",
-      "content": "Don't cry because it's over. Smile because it happened.",
-      "author": "Dr. Seuss",
+      "id": "0eba",
+      "quoteId": "b64MwqrSHMN",
+      "content": "Experience is simply the name we give our mistakes.",
+      "author": "Oscar Wilde",
       "tags": [
         "Famous Quotes"
       ],
-      "viewedAt": "2025-06-11T12:15:46.017Z"
+      "viewedAt": "2025-06-11T12:26:25.695Z"
+    },
+    {
+      "id": "ea60",
+      "quoteId": "s-FViy5Lm3E0",
+      "content": "Do not waste yourself in rejection, nor bark against the bad, but chant the beauty of the good.",
+      "author": "Ralph Waldo Emerson",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-11T12:26:29.363Z"
+    },
+    {
+      "id": "e00e",
+      "quoteId": "jUzHSANe7yNC",
+      "content": "He that respects himself is safe from others; he wears a coat of mail that none can pierce.",
+      "author": "Henry Wadsworth Longfellow",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-11T12:26:36.190Z"
+    },
+    {
+      "id": "9258",
+      "quoteId": "3v53-XiBvtQK",
+      "content": "Happiness is when what you think, what you say, and what you do are in harmony.",
+      "author": "Mahatma Gandhi",
+      "tags": [
+        "Wisdom"
+      ],
+      "viewedAt": "2025-06-11T12:26:37.696Z"
+    },
+    {
+      "id": "2bab",
+      "quoteId": "KLHo5zWCwdPk",
+      "content": "You cannot be lonely if you like the person you're alone with.",
+      "author": "Wayne Dyer",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-11T12:27:53.844Z"
+    },
+    {
+      "id": "c65a",
+      "quoteId": "za_rrJe3SE",
+      "content": "The essence of true friendship is to make allowance for another's little lapses.",
+      "author": "Ovid",
+      "tags": [
+        "Friendship"
+      ],
+      "viewedAt": "2025-06-11T12:28:17.297Z"
     }
   ],
   "quotes": [

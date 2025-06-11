@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Quote } from '../../models/quote.model';
 import { FavoriteService } from '../../services/favorite.service';
 import { HistoryService } from '../../services/history.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -44,7 +45,8 @@ export class HomeComponent {
     private authService: AuthService,
     private quoteService: QuoteService,
     private favoriteService: FavoriteService,
-    private historyService: HistoryService
+    private historyService: HistoryService,
+    private router: Router
   ) {
     this.authService.currentUser$.subscribe((user) => {
       this.currentUser = user;
@@ -130,5 +132,9 @@ export class HomeComponent {
       this.historyService.addToHistory(quote).subscribe();
     }
     this.isLoading = false;
+  }
+
+  navigateToCategories(): void {
+    this.router.navigate(['/categories']);
   }
 }

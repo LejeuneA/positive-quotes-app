@@ -41,6 +41,12 @@
       font-size: 1.3rem;
       font-weight: 600;
       color: $primary-color;
+      cursor: pointer;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $secondary-color;
+      }
     }
 
     .categories-container {
