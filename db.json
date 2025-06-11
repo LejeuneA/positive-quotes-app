@@ -13,12 +13,6 @@
       "password": "As130580"
     },
     {
-      "id": "282f",
-      "username": "Acelya Lejeune",
-      "email": "acelya@mail.com",
-      "password": "As130580"
-    },
-    {
       "id": "3432",
       "username": "Acelya Lejeune",
       "email": "acelyalejeune@gmail.com",
@@ -29,30 +23,52 @@
       "username": "Acelya Lejeune",
       "email": "acelyalejeune@gmail.com",
       "password": "As130580"
+    },
+    {
+      "id": "d9ea",
+      "username": "Acelya",
+      "email": "acelya@mail.com",
+      "password": "As130580"
+    },
+    {
+      "id": "44ad",
+      "username": "Bellatrix",
+      "email": "bellatrix@mail.com",
+      "password": "@As130580"
     }
   ],
   "favorites": [
     {
-      "id": "2134",
-      "quoteId": "Qkl55U0twCr",
-      "content": "Don't cry because it's over. Smile because it happened.",
-      "author": "Dr. Seuss",
+      "id": "ee9f",
+      "quoteId": "_KiEvJQt0dRj",
+      "content": "Your big opportunity may be right where you are now.",
+      "author": "Napoleon Hill",
       "tags": [
         "Famous Quotes"
       ],
-      "favoritedAt": "2025-06-11T12:15:47.969Z"
+      "favoritedAt": "2025-06-11T13:13:30.686Z"
+    },
+    {
+      "id": "fe26",
+      "quoteId": "VqDHgHOYYTsd",
+      "content": "Our lives are the only meaningful expression of what we believe and in Whom we believe. And the only real wealth, for any of us, lies in our faith.",
+      "author": "Gordon Hinckley",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "favoritedAt": "2025-06-11T13:35:26.479Z"
     }
   ],
   "history": [
     {
-      "id": "08e5",
-      "quoteId": "mVZ3mhSDcX15",
-      "content": "Today you are you! That is truer than true! There is no one alive who is you-er than you!",
-      "author": "Dr. Seuss",
+      "id": "4961",
+      "quoteId": "DHSz9oNRv15E",
+      "content": "Life is what happens to you while you're busy making other plans.",
+      "author": "John Lennon",
       "tags": [
         "Famous Quotes"
       ],
-      "viewedAt": "2025-06-11T12:36:20.045Z"
+      "viewedAt": "2025-06-11T13:36:32.577Z"
     }
   ],
   "quotes": [
