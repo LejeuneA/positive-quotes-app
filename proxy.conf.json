@@ -8,12 +8,9 @@
     },
     "logLevel": "debug"
   },
-  "/auth": {
+  "/users": {
     "target": "http://localhost:3000",
     "secure": false,
-    "changeOrigin": true,
-    "pathRewrite": {
-      "^/auth": ""
-    }
+    "changeOrigin": true
   }
 }

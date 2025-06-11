@@ -45,8 +45,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/portfolio/positive-quotes/",
-              "deployUrl": "/portfolio/positive-quotes/"
+              "baseHref": "/portfolio/positive-quotes/"
             },
             "development": {
               "optimization": false,
