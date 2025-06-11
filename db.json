@@ -33,16 +33,6 @@
   ],
   "favorites": [
     {
-      "id": "9957",
-      "quoteId": "tfo24zWoAJ",
-      "content": "It requires wisdom to understand wisdom: the music is nothing if the audience is deaf.",
-      "author": "Walter Lippmann",
-      "tags": [
-        "Wisdom"
-      ],
-      "favoritedAt": "2025-06-09T13:03:56.412Z"
-    },
-    {
       "id": "bb26",
       "quoteId": "R1DmP1kYtW",
       "content": "Reflect on your present blessings, of which every man has many; not on your past misfortunes, of which all men have some.",
@@ -51,135 +41,38 @@
         "Gratitude"
       ],
       "favoritedAt": "2025-06-09T15:45:03.610Z"
+    },
+    {
+      "id": "2134",
+      "quoteId": "Qkl55U0twCr",
+      "content": "Don't cry because it's over. Smile because it happened.",
+      "author": "Dr. Seuss",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "favoritedAt": "2025-06-11T12:15:47.969Z"
     }
   ],
   "history": [
     {
-      "id": "96c7",
-      "quoteId": "NNRKhkipf13G",
-      "content": "Keep your eyes on the stars and your feet on the ground.",
-      "author": "Theodore Roosevelt",
-      "tags": [
-        "Famous Quotes",
-        "Inspirational"
-      ],
-      "viewedAt": "2025-06-09T15:44:54.162Z"
-    },
-    {
-      "id": "f19e",
-      "quoteId": "R1DmP1kYtW",
-      "content": "Reflect on your present blessings, of which every man has many; not on your past misfortunes, of which all men have some.",
-      "author": "Charles Dickens",
-      "tags": [
-        "Gratitude"
-      ],
-      "viewedAt": "2025-06-09T15:44:59.776Z"
-    },
-    {
-      "id": "e998",
-      "quoteId": "y4rjpOn-joW",
-      "content": "Courage is rightly esteemed the first of human qualities... because it is the quality which guarantees all others.",
-      "author": "Winston Churchill",
-      "tags": [
-        "Courage"
-      ],
-      "viewedAt": "2025-06-09T15:45:12.806Z"
-    },
-    {
-      "id": "7975",
-      "content": "The only way to do great work is to love what you do.",
-      "author": "Steve Jobs",
-      "viewedAt": "2025-06-09T15:45:21.063Z"
-    },
-    {
-      "id": "2c4f",
-      "content": "The only way to do great work is to love what you do.",
-      "author": "Steve Jobs",
-      "viewedAt": "2025-06-09T15:45:25.710Z"
-    },
-    {
-      "id": "43d9",
-      "content": "Stay positive and happy. Work hard and don't give up hope.",
-      "author": "Anonymous",
-      "viewedAt": "2025-06-09T15:45:54.319Z"
-    },
-    {
-      "id": "31be",
-      "content": "Life is what happens when you're busy making other plans.",
-      "author": "John Lennon",
-      "viewedAt": "2025-06-09T15:45:59.252Z"
-    },
-    {
-      "id": "baab",
-      "content": "Every day may not be good, but there is something good in every day.",
-      "author": "Unknown",
-      "viewedAt": "2025-06-09T15:46:16.443Z"
-    },
-    {
-      "id": "22d2",
-      "content": "Every day may not be good, but there is something good in every day.",
-      "author": "Unknown",
-      "viewedAt": "2025-06-09T15:46:34.048Z"
-    },
-    {
-      "id": "c8f8",
-      "content": "Life is what happens when you're busy making other plans.",
-      "author": "John Lennon",
-      "viewedAt": "2025-06-09T15:49:02.584Z"
-    },
-    {
-      "id": "3fc0",
-      "quoteId": "Nz3BafiyALJ",
-      "content": "Pain and foolishness lead to great bliss and complete knowledge, for Eternal Wisdom created nothing under the sun in vain.",
-      "author": "Kahlil Gibran",
+      "id": "1781",
+      "quoteId": "2hAS8ixh02",
+      "content": "The greater danger for most of us lies not in setting our aim too high and falling short; but in setting our aim too low and achieving our mark.",
+      "author": "Michelangelo",
       "tags": [
         "Wisdom"
       ],
-      "viewedAt": "2025-06-09T15:49:21.513Z"
+      "viewedAt": "2025-06-11T12:15:28.005Z"
     },
     {
-      "id": "0281",
-      "content": "Every day may not be good, but there is something good in every day.",
-      "author": "Unknown",
-      "viewedAt": "2025-06-09T15:49:34.631Z"
-    },
-    {
-      "id": "a209",
-      "content": "Every day may not be good, but there is something good in every day.",
-      "author": "Unknown",
-      "viewedAt": "2025-06-09T15:50:43.263Z"
-    },
-    {
-      "id": "5eb9",
-      "quoteId": "89tyQf_NKq3f",
-      "content": "Life without love is like a tree without blossoms or fruit.",
-      "author": "Kahlil Gibran",
+      "id": "ab6f",
+      "quoteId": "Qkl55U0twCr",
+      "content": "Don't cry because it's over. Smile because it happened.",
+      "author": "Dr. Seuss",
       "tags": [
         "Famous Quotes"
       ],
-      "viewedAt": "2025-06-09T15:59:37.924Z"
-    },
-    {
-      "id": "363a",
-      "quoteId": "GQ8whOuPGD8Z",
-      "content": "The beginning of wisdom is found in doubting; by doubting we come to the question, and by seeking we may come upon the truth.",
-      "author": "Peter Abelard",
-      "tags": [
-        "Famous Quotes"
-      ],
-      "viewedAt": "2025-06-09T16:00:00.961Z"
-    },
-    {
-      "id": "8af0",
-      "content": "Life is what happens when you're busy making other plans.",
-      "author": "John Lennon",
-      "viewedAt": "2025-06-09T16:00:30.424Z"
-    },
-    {
-      "id": "c8c9",
-      "content": "The only way to do great work is to love what you do.",
-      "author": "Steve Jobs",
-      "viewedAt": "2025-06-09T16:01:00.114Z"
+      "viewedAt": "2025-06-11T12:15:46.017Z"
     }
   ],
   "quotes": [

@@ -1,44 +1,40 @@
 @use "../../scss/_variables" as *;
-@use "sass:color"; // Add this for modern color functions
+@use "sass:color";
 
 .categories-container {
-  min-height: 100vh;
   padding: 2rem;
-  background-color: $light-background;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 80vh;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 2rem;
 
   .categories-card {
-    width: 100%;
-    max-width: 800px;
-    margin: 0;
-    padding: 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
+    background: rgba($light-background, 0.8);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    :host-context(.dark-mode) & {
+      color: $light-background;
+      background-color: rgba($dark-background, 0.8);
     }
 
     mat-card-header {
-      margin-bottom: 1.5rem;
-      text-align: center;
-
       mat-card-title {
-        font-size: 2rem;
-        font-weight: 600;
         color: $primary-color;
-        margin-bottom: 0.5rem;
+        font-size: 1.8rem;
+        font-weight: 500;
       }
 
       mat-card-subtitle {
         color: $light-grey;
-        font-size: 1rem;
+        font-weight: 200;
+        padding: 1rem 0;
+
+        :host-context(.dark-mode) & {
+          color: color.scale($light-background, $lightness: 20%);
+        }
       }
     }
 
@@ -46,78 +42,98 @@
       padding: 0;
 
       mat-list-item {
-        height: 56px;
-        border-radius: 8px;
-        margin-bottom: 8px;
         cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        transition: all 0.2s ease;
+        border-left: 3px solid transparent;
 
         &:hover {
-          background-color: rgba($primary-color, 0.08);
-          transform: translateX(5px);
+          background-color: rgba($primary-color, 0.1);
+          border-left-color: $primary-color;
         }
 
         &.selected {
-          background-color: rgba($primary-color, 0.15);
-          font-weight: 500;
+          background-color: rgba($primary-color, 0.2);
+          border-left-color: $primary-dark-color;
 
           .category-name {
-            color: color.adjust($primary-color, $lightness: -10%);
+            color: $primary-dark-color;
+            font-weight: 500;
           }
 
           mat-icon {
-            color: $primary-color;
+            color: $secondary-color;
+            margin-left: 0.5rem;
+            vertical-align: middle;
           }
         }
 
         .category-name {
-          text-transform: capitalize;
-          font-size: 1.1rem;
-          flex-grow: 1;
-        }
+          flex: 1;
+          color: $dark-background;
 
-        mat-icon {
-          margin-left: 1rem;
+          :host-context(.dark-mode) & {
+            color: $light-background;
+          }
         }
       }
     }
   }
-}
 
-.dark-mode {
-  .categories-container {
-    background-color: color.adjust($dark-background, $lightness: -5%);
+  .quote-display {
+    h3 {
+      color: $primary-color;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+      position: relative;
 
-    .categories-card {
-      background-color: $dark-background;
+      &::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 2px;
+        background: $secondary-color;
+        margin: 0.5rem auto 0;
+      }
+    }
 
-      mat-card-title {
-        color: color.adjust($primary-color, $lightness: 10%);
+    .quote-wrapper {
+      background: rgba($light-background, 0.8);
+      border-left: 4px solid $primary-color;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 4px 4px 0;
+      position: relative;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+      :host-context(.dark-mode) & {
+        background-color: rgba($dark-background, 0.8);
+        color: $light-background;
       }
 
-      mat-card-subtitle {
-        color: color.adjust($light-grey, $lightness: 20%);
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
 
-      .categories-list {
-        mat-list-item {
-          color: $light-background;
+      app-quote {
+        background: transparent !important; // Ensure no inner background
+        padding: 0 !important; // Remove any internal padding
+        margin: 0 !important; // Remove any internal margins
+      }
+    }
 
-          &:hover {
-            background-color: rgba($primary-color, 0.15);
-          }
+    button {
+      margin: 1rem auto 0;
+      display: block;
+      width: fit-content;
+      padding: 0 2rem;
 
-          &.selected {
-            background-color: rgba($primary-color, 0.25);
-
-            .category-name {
-              color: color.adjust($primary-color, $lightness: 10%);
-            }
-          }
-        }
+      :host-context(.dark-mode) & {
+        color: $light-background;
+        background-color: rgba($dark-background, 0.8);
       }
     }
   }
@@ -127,12 +143,29 @@
 @media screen and (max-width: $screen-md) {
   .categories-container {
     padding: 1rem;
+    gap: 1rem;
 
     .categories-card {
-      padding: 1.5rem;
+      mat-card-header {
+        mat-card-title {
+          font-size: 1.5rem;
+        }
+      }
+    }
 
-      mat-card-title {
-        font-size: 1.5rem;
+    .quote-display {
+      h3 {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $screen-sm) {
+  .categories-container {
+    .categories-card {
+      mat-list-item {
+        padding: 0.5rem;
       }
     }
   }
