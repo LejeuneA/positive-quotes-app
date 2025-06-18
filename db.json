@@ -22,7 +22,7 @@
       "id": "3432",
       "username": "Acelya Lejeune",
       "email": "acelyalejeune@gmail.com",
-      "password": "As130580"
+      "password": "@As130580"
     },
     {
       "id": "904d",
@@ -33,26 +33,24 @@
   ],
   "favorites": [
     {
-      "id": "2134",
-      "quoteId": "Qkl55U0twCr",
-      "content": "Don't cry because it's over. Smile because it happened.",
-      "author": "Dr. Seuss",
-      "tags": [
-        "Famous Quotes"
-      ],
-      "favoritedAt": "2025-06-11T12:15:47.969Z"
+      "id": "8bb5",
+      "content": "The only way to do great work is to love what you do.",
+      "author": "Steve Jobs",
+      "favoritedAt": "2025-06-11T17:31:00.818Z"
     }
   ],
   "history": [
     {
-      "id": "08e5",
-      "quoteId": "mVZ3mhSDcX15",
-      "content": "Today you are you! That is truer than true! There is no one alive who is you-er than you!",
-      "author": "Dr. Seuss",
-      "tags": [
-        "Famous Quotes"
-      ],
-      "viewedAt": "2025-06-11T12:36:20.045Z"
+      "id": "0c8d",
+      "content": "The only way to do great work is to love what you do.",
+      "author": "Steve Jobs",
+      "viewedAt": "2025-06-11T17:32:46.967Z"
+    },
+    {
+      "id": "0bf8",
+      "content": "Every day may not be good, but there is something good in every day.",
+      "author": "Unknown",
+      "viewedAt": "2025-06-11T17:33:23.794Z"
     }
   ],
   "quotes": [
