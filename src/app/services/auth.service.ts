@@ -51,13 +51,11 @@ export class AuthService {
   }
 
   register(user: Omit<User, 'id'>): Observable<User> {
+    console.log('Registering at:', this.apiUrl);
     return this.http.post<User>(this.apiUrl, user).pipe(
-      tap((response: User) => {
-        this.setCurrentUser(response);
-        this.router.navigate(['/home']);
-      }),
+      tap((response) => console.log('Response:', response)),
       catchError((error) => {
-        console.error('Registration failed', error);
+        console.error('Full error:', error);
         return throwError(() => new Error('Registration failed'));
       })
     );
