@@ -22,7 +22,7 @@
       "id": "3432",
       "username": "Acelya Lejeune",
       "email": "acelyalejeune@gmail.com",
-      "password": "@As130580"
+      "password": "As130580"
     },
     {
       "id": "904d",
@@ -37,20 +37,38 @@
       "content": "The only way to do great work is to love what you do.",
       "author": "Steve Jobs",
       "favoritedAt": "2025-06-11T17:31:00.818Z"
+    },
+    {
+      "id": "34b3",
+      "quoteId": "58SXM3nFriy8",
+      "content": "Success is not final; failure is not fatal: it is the courage to continue that counts.",
+      "author": "Winston Churchill",
+      "tags": [
+        "Success"
+      ],
+      "favoritedAt": "2025-06-22T06:59:37.269Z"
     }
   ],
   "history": [
     {
-      "id": "0c8d",
-      "content": "The only way to do great work is to love what you do.",
-      "author": "Steve Jobs",
-      "viewedAt": "2025-06-11T17:32:46.967Z"
+      "id": "669c",
+      "quoteId": "58SXM3nFriy8",
+      "content": "Success is not final; failure is not fatal: it is the courage to continue that counts.",
+      "author": "Winston Churchill",
+      "tags": [
+        "Success"
+      ],
+      "viewedAt": "2025-06-22T06:59:34.628Z"
     },
     {
-      "id": "0bf8",
-      "content": "Every day may not be good, but there is something good in every day.",
-      "author": "Unknown",
-      "viewedAt": "2025-06-11T17:33:23.794Z"
+      "id": "1fe7",
+      "quoteId": "4uAgduNKEAKW",
+      "content": "For everything that lives is holy, life delights in life.",
+      "author": "William Blake",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-22T07:35:23.076Z"
     }
   ],
   "quotes": [

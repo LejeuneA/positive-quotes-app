@@ -1,4 +1,3 @@
-// auth.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {
@@ -11,7 +10,8 @@ import {
 } from 'rxjs';
 import { Router } from '@angular/router';
 import { UpdateUser } from '@app/models/user.interface';
-import { MatSnackBar } from '@angular/material/snack-bar'; // Added missing import
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { environment } from '../../environments/environment';
 
 interface User {
   id: number;
@@ -24,7 +24,7 @@ interface User {
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/users';
+  private apiUrl = `${environment.jsonServerUrl}/users`;
   private currentUserSubject = new BehaviorSubject<User | null>(null);
   public currentUser$ = this.currentUserSubject.asObservable();
   private redirectUrl: string | null = null;
@@ -32,7 +32,7 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private snackBar: MatSnackBar // Added to constructor
+    private snackBar: MatSnackBar
   ) {
     this.initializeCurrentUser();
   }
