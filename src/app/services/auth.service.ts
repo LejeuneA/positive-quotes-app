@@ -24,6 +24,7 @@ interface User {
   providedIn: 'root',
 })
 export class AuthService {
+  // Debugging: Log the API URL during service initialization
   private apiUrl = `${environment.jsonServerUrl}/users`;
   private currentUserSubject = new BehaviorSubject<User | null>(null);
   public currentUser$ = this.currentUserSubject.asObservable();
@@ -34,6 +35,7 @@ export class AuthService {
     private router: Router,
     private snackBar: MatSnackBar
   ) {
+    console.log('AuthService initialized with API URL:', this.apiUrl); // Debug
     this.initializeCurrentUser();
   }
 
@@ -51,17 +53,25 @@ export class AuthService {
   }
 
   register(user: Omit<User, 'id'>): Observable<User> {
-    console.log('Registering at:', this.apiUrl);
+    console.log('Attempting registration at:', this.apiUrl); // Debug
     return this.http.post<User>(this.apiUrl, user).pipe(
-      tap((response) => console.log('Response:', response)),
+      tap((response: User) => {
+        console.log('Registration successful:', response); // Debug
+        this.setCurrentUser(response);
+        this.router.navigate(['/home']);
+      }),
       catchError((error) => {
-        console.error('Full error:', error);
+        console.error('Registration error:', error); // Debug
+        this.snackBar.open('Registration failed. Please try again.', 'Close', {
+          duration: 3000,
+        });
         return throwError(() => new Error('Registration failed'));
       })
     );
   }
 
   login(email: string, password: string): Observable<User> {
+    console.log('Attempting login at:', `${this.apiUrl}?email=${email}`); // Debug
     return this.http.get<User[]>(`${this.apiUrl}?email=${email}`).pipe(
       map((users) => {
         const user = users.find((u) => u.password === password);
@@ -71,24 +81,27 @@ export class AuthService {
         return user;
       }),
       tap((user) => {
+        console.log('Login successful:', user); // Debug
         this.setCurrentUser(user);
         this.router.navigate([this.redirectUrl || '/home']);
         this.redirectUrl = null;
       }),
       catchError((error) => {
-        console.error('Login error:', error);
+        console.error('Login error:', error); // Debug
         let errorMessage = 'Login failed. Please try again.';
         if (error.status === 404) {
           errorMessage = 'User not found. Please check your email.';
         } else if (error.status === 401) {
           errorMessage = 'Invalid password. Please try again.';
         }
+        this.snackBar.open(errorMessage, 'Close', { duration: 3000 });
         return throwError(() => new Error(errorMessage));
       })
     );
   }
 
   logout(): void {
+    console.log('Logging out user'); // Debug
     this.clearUserData();
     this.router.navigate(['/login']);
   }
@@ -103,7 +116,6 @@ export class AuthService {
       return throwError(() => new Error('No user logged in'));
     }
 
-    // Verify current password if changing password
     if (userData.newPassword && !userData.currentPassword) {
       return throwError(
         () => new Error('Current password is required to change password')
@@ -121,17 +133,19 @@ export class AuthService {
       .put<User>(`${this.apiUrl}/${currentUser.id}`, updatedUser)
       .pipe(
         tap((user) => {
+          console.log('Update successful:', user); // Debug
           this.setCurrentUser(user);
           this.snackBar.open('Profile updated successfully!', 'Close', {
             duration: 3000,
           });
         }),
         catchError((error) => {
-          console.error('Update failed', error);
+          console.error('Update error:', error); // Debug
           let errorMessage = 'Failed to update profile';
           if (error.status === 400) {
             errorMessage = error.error?.message || errorMessage;
           }
+          this.snackBar.open(errorMessage, 'Close', { duration: 3000 });
           return throwError(() => new Error(errorMessage));
         })
       );
@@ -141,11 +155,13 @@ export class AuthService {
     const { password, ...userWithoutPassword } = user;
     localStorage.setItem('currentUser', JSON.stringify(userWithoutPassword));
     this.currentUserSubject.next(userWithoutPassword);
+    console.log('User set in localStorage:', userWithoutPassword); // Debug
   }
 
   private clearUserData(): void {
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
+    console.log('User data cleared'); // Debug
   }
 
   get currentUserValue(): User | null {
