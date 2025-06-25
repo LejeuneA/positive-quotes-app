@@ -29,38 +29,97 @@
       "username": "Acelya Lejeune",
       "email": "acelyalejeune@gmail.com",
       "password": "As130580"
+    },
+    {
+      "id": "db75",
+      "username": "Lejeune Acelya",
+      "email": "lejeuneacelya@mail.com",
+      "password": "As130580"
     }
   ],
   "favorites": [
     {
-      "id": "8bb5",
-      "content": "The only way to do great work is to love what you do.",
-      "author": "Steve Jobs",
-      "favoritedAt": "2025-06-11T17:31:00.818Z"
-    },
-    {
-      "id": "34b3",
-      "quoteId": "58SXM3nFriy8",
-      "content": "Success is not final; failure is not fatal: it is the courage to continue that counts.",
-      "author": "Winston Churchill",
+      "id": "f6d0",
+      "quoteId": "dFqMRKpguUJz",
+      "content": "A thing well said will be wit in all languages.",
+      "author": "John Dryden",
       "tags": [
-        "Success"
+        "Famous Quotes"
       ],
-      "favoritedAt": "2025-06-22T06:59:37.269Z"
+      "favoritedAt": "2025-06-25T13:08:16.528Z"
     }
   ],
   "history": [
     {
-      "id": "8119",
-      "content": "Life is what happens when you're busy making other plans.",
-      "author": "John Lennon",
-      "viewedAt": "2025-06-24T16:17:51.792Z"
+      "id": "6e40",
+      "quoteId": "J1amO36TwbX8",
+      "content": "You can't blame gravity for falling in love.",
+      "author": "Albert Einstein",
+      "tags": [
+        "Famous Quotes",
+        "Humorous"
+      ],
+      "viewedAt": "2025-06-25T13:07:50.795Z"
     },
     {
-      "id": "1517",
-      "content": "Life is what happens when you're busy making other plans.",
-      "author": "John Lennon",
-      "viewedAt": "2025-06-24T16:17:57.476Z"
+      "id": "5dc6",
+      "quoteId": "e_gpcYFrlC7",
+      "content": "Time is the most valuable thing a man can spend.",
+      "author": "Theophrastus",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-25T13:07:58.393Z"
+    },
+    {
+      "id": "2fda",
+      "quoteId": "_6z2BhrSP8hw",
+      "content": "Do not be too timid and squeamish about your reactions. All life is an experiment. The more experiments you make the better.",
+      "author": "Ralph Waldo Emerson",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-25T13:08:09.488Z"
+    },
+    {
+      "id": "6669",
+      "quoteId": "dFqMRKpguUJz",
+      "content": "A thing well said will be wit in all languages.",
+      "author": "John Dryden",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-25T13:08:15.694Z"
+    },
+    {
+      "id": "97b4",
+      "quoteId": "Q_jMQZjF57dD",
+      "content": "You cannot have what you do not want.",
+      "author": "John Acosta",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-25T13:08:46.084Z"
+    },
+    {
+      "id": "73f1",
+      "quoteId": "eFUpcDDj16lQ",
+      "content": "Love has no age, no limit; and no death.",
+      "author": "John Galsworthy",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-25T13:20:00.744Z"
+    },
+    {
+      "id": "f36b",
+      "quoteId": "Wxf1mhZ7ipPU",
+      "content": "Men in general judge more from appearances than from reality. All men have eyes, but few have the gift of penetration.",
+      "author": "Niccolò Machiavelli",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-06-25T13:21:24.361Z"
     }
   ],
   "quotes": [
