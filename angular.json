@@ -53,7 +53,15 @@
               "outputHashing": "all",
               "baseHref": "/positive-quotes-app/",
               "deployUrl": "/positive-quotes-app/",
-              "serviceWorker": false
+              "serviceWorker": false,
+              "assets": [
+                "src/assets",
+                {
+                  "glob": "**/*",
+                  "input": "src",
+                  "output": "/"
+                }
+              ]
             },
             "development": {
               "optimization": false,
