@@ -4,9 +4,9 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button'; // Add this import
+import { MatButtonModule } from '@angular/material/button';
 import { QuoteService } from '../../services/quote.service';
-import { QuoteComponent } from '../quote/quote.component';
+import { QuoteComponent } from '../../components/quote/quote.component';
 
 @Component({
   selector: 'app-categories',

@@ -17,7 +17,7 @@ export const routes: Routes = [
   {
     path: 'categories',
     loadComponent: () =>
-      import('./components/categories/categories.component').then(
+      import('./pages/categories/categories.component').then(
         (mod) => mod.CategoriesComponent
       ),
     canActivate: [AuthGuard],
