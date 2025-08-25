@@ -29,38 +29,86 @@
       "username": "Acelya Lejeune",
       "email": "acelyalejeune@gmail.com",
       "password": "As130580"
+    },
+    {
+      "id": "ef1a",
+      "username": "Acelya Lejeune",
+      "email": "lejeunea@mail.com",
+      "password": "As130580"
     }
   ],
   "favorites": [
     {
-      "id": "8bb5",
-      "content": "The only way to do great work is to love what you do.",
-      "author": "Steve Jobs",
-      "favoritedAt": "2025-06-11T17:31:00.818Z"
-    },
-    {
-      "id": "34b3",
-      "quoteId": "58SXM3nFriy8",
-      "content": "Success is not final; failure is not fatal: it is the courage to continue that counts.",
+      "id": "d0e3",
+      "quoteId": "NXFzDIOw6GZ",
+      "content": "Nothing in life is so exhilarating as to be shot at without result.",
       "author": "Winston Churchill",
       "tags": [
-        "Success"
+        "War"
       ],
-      "favoritedAt": "2025-06-22T06:59:37.269Z"
+      "favoritedAt": "2025-08-25T07:03:32.087Z"
     }
   ],
   "history": [
     {
-      "id": "8119",
-      "content": "Life is what happens when you're busy making other plans.",
-      "author": "John Lennon",
-      "viewedAt": "2025-06-24T16:17:51.792Z"
+      "id": "1cbe",
+      "quoteId": "trKnEw-ZVY",
+      "content": "What you do today can improve all your tomorrows.",
+      "author": "Ralph Marston",
+      "tags": [
+        "Motivational"
+      ],
+      "viewedAt": "2025-08-25T07:03:14.821Z"
     },
     {
-      "id": "1517",
-      "content": "Life is what happens when you're busy making other plans.",
-      "author": "John Lennon",
-      "viewedAt": "2025-06-24T16:17:57.476Z"
+      "id": "f4b7",
+      "quoteId": "yA3NA7G_Mii8",
+      "content": "Do I speak at the right time, or not? Do I speak of facts, or not? Do I speak gently or harshly? Do I speak profitable words or not? Do I speak with a kindly heart, or inwardly malicious?",
+      "author": "The Buddha",
+      "tags": [
+        "Wisdom"
+      ],
+      "viewedAt": "2025-08-25T07:03:17.879Z"
+    },
+    {
+      "id": "536d",
+      "quoteId": "9yI9oupgZp",
+      "content": "Wishing to be friends is quick work, but friendship is a slow ripening fruit.",
+      "author": "Aristotle",
+      "tags": [
+        "Friendship"
+      ],
+      "viewedAt": "2025-08-25T07:03:21.124Z"
+    },
+    {
+      "id": "e21d",
+      "quoteId": "NXFzDIOw6GZ",
+      "content": "Nothing in life is so exhilarating as to be shot at without result.",
+      "author": "Winston Churchill",
+      "tags": [
+        "War"
+      ],
+      "viewedAt": "2025-08-25T07:03:29.256Z"
+    },
+    {
+      "id": "3b11",
+      "quoteId": "xdwmubQ3Sh49",
+      "content": "Our doubts are traitors and make us lose the good we often might win, by fearing to attempt.",
+      "author": "Jane Addams",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-08-25T07:03:34.697Z"
+    },
+    {
+      "id": "ed7b",
+      "quoteId": "hmXfyn9YHg",
+      "content": "I hope our wisdom will grow with our power, and teach us, that the less we use our power the greater it will be.",
+      "author": "Thomas Jefferson",
+      "tags": [
+        "Wisdom"
+      ],
+      "viewedAt": "2025-08-25T07:05:58.199Z"
     }
   ],
   "quotes": [

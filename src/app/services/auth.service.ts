@@ -35,7 +35,7 @@ export class AuthService {
     private router: Router,
     private snackBar: MatSnackBar
   ) {
-    console.log('AuthService initialized with API URL:', this.apiUrl); // Debug
+    console.log('AuthService initialized with API URL:', this.apiUrl);
     this.initializeCurrentUser();
   }
 
