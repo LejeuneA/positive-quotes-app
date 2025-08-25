@@ -135,3 +135,10 @@
     }
   }
 }
+
+/* Style for share menu items */
+.mat-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

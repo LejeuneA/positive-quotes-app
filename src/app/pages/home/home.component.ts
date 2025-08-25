@@ -10,6 +10,7 @@ import { Quote } from '../../models/quote.model';
 import { FavoriteService } from '../../services/favorite.service';
 import { HistoryService } from '../../services/history.service';
 import { Router } from '@angular/router';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +21,7 @@ import { Router } from '@angular/router';
     SearchComponent,
     MatButtonModule,
     MatIconModule,
+    MatMenuModule, // Add this import
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
@@ -118,12 +120,37 @@ export class HomeComponent {
     }
   }
 
-  shareQuote() {
+  shareQuote(platform: string) {
     const text = `"${this.currentQuote.content}" - ${this.currentQuote.author}`;
-    const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      text
-    )}`;
-    window.open(url, '_blank');
+
+    switch (platform) {
+      case 'twitter':
+        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+          text
+        )}`;
+        window.open(twitterUrl, '_blank');
+        break;
+      case 'facebook':
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+          window.location.href
+        )}&quote=${encodeURIComponent(text)}`;
+        window.open(facebookUrl, '_blank');
+        break;
+      case 'instagram':
+        // Instagram doesn't support direct sharing via URL
+        // This will copy the text to clipboard for manual sharing
+        navigator.clipboard
+          .writeText(text)
+          .then(() => {
+            alert(
+              'Quote copied to clipboard! You can now paste it in Instagram.'
+            );
+          })
+          .catch((err) => {
+            console.error('Failed to copy: ', err);
+          });
+        break;
+    }
   }
 
   private handleNewQuote(quote: Quote) {
