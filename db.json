@@ -31,9 +31,9 @@
       "password": "As130580"
     },
     {
-      "id": "ef1a",
+      "id": "f595",
       "username": "Acelya Lejeune",
-      "email": "lejeunea@mail.com",
+      "email": "lejeuneacelya@mailcom",
       "password": "As130580"
     }
   ],
@@ -51,64 +51,14 @@
   ],
   "history": [
     {
-      "id": "1cbe",
-      "quoteId": "trKnEw-ZVY",
-      "content": "What you do today can improve all your tomorrows.",
-      "author": "Ralph Marston",
-      "tags": [
-        "Motivational"
-      ],
-      "viewedAt": "2025-08-25T07:03:14.821Z"
-    },
-    {
-      "id": "f4b7",
-      "quoteId": "yA3NA7G_Mii8",
-      "content": "Do I speak at the right time, or not? Do I speak of facts, or not? Do I speak gently or harshly? Do I speak profitable words or not? Do I speak with a kindly heart, or inwardly malicious?",
-      "author": "The Buddha",
-      "tags": [
-        "Wisdom"
-      ],
-      "viewedAt": "2025-08-25T07:03:17.879Z"
-    },
-    {
-      "id": "536d",
-      "quoteId": "9yI9oupgZp",
-      "content": "Wishing to be friends is quick work, but friendship is a slow ripening fruit.",
-      "author": "Aristotle",
-      "tags": [
-        "Friendship"
-      ],
-      "viewedAt": "2025-08-25T07:03:21.124Z"
-    },
-    {
-      "id": "e21d",
-      "quoteId": "NXFzDIOw6GZ",
-      "content": "Nothing in life is so exhilarating as to be shot at without result.",
-      "author": "Winston Churchill",
-      "tags": [
-        "War"
-      ],
-      "viewedAt": "2025-08-25T07:03:29.256Z"
-    },
-    {
-      "id": "3b11",
-      "quoteId": "xdwmubQ3Sh49",
-      "content": "Our doubts are traitors and make us lose the good we often might win, by fearing to attempt.",
-      "author": "Jane Addams",
+      "id": "3130",
+      "quoteId": "f071rzur67M2",
+      "content": "Men of perverse opinion do not know the excellence of what is in their hands, till someone dash it from them.",
+      "author": "Sophocles",
       "tags": [
         "Famous Quotes"
       ],
-      "viewedAt": "2025-08-25T07:03:34.697Z"
-    },
-    {
-      "id": "ed7b",
-      "quoteId": "hmXfyn9YHg",
-      "content": "I hope our wisdom will grow with our power, and teach us, that the less we use our power the greater it will be.",
-      "author": "Thomas Jefferson",
-      "tags": [
-        "Wisdom"
-      ],
-      "viewedAt": "2025-08-25T07:05:58.199Z"
+      "viewedAt": "2025-08-25T07:57:31.090Z"
     }
   ],
   "quotes": [
