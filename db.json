@@ -39,26 +39,36 @@
   ],
   "favorites": [
     {
-      "id": "d0e3",
-      "quoteId": "NXFzDIOw6GZ",
-      "content": "Nothing in life is so exhilarating as to be shot at without result.",
-      "author": "Winston Churchill",
+      "id": "4c5a",
+      "quoteId": "gbXrbDRZfzQz",
+      "content": "There is only one way to happiness and that is to cease worrying about things which are beyond the power of our will.",
+      "author": "Epictetus",
       "tags": [
-        "War"
+        "Happiness"
       ],
-      "favoritedAt": "2025-08-25T07:03:32.087Z"
+      "favoritedAt": "2025-08-25T13:40:42.102Z"
     }
   ],
   "history": [
     {
-      "id": "de09",
-      "quoteId": "G3x14DbMCIe",
-      "content": "The opportunity for brotherhood presents itself every time you meet a human being.",
-      "author": "Jane Wyman",
+      "id": "6d31",
+      "quoteId": "8UWYR-PPomcx",
+      "content": "The person who makes a success of living is the one who see his goal steadily and aims for it unswervingly. That is dedication.",
+      "author": "Cecil B. DeMille",
       "tags": [
-        "Wisdom"
+        "Success"
       ],
-      "viewedAt": "2025-08-25T11:18:49.264Z"
+      "viewedAt": "2025-08-25T13:40:28.832Z"
+    },
+    {
+      "id": "0c5d",
+      "quoteId": "6pgaH9TfTdET",
+      "content": "One secret of success in life is for a man to be ready for his opportunity when it comes.",
+      "author": "Benjamin Disraeli",
+      "tags": [
+        "Success"
+      ],
+      "viewedAt": "2025-08-25T13:40:48.298Z"
     }
   ],
   "quotes": [
