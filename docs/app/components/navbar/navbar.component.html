@@ -1,0 +1,48 @@
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a routerLink="/home" class="logo-link">
+      <img src="assets/logo/pqa_logo.png" alt="Quote Icon" class="logo" />
+      <span class="logo-text">STAY POSITIVE AND HAPPY</span>
+    </a>
+  </div>
+
+  <div class="navbar-actions">
+    <!-- Home and Settings buttons - only shown when logged in -->
+    <ng-container *ngIf="currentUser">
+      <button mat-icon-button routerLink="/home" class="home-button">
+        <mat-icon>home</mat-icon>
+      </button>
+
+      <!-- Favorites button -->
+      <button mat-icon-button routerLink="/favorites" class="favorites-button">
+        <mat-icon>favorite</mat-icon>
+      </button>
+
+      <!-- History button -->
+      <button mat-icon-button routerLink="/history" class="history-button">
+        <mat-icon>history</mat-icon>
+      </button>
+
+      <!-- Theme toggle (always visible) -->
+      <button mat-icon-button (click)="toggleTheme()" class="theme-toggle">
+        <mat-icon>{{ isDarkMode ? "light_mode" : "dark_mode" }}</mat-icon>
+      </button>
+
+      <button mat-icon-button routerLink="/settings" class="settings-button">
+        <mat-icon>settings</mat-icon>
+      </button>
+    </ng-container>
+
+    <!-- User/auth buttons -->
+    <ng-container *ngIf="currentUser; else authButtons">
+      <div class="user-info">
+        <span>Welcome, {{ currentUser.username }}</span>
+        <button mat-button (click)="logout()">Logout</button>
+      </div>
+    </ng-container>
+    <ng-template #authButtons>
+      <button mat-button routerLink="/login">Login</button>
+      <button mat-button routerLink="/register">Register</button>
+    </ng-template>
+  </div>
+</nav>

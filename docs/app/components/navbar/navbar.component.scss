@@ -1,0 +1,155 @@
+@use "../../scss/_variables" as *;
+@use "sass:color";
+
+.navbar {
+  height: $navbar-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  background-color: rgba($light-background, 0.95);
+  border-bottom: 1px solid $primary-color;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+
+  :host-context(.dark-mode) & {
+    background-color: rgba($dark-background, 0.95);
+    border-bottom-color: color.scale($primary-color, $lightness: 10%);
+
+    .logo-text {
+      color: color.scale($primary-color, $lightness: 15%);
+    }
+
+    button.mat-button {
+      color: $light-background;
+    }
+  }
+
+  &-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+
+        .logo-text {
+          color: color.scale($primary-color, $lightness: 10%);
+        }
+      }
+    }
+
+    .logo {
+      width: 40px;
+      height: auto;
+      transition: filter 0.3s ease;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $primary-color;
+      font-family: "Poppins", sans-serif;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .theme-toggle,
+    .home-button,
+    .settings-button,
+    .favorites-button,
+    .history-button {
+      color: inherit;
+      transition:
+        transform 0.2s,
+        color 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    button.mat-button {
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+
+      span {
+        color: inherit;
+      }
+    }
+  }
+}
+
+/* Responsive styles */
+@media screen and (max-width: $screen-sm) {
+  .navbar {
+    height: $navbar-mobile-height;
+    padding: 0.8rem 1rem;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    &-brand {
+      .logo-text {
+        font-size: 1.2rem;
+      }
+    }
+
+    &-actions {
+      width: 100%;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-md) {
+  .navbar {
+    &-brand {
+      .logo-text {
+        font-size: 1rem;
+      }
+    }
+
+    &-actions {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .user-info {
+        width: 100%;
+        justify-content: center;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}

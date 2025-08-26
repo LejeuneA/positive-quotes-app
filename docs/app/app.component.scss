@@ -1,0 +1,76 @@
+@use "./scss/_variables" as *;
+@use "sass:color";
+
+/* Global styles */
+:root {
+  --navbar-height: 80px;
+}
+
+/* Light mode default styles */
+body {
+  background-color: $light-background;
+  color: $dark-background;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: $dark-background;
+  color: $light-background;
+
+  .mat-card {
+    background-color: color.scale($dark-background, $lightness: 5%);
+    color: $light-background;
+  }
+
+  .mat-form-field {
+    .mat-input-element {
+      color: $light-background;
+    }
+    .mat-form-field-label {
+      color: rgba($light-background, 0.6);
+    }
+    .mat-form-field-underline {
+      background-color: rgba($light-background, 0.42);
+    }
+  }
+}
+
+/* Main container */
+.main-container {
+  position: relative;
+  z-index: 0;
+  min-height: 100vh;
+  color: $dark-background;
+  background-color: $light-background;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  &.dark-mode {
+    background-color: $dark-background;
+    color: $light-background;
+  }
+}
+
+/* Content area */
+.content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive design */
+@media screen and (max-width: $screen-md) {
+  .content {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media screen and (max-width: $screen-sm) {
+  .content {
+    padding: 1rem 0.5rem;
+  }
+}

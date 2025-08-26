@@ -1,0 +1,31 @@
+<div class="history-container">
+  <h1>Your Quote History</h1>
+
+  <div *ngIf="isLoading" class="loading-spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <div *ngIf="!isLoading">
+    <div *ngIf="history.length === 0" class="empty-state">
+      <p>No history yet. Quotes you view will appear here.</p>
+    </div>
+
+    <mat-card *ngFor="let item of history" class="history-item">
+      <app-quote [quote]="item.content" [author]="item.author || 'Unknown'" [isLoading]="false">
+      </app-quote>
+      <div class="history-meta">
+        <span class="viewed-at">Viewed: {{ formatDate(item.viewedAt) }}</span>
+        <span *ngIf="item.tags?.length" class="tags">
+          Tags: {{ item.tags.join(', ') }}
+        </span>
+      </div>
+    </mat-card>
+
+    <div *ngIf="history.length > 0" class="actions">
+      <button mat-raised-button color="warn" (click)="clearHistory()" [disabled]="isLoading">
+        <mat-icon>delete</mat-icon>
+        {{ isLoading ? 'Clearing...' : 'Clear All History' }}
+      </button>
+    </div>
+  </div>
+</div>

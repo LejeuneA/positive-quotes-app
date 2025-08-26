@@ -1,0 +1,13 @@
+<!-- Main content container -->
+<div class="main-container" [ngClass]="{ 'dark-mode': isDarkMode }">
+
+  <!--Navbar component-->
+  <app-navbar [isDarkMode]="isDarkMode" [currentUser]="currentUser" (themeToggled)="onThemeToggled($event)">
+  </app-navbar>
+
+  <!-- Router outlet for all pages -->
+  <router-outlet></router-outlet>
+
+  <!-- Background component -->
+  <app-background></app-background>
+</div>

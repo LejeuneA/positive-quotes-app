@@ -1,0 +1,45 @@
+<div class="home-container">
+  <div class="content-container">
+    <app-quote [quote]="currentQuote.content || ''" [author]="currentQuote.author || 'Unknown'" [isLoading]="isLoading">
+    </app-quote>
+
+    <div class="action-buttons">
+      <button mat-icon-button (click)="toggleFavorite()" [color]="currentQuote.favorited ? 'warn' : ''">
+        <mat-icon>{{currentQuote.favorited ? 'favorite' : 'favorite_border'}}</mat-icon>
+      </button>
+
+      <!-- Replace the single share button with a menu -->
+      <button mat-icon-button [matMenuTriggerFor]="shareMenu">
+        <mat-icon>share</mat-icon>
+      </button>
+      <mat-menu #shareMenu="matMenu">
+        <button mat-menu-item (click)="shareQuote('twitter')">
+          <mat-icon>flutter_dash</mat-icon>
+          <span>Twitter</span>
+        </button>
+        <button mat-menu-item (click)="shareQuote('facebook')">
+          <mat-icon>thumb_up</mat-icon>
+          <span>Facebook</span>
+        </button>
+        <button mat-menu-item (click)="shareQuote('instagram')">
+          <mat-icon>photo_camera</mat-icon>
+          <span>Instagram</span>
+        </button>
+      </mat-menu>
+
+      <button mat-icon-button (click)="refreshQuote()">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+
+    <app-search></app-search>
+
+    <h1 class="categories-title" (click)="navigateToCategories()">Categories</h1>
+    <div class="categories-container" *ngIf="currentUser">
+      <div class="category-pill" *ngFor="let category of categories" (click)="selectCategory(category)"
+        [class.active]="selectedCategory === category">
+        {{ category }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+@use "../../scss/_variables" as *;
+
+.quote-container {
+  text-align: center;
+  padding: 0.2rem;
+  font-family: "Poppins", sans-serif;
+  background-color: inherit;
+
+  .quote-text {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-top: 0;
+    line-height: 1.2rem;
+    color: $dark-background;
+
+    :host-context(.dark-mode) & {
+      color: $light-background;
+    }
+  }
+  color: $light-background;
+
+  .quote-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .quote-icon.start {
+    margin-right: 0.1rem;
+    font-size: 3rem;
+  }
+
+  .quote-icon.end {
+    margin-left: 0.1rem;
+    font-size: 3rem;
+    transform: rotate(180deg);
+  }
+}
+
+.quote-author {
+  font-size: 0.9rem;
+  color: $dark-background;
+  font-style: italic;
+
+  :host-context(.dark-mode) & {
+    color: $light-background;
+  }
+}

@@ -1,0 +1,144 @@
+@use "../../scss/_variables" as *;
+@use "sass:color";
+
+.home-container {
+  position: relative;
+  margin-top: $navbar-height;
+  width: 60%;
+  padding: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba($light-background, 0.8);
+  color: $light-background;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  z-index: 10;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+  :host-context(.dark-mode) & {
+    background-color: rgba($dark-background, 0.8);
+    color: $light-background;
+  }
+
+  .mat-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $primary-color;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    .categories-title {
+      text-align: center;
+      margin: 1.5rem 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: $primary-color;
+      cursor: pointer;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+
+    .categories-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+      margin: 1rem auto;
+      padding: 0 1rem;
+    }
+
+    .category-pill {
+      padding: 0.6rem 1.2rem;
+      background-color: rgba($primary-color, 0.5);
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+      color: $light-background;
+      border: 1px solid rgba($primary-color, 0.8);
+
+      &:hover {
+        background-color: rgba($primary-color, 0.8);
+        transform: translateY(-2px);
+      }
+
+      &.active {
+        background-color: $primary-color;
+        color: $light-background;
+        font-weight: 500;
+        box-shadow: 0 2px 8px rgba($primary-color, 0.3);
+      }
+
+      :host-context(.dark-mode) & {
+        background-color: rgba($primary-color, 0.5);
+        color: $light-background;
+
+        &:hover {
+          background-color: rgba($primary-color, 0.8);
+          transform: translateY(-2px);
+        }
+
+        &.active {
+          background-color: $primary-color;
+          color: $light-background;
+          font-weight: 500;
+          box-shadow: 0 2px 8px rgba($primary-color, 0.3);
+        }
+      }
+
+      @media screen and (max-width: $screen-sm) {
+        font-size: 0.7rem;
+        padding: 0.4rem 1rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    margin-top: 2rem;
+    margin-bottom: auto;
+    width: 90%;
+  }
+}
+
+/* Dark mode adjustments */
+.dark-mode .home-container {
+  background-color: rgba(30, 30, 30, 0.6);
+  color: $light-background;
+
+  .category-pill {
+    background-color: rgba($primary-color, 0.2);
+    color: color.adjust($primary-color, $lightness: 15%);
+    border-color: rgba($primary-color, 0.4);
+
+    &:hover {
+      background-color: rgba($primary-color, 0.3);
+    }
+
+    &.active {
+      background-color: $primary-color;
+      color: $dark-background;
+    }
+  }
+}
+
+/* Style for share menu items */
+.mat-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
