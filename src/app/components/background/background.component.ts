@@ -25,6 +25,7 @@ export class BackgroundComponent {
     const accessKey = '2Dd2Hb-S8Ekw-KDUh-WmG2skBLNV6zncJ6NAPEIBKDA';
     const apiUrl = `https://api.unsplash.com/photos/random?query=nature&client_id=${accessKey}`;
 
+    // API calls are asynchronous. Subscribe listens for results and lets me react when the response arrives
     this.http.get<any>(apiUrl).subscribe({
       next: (data) => {
         this.backgroundImage = data.urls.full;

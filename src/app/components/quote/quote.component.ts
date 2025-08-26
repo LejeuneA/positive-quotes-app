@@ -14,8 +14,11 @@ export class QuoteComponent {
   @Input() author?: string;
   @Input() isLoading: boolean = false;
 
+  /*It works like a property, not a function. NOT need parentheses like displayQuote()*/
   get displayQuote(): string {
-    return this.quote || 'No quote available';
+    return (
+      this.quote || 'No quote available'
+    ); /* If quote is empty, show 'No quote available' */
   }
 
   get displayAuthor(): string {

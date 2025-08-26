@@ -13,11 +13,16 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  @Input() isDarkMode = false;
+  @Input() isDarkMode = false; /* Receive data from parent */
   @Input() currentUser: any = null;
-  @Output() themeToggled = new EventEmitter<boolean>();
 
-  constructor(private authService: AuthService) {}
+  /* Sends data back to parent */
+  @Output() themeToggled =
+    new EventEmitter<boolean>(); /* Send events from child to parent*/
+
+  constructor(
+    private authService: AuthService
+  ) {} /* Private means we only use it inside this file. Constructor injects the service */
 
   toggleTheme() {
     this.isDarkMode = !this.isDarkMode;
@@ -25,6 +30,6 @@ export class NavbarComponent {
   }
 
   logout() {
-    this.authService.logout();
+    this.authService.logout(); /* Call the logout method from the service */
   }
 }
