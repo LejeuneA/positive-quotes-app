@@ -27,3 +27,5 @@ export interface UpdateUser {
     avatar?: string;
   };
 }
+
+/** Omit creates a new type by removing some properties from another type */

@@ -35,6 +35,12 @@
       "username": "Acelya Lejeune",
       "email": "lejeuneacelya@mailcom",
       "password": "As130580"
+    },
+    {
+      "id": "3f43",
+      "username": "Acelya Lejeune",
+      "email": "acelyalejeune@gmail.com",
+      "password": "As130580"
     }
   ],
   "favorites": [
@@ -135,6 +141,37 @@
         "Famous Quotes"
       ],
       "viewedAt": "2025-08-26T14:00:57.861Z"
+    },
+    {
+      "id": "2ce1",
+      "quoteId": "DBkTDkczWkg",
+      "content": "You can't shake hands with a clenched fist.",
+      "author": "Indira Gandhi",
+      "tags": [
+        "Wisdom"
+      ],
+      "viewedAt": "2025-08-27T09:12:16.052Z"
+    },
+    {
+      "id": "ed2f",
+      "quoteId": "w_JEQv9o4sF",
+      "content": "The truest wisdom is a resolute determination.",
+      "author": "Napoleon",
+      "tags": [
+        "Famous Quotes",
+        "Wisdom"
+      ],
+      "viewedAt": "2025-08-27T09:36:10.082Z"
+    },
+    {
+      "id": "678d",
+      "quoteId": "nyqZk3TwZb_C",
+      "content": "Let us revere, let us worship, but erect and open-eyed, the highest, not the lowest; the future, not the past!",
+      "author": "Charlotte Perkins Gilman",
+      "tags": [
+        "Wisdom"
+      ],
+      "viewedAt": "2025-08-27T09:37:03.402Z"
     }
   ],
   "quotes": [
