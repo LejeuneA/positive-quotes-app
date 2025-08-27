@@ -1,5 +1,6 @@
 <div class="favorites-container">
   <h2>Your Favorite Quotes</h2>
+  <!-- *ngFor is used to loop through the favorites array and display each quote. -->
   <div *ngFor="let favorite of favorites" class="quote-item">
     <p>"{{ favorite.content }}"</p>
     <p>- {{ favorite.author || "Unknown" }}</p>

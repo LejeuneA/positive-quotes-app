@@ -75,10 +75,11 @@ export class SettingsComponent implements OnInit {
     }
     return null;
   }
-
+  /** Shows/hides password section */
   togglePasswordFields() {
     this.showPasswordFields = !this.showPasswordFields;
     if (!this.showPasswordFields) {
+      /** patchValue() resets password fields if user cancels password change */
       this.settingsForm.patchValue({
         currentPassword: '',
         newPassword: '',
@@ -126,8 +127,10 @@ export class SettingsComponent implements OnInit {
       },
     });
   }
-
+  /** Navigates back to home page when user cancels. */
   onCancel() {
     this.router.navigate(['/home']);
   }
 }
+
+/** router.navigate()? → Changes page in Angular. */

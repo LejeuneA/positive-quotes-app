@@ -8,10 +8,12 @@
         <mat-icon>{{currentQuote.favorited ? 'favorite' : 'favorite_border'}}</mat-icon>
       </button>
 
-      <!-- Replace the single share button with a menu -->
+      <!-- [matMenuTriggerFor] connects button to a dropdown menu. -->
       <button mat-icon-button [matMenuTriggerFor]="shareMenu">
         <mat-icon>share</mat-icon>
       </button>
+
+      <!-- #shareMenu="matMenu" It makes a reference name to connect the button with the menu.-->
       <mat-menu #shareMenu="matMenu">
         <button mat-menu-item (click)="shareQuote('twitter')">
           <mat-icon>flutter_dash</mat-icon>
@@ -35,7 +37,7 @@
     <app-search></app-search>
 
     <h1 class="categories-title" (click)="navigateToCategories()">Categories</h1>
-    <div class="categories-container" *ngIf="currentUser">
+    <div class="categories-container" *ngIf="currentUser"> <!-- *ngIf show categories only if user is logged in -->
       <div class="category-pill" *ngFor="let category of categories" (click)="selectCategory(category)"
         [class.active]="selectedCategory === category">
         {{ category }}

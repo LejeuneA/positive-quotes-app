@@ -39,6 +39,7 @@ export class HistoryComponent {
     this.loadHistory();
   }
 
+  /** This function sorts the quotes by newest date first */
   loadHistory(): void {
     this.isLoading = true;
     this.historyService.getHistory().subscribe({
@@ -49,6 +50,7 @@ export class HistoryComponent {
         );
         this.isLoading = false;
       },
+      /** Shows a small popup message if something goes wrong. snackBar is a message box from Angular Material */
       error: (error) => {
         console.error('Error loading history:', error);
         this.snackBar.open('Failed to load history', 'Close', {
@@ -90,6 +92,7 @@ export class HistoryComponent {
   }
 
   formatDate(dateString: string): string {
+    /** This is a TypeScript type for formatting dates and times in JavaScript. */
     const options: Intl.DateTimeFormatOptions = {
       year: 'numeric',
       month: 'short',

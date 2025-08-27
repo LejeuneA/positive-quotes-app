@@ -53,6 +53,16 @@
         "Happiness"
       ],
       "favoritedAt": "2025-08-25T13:40:42.102Z"
+    },
+    {
+      "id": "fac9",
+      "quoteId": "1SHCOeLgKWa0",
+      "content": "A wise man will make more opportunities than he finds.",
+      "author": "Francis Bacon",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "favoritedAt": "2025-08-27T10:19:48.723Z"
     }
   ],
   "history": [
@@ -172,6 +182,183 @@
         "Wisdom"
       ],
       "viewedAt": "2025-08-27T09:37:03.402Z"
+    },
+    {
+      "id": "41b7",
+      "quoteId": "1SHCOeLgKWa0",
+      "content": "A wise man will make more opportunities than he finds.",
+      "author": "Francis Bacon",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-08-27T10:15:46.624Z"
+    },
+    {
+      "id": "b886",
+      "quoteId": "1Gexq3uqTbDs",
+      "content": "Joy is what happens to us when we allow ourselves to recognize how good things really are.",
+      "author": "Marianne Williamson",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-08-27T10:19:54.732Z"
+    },
+    {
+      "id": "7310",
+      "quoteId": "x6LCvKtrXx",
+      "content": "All love that has not friendship for its base, is like a mansion built upon the sand.",
+      "author": "Ella Wheeler Wilcox",
+      "tags": [
+        "Friendship",
+        "Love"
+      ],
+      "viewedAt": "2025-08-27T10:54:57.516Z"
+    },
+    {
+      "id": "1260",
+      "quoteId": "5SHro-fGJ9P",
+      "content": "Whatever you do in life, surround yourself with smart people who'll argue with you.",
+      "author": "John Wooden",
+      "tags": [
+        "Wisdom"
+      ],
+      "viewedAt": "2025-08-27T10:55:36.135Z"
+    },
+    {
+      "id": "7829",
+      "quoteId": "GM68LOEYM9",
+      "content": "The most certain sign of wisdom is cheerfulness.",
+      "author": "Michel de Montaigne",
+      "tags": [
+        "Wisdom"
+      ],
+      "viewedAt": "2025-08-27T10:55:51.942Z"
+    },
+    {
+      "id": "fb1e",
+      "quoteId": "_NreZWviTlke",
+      "content": "Think like a man of action; act like a man of thought.",
+      "author": "Henri Bergson",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-08-27T10:56:08.105Z"
+    },
+    {
+      "id": "e1c6",
+      "quoteId": "06AJBdluiw",
+      "content": "You are that vast thing that you see far, far off with great telescopes.",
+      "author": "Alan Watts",
+      "tags": [
+        "Philosophy",
+        "Spirituality",
+        "Self"
+      ],
+      "viewedAt": "2025-08-27T11:00:34.153Z"
+    },
+    {
+      "id": "bcb8",
+      "quoteId": "bNHmV_xSgwi",
+      "content": "Time you enjoy wasting, was not wasted.",
+      "author": "John Lennon",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-08-27T11:00:58.467Z"
+    },
+    {
+      "id": "e0ea",
+      "quoteId": "xjRJ2oXvhode",
+      "content": "Time you enjoyed wasting was not wasted.",
+      "author": "John Lennon",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-08-27T11:01:07.340Z"
+    },
+    {
+      "id": "4106",
+      "quoteId": "iXtSYIGVbm",
+      "content": "The strong bond of friendship is not always a balanced equation; friendship is not always about giving and taking in equal shares. Instead, friendship is grounded in a feeling that you know exactly who will be there for you when you need something, no matter what or when.",
+      "author": "Simon Sinek",
+      "tags": [
+        "Friendship"
+      ],
+      "viewedAt": "2025-08-27T11:02:00.319Z"
+    },
+    {
+      "id": "0c2f",
+      "quoteId": "8JwkEK-TDvGR",
+      "content": "People are so constituted that everybody would rather undertake what they see others do, whether they have an aptitude for it or not.",
+      "author": "Johann Wolfgang von Goethe",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-08-27T12:42:13.699Z"
+    },
+    {
+      "id": "cd2f",
+      "quoteId": "Xof9SNxItD8Y",
+      "content": "Before you can inspire with emotion, you must be swamped with it yourself. Before you can move their tears, your own must flow. To convince them, you must yourself believe.",
+      "author": "Winston Churchill",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-08-27T12:43:11.220Z"
+    },
+    {
+      "id": "96e6",
+      "quoteId": "HTn2Q6e3AYr",
+      "content": "If you wish to be a writer, write.",
+      "author": "Epictetus",
+      "tags": [
+        "Success"
+      ],
+      "viewedAt": "2025-08-27T13:01:02.140Z"
+    },
+    {
+      "id": "2102",
+      "quoteId": "zOivJtHmwWgt",
+      "content": "The best thing about the future is that it only comes one day at a time.",
+      "author": "Abraham Lincoln",
+      "tags": [
+        "Famous Quotes",
+        "Life",
+        "Future"
+      ],
+      "viewedAt": "2025-08-27T13:01:38.559Z"
+    },
+    {
+      "id": "2a15",
+      "quoteId": "1nHB8yRamu",
+      "content": "Appearances are often deceiving.",
+      "author": "Aesop",
+      "tags": [
+        "Wisdom"
+      ],
+      "viewedAt": "2025-08-27T13:04:46.970Z"
+    },
+    {
+      "id": "7757",
+      "quoteId": "_XB2MKPzW7dA",
+      "content": "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.",
+      "author": "Albert Schweitzer",
+      "tags": [
+        "Famous Quotes",
+        "Success",
+        "Happiness"
+      ],
+      "viewedAt": "2025-08-27T13:05:04.945Z"
+    },
+    {
+      "id": "c108",
+      "quoteId": "V_8lMjayjqwM",
+      "content": "To see things in the seed, that is genius.",
+      "author": "Laozi",
+      "tags": [
+        "Wisdom"
+      ],
+      "viewedAt": "2025-08-27T13:05:28.495Z"
     }
   ],
   "quotes": [
