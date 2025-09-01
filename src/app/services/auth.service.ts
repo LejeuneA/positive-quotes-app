@@ -24,7 +24,6 @@ interface User {
   providedIn: 'root',
 })
 export class AuthService {
-  // Debugging: Log the API URL during service initialization
   private apiUrl = `${environment.jsonServerUrl}/users`;
   private currentUserSubject = new BehaviorSubject<User | null>(null);
   public currentUser$ = this.currentUserSubject.asObservable();

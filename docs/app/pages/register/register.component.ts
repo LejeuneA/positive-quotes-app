@@ -58,6 +58,7 @@ export class RegisterComponent {
     private snackBar: MatSnackBar
   ) {}
 
+  /** registerForm.invalid checks if user input is correct. */
   onRegister(formDirective?: FormGroupDirective): void {
     if (this.registerForm.invalid || this.isLoading) {
       return;
@@ -65,13 +66,13 @@ export class RegisterComponent {
 
     this.isLoading = true;
 
-    // Create a properly typed registration object
+    /** Create a properly typed registration object */
     const registrationData = {
       username: this.registerForm.value.username!,
       email: this.registerForm.value.email!,
       password: this.registerForm.value.password!,
     };
-
+    /** Sends the registration data to the backend server. */
     this.authService.register(registrationData).subscribe({
       next: () => {
         this.isLoading = false;

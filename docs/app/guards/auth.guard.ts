@@ -7,6 +7,7 @@ import {
 } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
+/** Injectable: Guard available everywhere in the app without needing extra configuration */
 @Injectable({
   providedIn: 'root',
 })
@@ -28,3 +29,5 @@ export class AuthGuard implements CanActivate {
     return false;
   }
 }
+
+/** queryParams sends extra information (returnUrl) with the login request, so after login we can go back to that page. */

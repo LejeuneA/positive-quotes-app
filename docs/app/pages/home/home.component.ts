@@ -21,7 +21,7 @@ import { MatMenuModule } from '@angular/material/menu';
     SearchComponent,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule, // Add this import
+    MatMenuModule,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],

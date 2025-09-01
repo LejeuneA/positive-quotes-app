@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-search',
   imports: [],
   templateUrl: './search.component.html',
-  styleUrl: './search.component.scss'
+  styleUrl: './search.component.scss',
 })
-export class SearchComponent {
-
-}
+export class SearchComponent {} /* It is empty now because the form is working with pure HTML. */

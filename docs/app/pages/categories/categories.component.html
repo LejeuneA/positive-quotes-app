@@ -16,10 +16,11 @@
     </mat-card-content>
   </mat-card>
 
+  <!-- *ngIf is used to show the quote part only after the user chooses a category. -->
   <div *ngIf="selectedCategory" class="quote-display">
     <h3>Category: {{ selectedCategory }}</h3>
 
-    <div class="quote-wrapper"> <!-- New wrapper div -->
+    <div class="quote-wrapper">
       <app-quote [quote]="currentQuote?.content" [author]="currentQuote?.author" [isLoading]="isLoading">
       </app-quote>
     </div>

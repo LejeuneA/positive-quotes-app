@@ -18,3 +18,5 @@ export interface QuoteRequest {
   author: string;
   tags?: string[];
 }
+
+/** ? means the property is optional. */

@@ -1,6 +1,6 @@
 <nav class="navbar">
   <div class="navbar-brand">
-    <a routerLink="/home" class="logo-link">
+    <a routerLink="/home" class="logo-link"> <!-- Angular Router handles navigation without reloading the whole app -->
       <img src="assets/logo/pqa_logo.png" alt="Quote Icon" class="logo" />
       <span class="logo-text">STAY POSITIVE AND HAPPY</span>
     </a>
@@ -8,7 +8,7 @@
 
   <div class="navbar-actions">
     <!-- Home and Settings buttons - only shown when logged in -->
-    <ng-container *ngIf="currentUser">
+    <ng-container *ngIf="currentUser"> <!-- *ngIf conditionally adds/removes elements. Saves performance -->
       <button mat-icon-button routerLink="/home" class="home-button">
         <mat-icon>home</mat-icon>
       </button>
@@ -40,7 +40,7 @@
         <button mat-button (click)="logout()">Logout</button>
       </div>
     </ng-container>
-    <ng-template #authButtons>
+    <ng-template #authButtons> <!--It is a hidden block we show only when condition is false.-->
       <button mat-button routerLink="/login">Login</button>
       <button mat-button routerLink="/register">Register</button>
     </ng-template>

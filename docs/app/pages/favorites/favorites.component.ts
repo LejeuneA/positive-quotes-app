@@ -38,3 +38,6 @@ export class FavoritesComponent {
       });
   }
 }
+
+/** getFavorites() returns an Observable → because it gets data from the server (this takes time).
+With .subscribe() says "When the data arrives, please give it to me and I will use it." */
