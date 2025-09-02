@@ -1,15 +1,18 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router'; /* It tells Angular which routes we will use */
+import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async'; /* For Angular Material and smooth transitions */
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
+    /* Optimizes Angular change detection. */
+    provideZoneChangeDetection({
+      eventCoalescing: true,
+    }),
+    /* It tells Angular which routes we will use */
     provideRouter(routes),
+    /* For Angular Material and smooth transitions */
     provideAnimationsAsync(),
   ],
 };
-
-/* provideZoneChangeDetection → optimizes Angular change detection. */

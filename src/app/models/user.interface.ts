@@ -28,4 +28,10 @@ export interface UpdateUser {
   };
 }
 
-/** Omit creates a new type by removing some properties from another type */
+/**
+ * Omit creates a new type by removing some properties from another type
+
+ * Omit<User, 'id' | 'createdAt' | 'updatedAt'>
+→ Take everything from User
+→ Remove id, createdAt, and updatedAt
+*/

@@ -13,7 +13,13 @@ export class BackgroundService {
 
   getBackgroundImage(): Observable<string> {
     return this.http
-      .get<any>(this.apiUrl)
+      .get<any>(this.apiUrl) /** Makes an HTTP request */
       .pipe(map((data: { urls: { full: any } }) => data.urls.full));
   }
 }
+
+/**
+ * get → fetch data from API
+ * pipe → make a chain of operators to change data
+ * map → pick/transform the part of the data you need
+ */

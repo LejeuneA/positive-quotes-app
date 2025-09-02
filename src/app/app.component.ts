@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
 
   constructor(private authService: AuthService) {}
 
+  // ngOnInit() runs when app starts
   ngOnInit(): void {
     // Check for saved theme
     const savedTheme = localStorage.getItem('theme');
@@ -42,6 +43,9 @@ export class AppComponent implements OnInit {
 
   private updateDarkMode(isDark: boolean) {
     document.body.classList.toggle('dark-mode', isDark);
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    localStorage.setItem(
+      'theme',
+      isDark ? 'dark' : 'light'
+    ); /** Ternary operator */
   }
 }
