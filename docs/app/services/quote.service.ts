@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class QuoteService {
-  private apiUrl = environment.apiUrl;
+  private apiUrl = `${environment.jsonServerUrl}/quotes`;
 
   constructor(private http: HttpClient) {}
 
