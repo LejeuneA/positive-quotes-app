@@ -20,9 +20,8 @@ export class NavbarComponent {
   @Output() themeToggled =
     new EventEmitter<boolean>(); /* Send events from child to parent*/
 
-  constructor(
-    private authService: AuthService
-  ) {} /* Private means we only use it inside this file. Constructor injects the service */
+  /* Private means we only use it inside this file. Constructor connect to login service */
+  constructor(private authService: AuthService) {}
 
   toggleTheme() {
     this.isDarkMode = !this.isDarkMode;

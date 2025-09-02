@@ -12,7 +12,6 @@ export const routes: Routes = [
     path: 'home',
     loadComponent: () =>
       import('./pages/home/home.component').then((mod) => mod.HomeComponent),
-    canActivate: [AuthGuard],
   },
   {
     path: 'categories',
@@ -20,7 +19,6 @@ export const routes: Routes = [
       import('./pages/categories/categories.component').then(
         (mod) => mod.CategoriesComponent
       ),
-    canActivate: [AuthGuard],
   },
   {
     path: 'settings',
@@ -28,7 +26,6 @@ export const routes: Routes = [
       import('./pages/settings/settings.component').then(
         (mod) => mod.SettingsComponent
       ),
-    canActivate: [AuthGuard],
   },
   {
     path: 'login',
@@ -48,7 +45,6 @@ export const routes: Routes = [
       import('./pages/favorites/favorites.component').then(
         (mod) => mod.FavoritesComponent
       ),
-    canActivate: [AuthGuard],
   },
   {
     path: 'history',
@@ -56,7 +52,6 @@ export const routes: Routes = [
       import('./pages/history/history.component').then(
         (mod) => mod.HistoryComponent
       ),
-    canActivate: [AuthGuard],
   },
   {
     path: '**',
