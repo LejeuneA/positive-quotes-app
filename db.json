@@ -139,6 +139,43 @@
         "Famous Quotes"
       ],
       "viewedAt": "2025-09-01T09:32:42.177Z"
+    },
+    {
+      "id": "8bf4",
+      "content": "The only way to do great work is to love what you do.",
+      "author": "Steve Jobs",
+      "viewedAt": "2025-09-01T09:43:55.407Z"
+    },
+    {
+      "id": "7c41",
+      "quoteId": "quPFG0dg3QKy",
+      "content": "You really can change the world if you care enough.",
+      "author": "Marian Wright Edelman",
+      "tags": [
+        "Change",
+        "Wisdom"
+      ],
+      "viewedAt": "2025-09-01T09:44:12.047Z"
+    },
+    {
+      "id": "9a0c",
+      "quoteId": "HeconvRtwo0P",
+      "content": "The happiness that is genuinely satisfying is accompanied by the fullest exercise of our faculties and the fullest realization of the world in which we live.",
+      "author": "Bertrand Russell",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2025-09-01T09:45:50.725Z"
+    },
+    {
+      "id": "d961",
+      "quoteId": "MJw4V38c9J",
+      "content": "Only I can change my life. No one can do it for me.",
+      "author": "Carol Burnett",
+      "tags": [
+        "Inspirational"
+      ],
+      "viewedAt": "2025-09-01T09:46:02.962Z"
     }
   ],
   "quotes": [
