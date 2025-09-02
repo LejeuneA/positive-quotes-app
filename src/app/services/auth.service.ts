@@ -25,6 +25,7 @@ interface User {
 })
 export class AuthService {
   private apiUrl = `${environment.jsonServerUrl}/users`;
+  /** BehaviorSubject keeps the current user state. It starts with null (no user). */
   private currentUserSubject = new BehaviorSubject<User | null>(null);
   public currentUser$ = this.currentUserSubject.asObservable();
   private redirectUrl: string | null = null;
