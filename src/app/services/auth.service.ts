@@ -20,6 +20,7 @@ interface User {
   password?: string;
 }
 
+// It tells Angular this class is a service.
 @Injectable({
   providedIn: 'root',
 })
