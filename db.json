@@ -25,103 +25,65 @@
       "password": "As130580"
     },
     {
-      "id": "904d",
-      "username": "Acelya Lejeune",
-      "email": "acelyalejeune@gmail.com",
-      "password": "As130580"
-    },
-    {
-      "id": "f595",
-      "username": "Acelya Lejeune",
-      "email": "lejeuneacelya@mailcom",
-      "password": "As130580"
-    },
-    {
       "id": "3f43",
       "username": "Acelya Lejeune",
       "email": "acelyalejeune@gmail.com",
       "password": "As130580"
-    }
-  ],
-  "favorites": [
-    {
-      "id": "2146",
-      "quoteId": "VhB6QxfGuNjt",
-      "content": "Heedfulness is the path to the Deathless. Heedlessness is the path to death. The heedful die not. The heedless are as if already dead.",
-      "author": "The Buddha",
-      "tags": [
-        "Wisdom"
-      ],
-      "favoritedAt": "2025-09-02T13:25:09.894Z"
     },
     {
-      "id": "521f",
-      "quoteId": "5UaK7cijxqOE",
-      "content": "Can miles truly separate you from friends... If you want to be with someone you love, aren't you already there?",
-      "author": "Richard Bach",
-      "tags": [
-        "Love",
-        "Friendship"
-      ],
-      "favoritedAt": "2025-09-02T13:25:33.210Z"
-    },
-    {
-      "id": "69cf",
-      "quoteId": "tcFPk-72hdRT",
-      "content": "The thoughts we choose to think are the tools we use to paint the canvas of our lives.",
-      "author": "Louise Hay",
-      "tags": [
-        "Famous Quotes",
-        "Life",
-        "Wisdom"
-      ],
-      "favoritedAt": "2025-09-03T09:27:24.084Z"
+      "id": "34fc",
+      "username": "Acelya",
+      "email": "lejeunea@mail.com",
+      "password": "As130580"
     }
   ],
+  "favorites": [],
   "history": [
     {
-      "id": "ea87",
-      "quoteId": "tcFPk-72hdRT",
-      "content": "The thoughts we choose to think are the tools we use to paint the canvas of our lives.",
-      "author": "Louise Hay",
-      "tags": [
-        "Famous Quotes",
-        "Life",
-        "Wisdom"
-      ],
-      "viewedAt": "2025-09-03T09:27:05.993Z"
+      "id": "7e6e",
+      "content": "The only way to do great work is to love what you do.",
+      "author": "Steve Jobs",
+      "viewedAt": "2025-09-07T07:37:41.366Z"
     },
     {
-      "id": "c80d",
-      "quoteId": "V_8lMjayjqwM",
-      "content": "To see things in the seed, that is genius.",
-      "author": "Laozi",
-      "tags": [
-        "Wisdom"
-      ],
-      "viewedAt": "2025-09-03T09:27:28.052Z"
+      "id": "9a36",
+      "quoteId": "r5SEZsvbKwTw",
+      "content": "What is new in the world? Nothing. What is old in the world? Nothing. Everything has always been and will always be.",
+      "author": "Sai Baba",
+      "tags": ["Famous Quotes"],
+      "viewedAt": "2025-09-07T07:39:04.166Z"
     },
     {
-      "id": "e180",
-      "quoteId": "GQ8whOuPGD8Z",
-      "content": "The beginning of wisdom is found in doubting; by doubting we come to the question, and by seeking we may come upon the truth.",
-      "author": "Peter Abelard",
-      "tags": [
-        "Famous Quotes"
-      ],
-      "viewedAt": "2025-09-03T09:27:47.411Z"
+      "id": "2489",
+      "quoteId": "HxaMW05ghs7P",
+      "content": "Every time you smile at someone, it is an action of love, a gift to that person, a beautiful thing.",
+      "author": "Mother Teresa",
+      "tags": ["Famous Quotes"],
+      "viewedAt": "2025-09-07T07:39:26.437Z"
     },
     {
-      "id": "8bc3",
-      "quoteId": "vvI7HzgTSh_",
-      "content": "'As I am, so are these. As are these, so am I.' Drawing the parallel to yourself, neither kill nor get others to kill.",
-      "author": "The Buddha",
-      "tags": [
-        "Wisdom",
-        "Virtue",
-        "Honor"
-      ],
-      "viewedAt": "2025-09-03T09:27:49.608Z"
+      "id": "0a94",
+      "quoteId": "wQNfb7IAqrk",
+      "content": "There is no way to happiness, happiness is the way.",
+      "author": "Thích Nhất Hạnh",
+      "tags": ["Famous Quotes"],
+      "viewedAt": "2025-09-07T07:39:29.045Z"
+    },
+    {
+      "id": "8e3f",
+      "quoteId": "x-0qEVIZ66n",
+      "content": "God made me fast. And when I run, I feel His pleasure.",
+      "author": "Eric Liddell",
+      "tags": ["Sports", "Competition"],
+      "viewedAt": "2025-09-07T07:47:06.716Z"
+    },
+    {
+      "id": "c6ab",
+      "quoteId": "W_NZxqBSuJ",
+      "content": "The friend who can be silent with us in a moment of despair or confusion, who can stay with us in an hour of grief and bereavement, who can tolerate not knowing... not healing, not curing... that is a friend who cares.",
+      "author": "Henri Nouwen",
+      "tags": ["Friendship"],
+      "viewedAt": "2025-09-07T07:54:40.952Z"
     }
   ],
   "quotes": [
@@ -129,26 +91,19 @@
       "id": "5d91b45a3f1f9e0017f1e8e5",
       "content": "Stay positive and happy. Work hard and don't give up hope.",
       "author": "Anonymous",
-      "tags": [
-        "motivational"
-      ]
+      "tags": ["motivational"]
     },
     {
       "id": "5d91b45a3f1f9e0017f1e8e6",
       "content": "Every day may not be good, but there is something good in every day.",
       "author": "Unknown",
-      "tags": [
-        "inspirational"
-      ]
+      "tags": ["inspirational"]
     },
     {
       "id": "5d91b45a3f1f9e0017f1e8e7",
       "content": "The only way to do great work is to love what you do.",
       "author": "Steve Jobs",
-      "tags": [
-        "success",
-        "motivational"
-      ]
+      "tags": ["success", "motivational"]
     }
   ]
 }
