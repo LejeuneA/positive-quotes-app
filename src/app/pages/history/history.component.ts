@@ -9,6 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { HistoryService } from '../../services/history.service';
 import { AuthService } from '../../services/auth.service';
 import { QuoteComponent } from '../../components/quote/quote.component';
+import { HistoryQuoteRecord } from '../../models/quote.model';
 
 @Component({
   selector: 'app-history',
@@ -26,7 +27,7 @@ import { QuoteComponent } from '../../components/quote/quote.component';
   styleUrls: ['./history.component.scss'],
 })
 export class HistoryComponent {
-  history: any[] = [];
+  history: HistoryQuoteRecord[] = [];
   isLoading = false;
 
   constructor(

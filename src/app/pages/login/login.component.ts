@@ -15,7 +15,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AuthService } from '../../services/auth.service';
-import { HttpErrorResponse } from '@angular/common/http';
 
 interface LoginForm {
   email: FormControl<string | null>;
@@ -69,7 +68,7 @@ export class LoginComponent {
         this.showSnackbar('Login successful!', 'success');
         formDirective?.resetForm();
       },
-      error: (error: HttpErrorResponse) => {
+      error: (error: Error) => {
         this.isLoading = false;
         this.handleLoginError(error);
         this.loginForm.get('password')?.reset();
@@ -85,17 +84,10 @@ export class LoginComponent {
     });
   }
 
-  private handleLoginError(error: HttpErrorResponse): void {
+  private handleLoginError(error: Error): void {
     console.error('Login error:', error);
 
-    let errorMessage = 'Login failed - please try again later';
-    if (error.status === 0) {
-      errorMessage = 'Network error - please check your connection';
-    } else if (error.status === 401) {
-      errorMessage = 'Invalid email or password';
-    } else if (error.status >= 400 && error.status < 500) {
-      errorMessage = 'Invalid request - please check your input';
-    }
+    const errorMessage = error.message || 'Login failed - please try again later';
 
     this.showSnackbar(errorMessage, 'error');
   }

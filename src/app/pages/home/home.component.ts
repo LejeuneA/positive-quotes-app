@@ -11,6 +11,7 @@ import { FavoriteService } from '../../services/favorite.service';
 import { HistoryService } from '../../services/history.service';
 import { Router } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
+import { QUOTE_CATEGORIES } from '../../constants/quote-categories';
 
 @Component({
   selector: 'app-home',
@@ -27,16 +28,7 @@ import { MatMenuModule } from '@angular/material/menu';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  categories = [
-    'motivational',
-    'inspirational',
-    'success',
-    'happiness',
-    'wisdom',
-    'love',
-    'friendship',
-    'life',
-  ];
+  categories = QUOTE_CATEGORIES;
 
   selectedCategory: string | null = null;
   currentUser: any;

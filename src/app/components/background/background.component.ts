@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { BackgroundService } from '../../services/background.service';
 
 @Component({
   selector: 'app-background',
@@ -14,7 +14,7 @@ export class BackgroundComponent {
   isLoading = true;
   error = false;
   // Method to inject services
-  constructor(private http: HttpClient) {
+  constructor(private backgroundService: BackgroundService) {
     this.fetchBackgroundImage();
   }
 
@@ -22,13 +22,10 @@ export class BackgroundComponent {
     this.isLoading = true;
     this.error = false;
 
-    const accessKey = '2Dd2Hb-S8Ekw-KDUh-WmG2skBLNV6zncJ6NAPEIBKDA';
-    const apiUrl = `https://api.unsplash.com/photos/random?query=nature&client_id=${accessKey}`;
-
     // API calls are asynchronous. Subscribe listens for results and lets us react when the response arrives
-    this.http.get<any>(apiUrl).subscribe({
-      next: (data) => {
-        this.backgroundImage = data.urls.full;
+    this.backgroundService.getBackgroundImage().subscribe({
+      next: (imageUrl) => {
+        this.backgroundImage = imageUrl;
         this.isLoading = false;
       },
       error: (error) => {

@@ -12,21 +12,19 @@ import { Quote } from '../../models/quote.model';
   standalone: true,
 })
 export class FavoritesComponent {
-  favorites: any[] = [];
+  favorites: Quote[] = [];
 
   constructor(private favoriteService: FavoriteService) {
     this.loadFavorites();
   }
 
-  loadFavorites() {
-    this.favoriteService.getFavorites().subscribe((favs) => {
-      this.favoriteService.getFavorites().subscribe((favorites) => {
-        this.favorites = favorites;
-      });
+  loadFavorites(): void {
+    this.favoriteService.getFavorites().subscribe((favorites) => {
+      this.favorites = favorites;
     });
   }
 
-  removeFavorite(quoteId: string) {
+  removeFavorite(quoteId: string): void {
     this.favoriteService
       .getFavoriteIdByQuoteId(quoteId)
       .subscribe((favoriteId) => {

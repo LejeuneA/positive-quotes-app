@@ -1,20 +1,31 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
+
+interface UnsplashPhotoResponse {
+  urls: {
+    full: string;
+  };
+}
 
 @Injectable({
   providedIn: 'root',
 })
 export class BackgroundService {
-  private apiUrl =
-    'https://api.unsplash.com/photos/random?query=nature&client_id=YOUR_UNSPLASH_ACCESS_KEY';
+  private apiUrl = 'https://api.unsplash.com/photos/random';
 
   constructor(private http: HttpClient) {}
 
   getBackgroundImage(): Observable<string> {
     return this.http
-      .get<any>(this.apiUrl) /** Makes an HTTP request */
-      .pipe(map((data: { urls: { full: any } }) => data.urls.full));
+      .get<UnsplashPhotoResponse>(this.apiUrl, {
+        params: {
+          query: 'nature',
+          client_id: environment.unsplashAccessKey,
+        },
+      })
+      .pipe(map((data) => data.urls.full));
   }
 }
 

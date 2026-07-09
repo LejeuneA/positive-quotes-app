@@ -9,16 +9,9 @@ import {
   throwError,
 } from 'rxjs';
 import { Router } from '@angular/router';
-import { UpdateUser } from '@app/models/user.interface';
+import { UpdateUser, User } from '@app/models/user.interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { environment } from '../../environments/environment';
-
-interface User {
-  id: number;
-  username: string;
-  email: string;
-  password?: string;
-}
 
 // It tells Angular this class is a service.
 @Injectable({
@@ -90,12 +83,16 @@ export class AuthService {
       catchError((error) => {
         console.error('Login error:', error); // Debug
         let errorMessage = 'Login failed. Please try again.';
-        if (error.status === 404) {
+        if (error.status === 0) {
+          errorMessage =
+            'Cannot connect to the login server. Please start the local database server.';
+        } else if (error.message === 'Invalid email or password') {
+          errorMessage = 'Invalid email or password.';
+        } else if (error.status === 404) {
           errorMessage = 'User not found. Please check your email.';
         } else if (error.status === 401) {
           errorMessage = 'Invalid password. Please try again.';
         }
-        this.snackBar.open(errorMessage, 'Close', { duration: 3000 });
         return throwError(() => new Error(errorMessage));
       })
     );

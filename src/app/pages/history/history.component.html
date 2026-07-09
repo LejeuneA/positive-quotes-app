@@ -16,7 +16,7 @@
       <div class="history-meta">
         <span class="viewed-at">Viewed: {{ formatDate(item.viewedAt) }}</span>
         <span *ngIf="item.tags?.length" class="tags">
-          Tags: {{ item.tags.join(', ') }}
+          Tags: {{ item.tags?.join(', ') }}
         </span>
       </div>
     </mat-card>

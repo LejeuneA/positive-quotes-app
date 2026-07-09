@@ -7,6 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { QuoteService } from '../../services/quote.service';
 import { QuoteComponent } from '../../components/quote/quote.component';
+import { QUOTE_CATEGORIES } from '../../constants/quote-categories';
+import { Quote } from '../../models/quote.model';
 
 @Component({
   selector: 'app-categories',
@@ -23,18 +25,9 @@ import { QuoteComponent } from '../../components/quote/quote.component';
   styleUrls: ['./categories.component.scss'],
 })
 export class CategoriesComponent {
-  categories = [
-    'motivational',
-    'inspirational',
-    'success',
-    'happiness',
-    'wisdom',
-    'love',
-    'friendship',
-    'life',
-  ];
+  categories = QUOTE_CATEGORIES;
   selectedCategory: string | null = null;
-  currentQuote: any = null;
+  currentQuote: Quote | null = null;
   isLoading = false;
 
   constructor(private quoteService: QuoteService) {}

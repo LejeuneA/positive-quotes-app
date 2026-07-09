@@ -7,6 +7,24 @@ export interface Quote {
   viewedAt?: Date;
 }
 
+export interface FavoriteQuoteRecord {
+  id?: number | string;
+  quoteId: string;
+  content: string;
+  author: string;
+  tags?: string[];
+  favoritedAt: string;
+}
+
+export interface HistoryQuoteRecord {
+  id?: number | string;
+  quoteId: string;
+  content: string;
+  author: string;
+  tags?: string[];
+  viewedAt: string;
+}
+
 export interface QuoteResponse {
   results: Quote[];
   count?: number;

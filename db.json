@@ -50,7 +50,9 @@
       "quoteId": "r5SEZsvbKwTw",
       "content": "What is new in the world? Nothing. What is old in the world? Nothing. Everything has always been and will always be.",
       "author": "Sai Baba",
-      "tags": ["Famous Quotes"],
+      "tags": [
+        "Famous Quotes"
+      ],
       "viewedAt": "2025-09-07T07:39:04.166Z"
     },
     {
@@ -58,7 +60,9 @@
       "quoteId": "HxaMW05ghs7P",
       "content": "Every time you smile at someone, it is an action of love, a gift to that person, a beautiful thing.",
       "author": "Mother Teresa",
-      "tags": ["Famous Quotes"],
+      "tags": [
+        "Famous Quotes"
+      ],
       "viewedAt": "2025-09-07T07:39:26.437Z"
     },
     {
@@ -66,7 +70,9 @@
       "quoteId": "wQNfb7IAqrk",
       "content": "There is no way to happiness, happiness is the way.",
       "author": "Thích Nhất Hạnh",
-      "tags": ["Famous Quotes"],
+      "tags": [
+        "Famous Quotes"
+      ],
       "viewedAt": "2025-09-07T07:39:29.045Z"
     },
     {
@@ -74,7 +80,10 @@
       "quoteId": "x-0qEVIZ66n",
       "content": "God made me fast. And when I run, I feel His pleasure.",
       "author": "Eric Liddell",
-      "tags": ["Sports", "Competition"],
+      "tags": [
+        "Sports",
+        "Competition"
+      ],
       "viewedAt": "2025-09-07T07:47:06.716Z"
     },
     {
@@ -82,8 +91,83 @@
       "quoteId": "W_NZxqBSuJ",
       "content": "The friend who can be silent with us in a moment of despair or confusion, who can stay with us in an hour of grief and bereavement, who can tolerate not knowing... not healing, not curing... that is a friend who cares.",
       "author": "Henri Nouwen",
-      "tags": ["Friendship"],
+      "tags": [
+        "Friendship"
+      ],
       "viewedAt": "2025-09-07T07:54:40.952Z"
+    },
+    {
+      "id": "5cb4",
+      "quoteId": "KIWgGSudMpjZ",
+      "content": "It takes courage to grow up and become who you really are.",
+      "author": "E. E. Cummings",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2026-07-09T09:39:32.455Z"
+    },
+    {
+      "id": "8e51",
+      "quoteId": "HQNnn2x2Vc",
+      "content": "A passion for politics stems usually from an insatiable need, either for power, or for friendship and adulation, or a combination of both.",
+      "author": "Fawn M. Brodie",
+      "tags": [
+        "Friendship",
+        "Politics"
+      ],
+      "viewedAt": "2026-07-09T09:39:44.762Z"
+    },
+    {
+      "id": "18e9",
+      "quoteId": "7FWID1UNP8o",
+      "content": "As an elephant in the battlefield withstands arrows shot from bows all around, even so shall I endure abuse.",
+      "author": "The Buddha",
+      "tags": [
+        "Wisdom",
+        "Character",
+        "Courage"
+      ],
+      "viewedAt": "2026-07-09T09:39:47.075Z"
+    },
+    {
+      "id": "0bd5",
+      "quoteId": "Zrxblk3MazL",
+      "content": "Meetings are indispensable when you don't want to do anything.",
+      "author": "John Kenneth Galbraith",
+      "tags": [
+        "Business"
+      ],
+      "viewedAt": "2026-07-09T09:39:48.879Z"
+    },
+    {
+      "id": "f834",
+      "quoteId": "YcSlCFOS_QsH",
+      "content": "Great acts are made up of small deeds.",
+      "author": "Laozi",
+      "tags": [
+        "Wisdom"
+      ],
+      "viewedAt": "2026-07-09T09:39:51.354Z"
+    },
+    {
+      "id": "b46c",
+      "quoteId": "NzmVr08q5EkO",
+      "content": "Tell me and I forget. Teach me and I remember. Involve me and I learn.",
+      "author": "Benjamin Franklin",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2026-07-09T09:39:53.038Z"
+    },
+    {
+      "id": "ecba",
+      "quoteId": "cjyPQOFcVaRA",
+      "content": "Let us resolve to be masters, not the victims, of our history, controlling our own destiny without giving way to blind suspicions and emotions.",
+      "author": "John F. Kennedy",
+      "tags": [
+        "Famous Quotes"
+      ],
+      "viewedAt": "2026-07-09T09:40:17.077Z"
     }
   ],
   "quotes": [
@@ -91,19 +175,26 @@
       "id": "5d91b45a3f1f9e0017f1e8e5",
       "content": "Stay positive and happy. Work hard and don't give up hope.",
       "author": "Anonymous",
-      "tags": ["motivational"]
+      "tags": [
+        "motivational"
+      ]
     },
     {
       "id": "5d91b45a3f1f9e0017f1e8e6",
       "content": "Every day may not be good, but there is something good in every day.",
       "author": "Unknown",
-      "tags": ["inspirational"]
+      "tags": [
+        "inspirational"
+      ]
     },
     {
       "id": "5d91b45a3f1f9e0017f1e8e7",
       "content": "The only way to do great work is to love what you do.",
       "author": "Steve Jobs",
-      "tags": ["success", "motivational"]
+      "tags": [
+        "success",
+        "motivational"
+      ]
     }
   ]
 }
