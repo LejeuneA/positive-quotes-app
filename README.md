@@ -1,80 +1,108 @@
-# PositiveQuotesApp
+# Positive Quotes
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.8.
+Positive Quotes is an Angular 19 portfolio application for discovering, saving, and revisiting uplifting quotations. The production version uses a small same-origin Node.js API, so the Angular frontend and persistent JSON data can be deployed together without CORS or localhost dependencies.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Random quotes and category filtering
+- User registration and login
+- Password hashing and signed authentication tokens
+- Per-user favorites and viewing history
+- Account settings
+- Responsive Angular Material interface
+- Optional Unsplash backgrounds with a local fallback
+- SPA route fallback for direct links and browser refreshes
 
-```bash
-ng serve
-```
+## Technology
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Angular 19
+- TypeScript
+- SCSS
+- Angular Material
+- Node.js built-in HTTP server
+- Persistent JSON storage
+- Quotable API with local fallback quotes
 
-## Code scaffolding
+## Local development
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Install dependencies:
 
 ```bash
-ng build
+npm install
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Start the local API in the first terminal:
 
 ```bash
-ng test
+npm run db
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+Start Angular in a second terminal:
 
 ```bash
-ng e2e
+npm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Open `http://localhost:4200`.
 
-## Additional Resources
+## Production build
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm run build
+```
 
-cd /c/xampp/htdocs/dashboard/PROJECTS
-ng new positive-quotes-app --routing --style=scss
-cd positive-quotes-app
-ng add @angular/material
+The Node server automatically serves the Angular build from:
 
-ng generate component app/components/background
-ng g c components/categories
-ng g c components/quote
-ng g c components/quote-history
-ng g c components/search
-ng g c components/settings
-ng g c components/share
-ng generate service services/background
-ng generate service services/categories
-ng generate service services/quote
-ng generate service services/share
-ng generate service services/theme
-ng serve
+```text
+dist/positive-quotes-app/browser
+```
 
-https://www.lejeunedesign.be/portfolio/positive-quotes/index.html
+Start the production application:
+
+```bash
+APP_SECRET="replace-with-a-long-random-secret" node server.js
+```
+
+On Windows PowerShell:
+
+```powershell
+$env:APP_SECRET="replace-with-a-long-random-secret"
+node server.js
+```
+
+## Environment variables
+
+- `IP`: listening address supplied by the host
+- `PORT`: listening port supplied by the host
+- `APP_SECRET`: long random secret used to sign login tokens
+- `DB_FILE`: optional absolute path to the writable JSON data file
+- `DEMO_EMAIL`: optional demo account email
+- `DEMO_PASSWORD`: optional demo account password
+- `UNSPLASH_ACCESS_KEY`: optional Unsplash access key stored only on the server
+
+When no Unsplash key is supplied, the app uses its bundled background image.
+
+## Demo account
+
+```text
+Email: demo@positivequotes.app
+Password: Positive123!
+```
+
+The shared demo account cannot change its profile credentials. Visitors may register their own account.
+
+## Production data
+
+Runtime data is stored in `data/db.json`. Keep this file writable by the Node process and do not replace it during later code-only deployments unless you intentionally want to reset the demo data.
+
+## Security notes
+
+- Passwords are stored as salted scrypt hashes.
+- The API never exposes password hashes.
+- Favorites and history are isolated by authenticated user.
+- Authentication endpoints include basic rate limiting.
+- The previously client-side Unsplash key has been removed from the Angular bundle.
+
+## Copyright
+
+© Açelya Lejeune. All rights reserved.

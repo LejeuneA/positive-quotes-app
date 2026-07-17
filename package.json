@@ -8,7 +8,9 @@
     "prod": "ng build --configuration=production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "db": "json-server db.json --port 3000"
+    "db": "node server.js",
+    "server": "node server.js",
+    "serve:production": "node server.js"
   },
   "private": true,
   "dependencies": {
@@ -22,7 +24,7 @@
     "@angular/platform-browser": "^19.1.0",
     "@angular/platform-browser-dynamic": "^19.1.0",
     "@angular/router": "^19.1.0",
-    "json-server": "^1.0.0-beta.3",
+    "dotenv": "^17.4.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

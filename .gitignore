@@ -40,3 +40,9 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Runtime and local secrets
+.env
+.env.*
+!.env.example
+/data/db.json.tmp

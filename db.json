@@ -168,6 +168,28 @@
         "Famous Quotes"
       ],
       "viewedAt": "2026-07-09T09:40:17.077Z"
+    },
+    {
+      "id": "ac54",
+      "quoteId": "bT4wt0vfm_F",
+      "content": "If you can dream it, you can do it.",
+      "author": "Walt Disney",
+      "tags": [
+        "Famous Quotes",
+        "Inspirational"
+      ],
+      "viewedAt": "2026-07-17T13:34:58.844Z"
+    },
+    {
+      "id": "8cdd",
+      "quoteId": "l1g_brfDMZy",
+      "content": "Tennis is a perfect combination of violent action taking place in an atmosphere of total tranquillity.",
+      "author": "Billie Jean King",
+      "tags": [
+        "Sports",
+        "Competition"
+      ],
+      "viewedAt": "2026-07-17T13:44:20.545Z"
     }
   ],
   "quotes": [

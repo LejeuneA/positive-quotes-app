@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import {
   BehaviorSubject,
   Observable,
@@ -13,93 +13,80 @@ import { UpdateUser, User } from '@app/models/user.interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { environment } from '../../environments/environment';
 
-// It tells Angular this class is a service.
+interface AuthResponse {
+  user: User;
+  token: string;
+}
+
+interface UserResponse {
+  user: User;
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = `${environment.jsonServerUrl}/users`;
-  /** BehaviorSubject keeps the current user state. It starts with null (no user). */
-  private currentUserSubject = new BehaviorSubject<User | null>(null);
-  public currentUser$ = this.currentUserSubject.asObservable();
+  private readonly apiUrl = environment.jsonServerUrl;
+  private readonly currentUserSubject = new BehaviorSubject<User | null>(null);
+  public readonly currentUser$ = this.currentUserSubject.asObservable();
   private redirectUrl: string | null = null;
 
   constructor(
-    private http: HttpClient,
-    private router: Router,
-    private snackBar: MatSnackBar
+    private readonly http: HttpClient,
+    private readonly router: Router,
+    private readonly snackBar: MatSnackBar
   ) {
-    console.log('AuthService initialized with API URL:', this.apiUrl);
     this.initializeCurrentUser();
   }
 
   private initializeCurrentUser(): void {
     const storedUser = localStorage.getItem('currentUser');
-    if (storedUser) {
-      try {
-        const user: User = JSON.parse(storedUser);
-        this.currentUserSubject.next(user);
-      } catch (error) {
-        console.error('Error parsing stored user', error);
-        this.clearUserData();
-      }
+    const token = localStorage.getItem('authToken');
+
+    if (!storedUser || !token) {
+      this.clearUserData();
+      return;
+    }
+
+    try {
+      this.currentUserSubject.next(JSON.parse(storedUser) as User);
+    } catch {
+      this.clearUserData();
     }
   }
 
   register(user: Omit<User, 'id'>): Observable<User> {
-    console.log('Attempting registration at:', this.apiUrl); // Debug
-    return this.http.post<User>(this.apiUrl, user).pipe(
-      tap((response: User) => {
-        console.log('Registration successful:', response); // Debug
-        this.setCurrentUser(response);
-        this.router.navigate(['/home']);
-      }),
-      catchError((error) => {
-        console.error('Registration error:', error); // Debug
-        this.snackBar.open('Registration failed. Please try again.', 'Close', {
-          duration: 3000,
-        });
-        return throwError(() => new Error('Registration failed'));
-      })
-    );
+    return this.http
+      .post<AuthResponse>(`${this.apiUrl}/auth/register`, user)
+      .pipe(
+        tap((response) => {
+          this.setCurrentUser(response.user, response.token);
+          this.router.navigate(['/home']);
+        }),
+        map((response) => response.user),
+        catchError((error: HttpErrorResponse) =>
+          throwError(() => new Error(this.getErrorMessage(error, 'Registration failed.')))
+        )
+      );
   }
 
   login(email: string, password: string): Observable<User> {
-    console.log('Attempting login at:', `${this.apiUrl}?email=${email}`); // Debug
-    return this.http.get<User[]>(`${this.apiUrl}?email=${email}`).pipe(
-      map((users) => {
-        const user = users.find((u) => u.password === password);
-        if (!user) {
-          throw new Error('Invalid email or password');
-        }
-        return user;
-      }),
-      tap((user) => {
-        console.log('Login successful:', user); // Debug
-        this.setCurrentUser(user);
-        this.router.navigate([this.redirectUrl || '/home']);
-        this.redirectUrl = null;
-      }),
-      catchError((error) => {
-        console.error('Login error:', error); // Debug
-        let errorMessage = 'Login failed. Please try again.';
-        if (error.status === 0) {
-          errorMessage =
-            'Cannot connect to the login server. Please start the local database server.';
-        } else if (error.message === 'Invalid email or password') {
-          errorMessage = 'Invalid email or password.';
-        } else if (error.status === 404) {
-          errorMessage = 'User not found. Please check your email.';
-        } else if (error.status === 401) {
-          errorMessage = 'Invalid password. Please try again.';
-        }
-        return throwError(() => new Error(errorMessage));
-      })
-    );
+    return this.http
+      .post<AuthResponse>(`${this.apiUrl}/auth/login`, { email, password })
+      .pipe(
+        tap((response) => {
+          this.setCurrentUser(response.user, response.token);
+          this.router.navigate([this.redirectUrl || '/home']);
+          this.redirectUrl = null;
+        }),
+        map((response) => response.user),
+        catchError((error: HttpErrorResponse) =>
+          throwError(() => new Error(this.getErrorMessage(error, 'Login failed.')))
+        )
+      );
   }
 
   logout(): void {
-    console.log('Logging out user'); // Debug
     this.clearUserData();
     this.router.navigate(['/login']);
   }
@@ -111,55 +98,67 @@ export class AuthService {
   updateUser(userData: UpdateUser): Observable<User> {
     const currentUser = this.currentUserValue;
     if (!currentUser) {
-      return throwError(() => new Error('No user logged in'));
+      return throwError(() => new Error('No user is logged in.'));
     }
 
     if (userData.newPassword && !userData.currentPassword) {
       return throwError(
-        () => new Error('Current password is required to change password')
+        () => new Error('Current password is required to change the password.')
       );
     }
 
-    const updatedUser = {
-      ...currentUser,
-      username: userData.username || currentUser.username,
-      email: userData.email || currentUser.email,
-      password: userData.newPassword || currentUser.password,
-    };
-
     return this.http
-      .put<User>(`${this.apiUrl}/${currentUser.id}`, updatedUser)
+      .put<UserResponse>(`${this.apiUrl}/users/${currentUser.id}`, userData)
       .pipe(
+        map((response) => response.user),
         tap((user) => {
-          console.log('Update successful:', user); // Debug
           this.setCurrentUser(user);
           this.snackBar.open('Profile updated successfully!', 'Close', {
             duration: 3000,
           });
         }),
-        catchError((error) => {
-          console.error('Update error:', error); // Debug
-          let errorMessage = 'Failed to update profile';
-          if (error.status === 400) {
-            errorMessage = error.error?.message || errorMessage;
-          }
-          this.snackBar.open(errorMessage, 'Close', { duration: 3000 });
-          return throwError(() => new Error(errorMessage));
+        catchError((error: HttpErrorResponse) => {
+          const message = this.getErrorMessage(
+            error,
+            'Failed to update the profile.'
+          );
+          this.snackBar.open(message, 'Close', { duration: 3000 });
+          return throwError(() => new Error(message));
         })
       );
   }
 
-  private setCurrentUser(user: User): void {
-    const { password, ...userWithoutPassword } = user;
-    localStorage.setItem('currentUser', JSON.stringify(userWithoutPassword));
-    this.currentUserSubject.next(userWithoutPassword);
-    console.log('User set in localStorage:', userWithoutPassword); // Debug
+  private setCurrentUser(user: User, token?: string): void {
+    const safeUser: User = {
+      ...user,
+      password: undefined,
+    };
+
+    localStorage.setItem('currentUser', JSON.stringify(safeUser));
+    if (token) {
+      localStorage.setItem('authToken', token);
+    }
+    this.currentUserSubject.next(safeUser);
   }
 
   private clearUserData(): void {
     localStorage.removeItem('currentUser');
+    localStorage.removeItem('authToken');
     this.currentUserSubject.next(null);
-    console.log('User data cleared'); // Debug
+  }
+
+  private getErrorMessage(
+    error: HttpErrorResponse,
+    fallbackMessage: string
+  ): string {
+    if (error.status === 0) {
+      return 'Cannot connect to the application server.';
+    }
+
+    const serverMessage = error.error?.message;
+    return typeof serverMessage === 'string' && serverMessage.trim()
+      ? serverMessage
+      : fallbackMessage;
   }
 
   get currentUserValue(): User | null {
@@ -167,6 +166,8 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    return !!this.currentUserValue;
+    return Boolean(
+      this.currentUserValue && localStorage.getItem('authToken')
+    );
   }
 }

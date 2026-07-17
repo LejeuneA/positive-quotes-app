@@ -1,16 +1,18 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideHttpClient } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptors,
+} from '@angular/common/http';
 import { provideRouter } from '@angular/router';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { routes } from './app.routes';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { authInterceptor } from './interceptors/auth.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    /* It tells Angular which routes we will use */
     provideRouter(routes),
-    provideHttpClient(),
-    /* For Angular Material and smooth transitions */
+    provideHttpClient(withInterceptors([authInterceptor])),
     provideAnimationsAsync(),
   ],
 };

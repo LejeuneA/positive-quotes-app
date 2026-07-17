@@ -1,0 +1,73 @@
+{
+  "users": [
+    {
+      "id": "demo-user",
+      "username": "Demo User",
+      "email": "demo@positivequotes.app",
+      "passwordHash": "scrypt$af806231334a9e51377c5ae38afb0481$e442130575ecf03f8ccc4fd2001db6583c185b1ecc6740e7ec77f6a169edf4435a5ff959d2e66a16aa584ae38c53eca0c86f6b8609c405440d009b5fd41265c6",
+      "isDemo": true,
+      "createdAt": "2026-07-17T13:52:20.077Z",
+      "updatedAt": "2026-07-17T13:52:20.077Z"
+    }
+  ],
+  "favorites": [
+    {
+      "id": "15bc7346-20f2-44b6-99ac-188cdf2ff4b0",
+      "userId": "demo-user",
+      "quoteId": "dummy-720",
+      "content": "To Love Another Person Is To See The Face Of God.",
+      "author": "Victor Hugo",
+      "tags": [
+        "positive"
+      ],
+      "favoritedAt": "2026-07-17T14:35:01.634Z"
+    }
+  ],
+  "history": [
+    {
+      "id": "24708d91-522f-43a3-9575-f3cf562f9acb",
+      "userId": "demo-user",
+      "quoteId": "dummy-720",
+      "content": "To Love Another Person Is To See The Face Of God.",
+      "author": "Victor Hugo",
+      "tags": [
+        "positive"
+      ],
+      "viewedAt": "2026-07-17T14:35:00.690Z"
+    }
+  ],
+  "quotes": [
+    {
+      "id": "fallback-positive",
+      "content": "Stay positive and happy. Work hard and don't give up hope.",
+      "author": "Anonymous",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "fallback-good-day",
+      "content": "Every day may not be good, but there is something good in every day.",
+      "author": "Unknown",
+      "tags": [
+        "positive"
+      ]
+    },
+    {
+      "id": "fallback-great-work",
+      "content": "The only way to do great work is to love what you do.",
+      "author": "Steve Jobs",
+      "tags": [
+        "work"
+      ]
+    },
+    {
+      "id": "fallback-life",
+      "content": "Life is what happens when you're busy making other plans.",
+      "author": "John Lennon",
+      "tags": [
+        "life"
+      ]
+    }
+  ]
+}

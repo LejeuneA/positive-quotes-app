@@ -3,8 +3,9 @@ export interface User {
   username: string;
   email: string;
   password?: string;
-  createdAt?: Date;
-  updatedAt?: Date;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+  isDemo?: boolean;
   profile?: {
     firstName?: string;
     lastName?: string;

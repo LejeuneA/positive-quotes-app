@@ -1,16 +1,8 @@
 {
   "/api": {
-    "target": "https://api.quotable.io",
-    "secure": false,
-    "changeOrigin": true,
-    "pathRewrite": {
-      "^/api": ""
-    },
-    "logLevel": "debug"
-  },
-  "/users": {
     "target": "http://localhost:3000",
     "secure": false,
-    "changeOrigin": true
+    "changeOrigin": true,
+    "logLevel": "info"
   }
 }

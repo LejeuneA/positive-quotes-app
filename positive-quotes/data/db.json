@@ -1,0 +1,31 @@
+{
+  "users": [],
+  "favorites": [],
+  "history": [],
+  "quotes": [
+    {
+      "id": "fallback-positive",
+      "content": "Stay positive and happy. Work hard and don't give up hope.",
+      "author": "Anonymous",
+      "tags": ["positive"]
+    },
+    {
+      "id": "fallback-good-day",
+      "content": "Every day may not be good, but there is something good in every day.",
+      "author": "Unknown",
+      "tags": ["positive"]
+    },
+    {
+      "id": "fallback-great-work",
+      "content": "The only way to do great work is to love what you do.",
+      "author": "Steve Jobs",
+      "tags": ["work"]
+    },
+    {
+      "id": "fallback-life",
+      "content": "Life is what happens when you're busy making other plans.",
+      "author": "John Lennon",
+      "tags": ["life"]
+    }
+  ]
+}
