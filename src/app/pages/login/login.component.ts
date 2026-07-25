@@ -1,18 +1,19 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
-  FormGroupDirective,
 } from '@angular/forms';
-import { Router } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import {
+  MatSnackBar,
+  MatSnackBarModule,
+} from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AuthService } from '../../services/auth.service';
 
@@ -39,57 +40,82 @@ interface LoginForm {
 })
 export class LoginComponent {
   loginForm: FormGroup<LoginForm> = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email,
+    ]),
     password: new FormControl('', [
       Validators.required,
-      Validators.minLength(6),
+      Validators.minLength(8),
     ]),
   });
 
-  isLoading = false;
+  isOwnerLoading = false;
+  isDemoLoading = false;
 
   constructor(
-    private authService: AuthService,
-    private router: Router,
-    private snackBar: MatSnackBar
+    private readonly authService: AuthService,
+    private readonly snackBar: MatSnackBar
   ) {}
 
-  onLogin(formDirective?: FormGroupDirective): void {
-    if (this.loginForm.invalid || this.isLoading) {
+  continueAsDemo(): void {
+    if (this.isDemoLoading || this.isOwnerLoading) {
       return;
     }
 
-    this.isLoading = true;
+    this.isDemoLoading = true;
+
+    this.authService.loginAsDemo().subscribe({
+      next: () => {
+        this.isDemoLoading = false;
+        this.showSnackbar('Welcome to the demo!', 'success');
+      },
+      error: (error: Error) => {
+        this.isDemoLoading = false;
+        this.showSnackbar(
+          error.message || 'Demo access is temporarily unavailable.',
+          'error'
+        );
+      },
+    });
+  }
+
+  onLogin(): void {
+    if (
+      this.loginForm.invalid ||
+      this.isOwnerLoading ||
+      this.isDemoLoading
+    ) {
+      return;
+    }
+
+    this.isOwnerLoading = true;
+
     const { email, password } = this.loginForm.value;
 
     this.authService.login(email!, password!).subscribe({
       next: () => {
-        this.isLoading = false;
+        this.isOwnerLoading = false;
         this.showSnackbar('Login successful!', 'success');
-        formDirective?.resetForm();
+        this.loginForm.reset();
       },
       error: (error: Error) => {
-        this.isLoading = false;
-        this.handleLoginError(error);
+        this.isOwnerLoading = false;
+        this.showSnackbar(error.message || 'Login failed.', 'error');
         this.loginForm.get('password')?.reset();
       },
     });
   }
 
-  private showSnackbar(message: string, type: 'success' | 'error'): void {
+  private showSnackbar(
+    message: string,
+    type: 'success' | 'error'
+  ): void {
     this.snackBar.open(message, 'Close', {
       duration: 5000,
       panelClass: [`snackbar-${type}`],
       verticalPosition: 'top',
     });
-  }
-
-  private handleLoginError(error: Error): void {
-    console.error('Login error:', error);
-
-    const errorMessage = error.message || 'Login failed - please try again later';
-
-    this.showSnackbar(errorMessage, 'error');
   }
 
   get email() {

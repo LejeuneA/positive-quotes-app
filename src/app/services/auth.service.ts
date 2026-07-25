@@ -59,29 +59,57 @@ export class AuthService {
     return this.http
       .post<AuthResponse>(`${this.apiUrl}/auth/register`, user)
       .pipe(
-        tap((response) => {
-          this.setCurrentUser(response.user, response.token);
-          this.router.navigate(['/home']);
-        }),
         map((response) => response.user),
         catchError((error: HttpErrorResponse) =>
-          throwError(() => new Error(this.getErrorMessage(error, 'Registration failed.')))
+          throwError(
+            () =>
+              new Error(
+                this.getErrorMessage(
+                  error,
+                  'Public registration is closed.'
+                )
+              )
+          )
         )
       );
   }
 
   login(email: string, password: string): Observable<User> {
     return this.http
-      .post<AuthResponse>(`${this.apiUrl}/auth/login`, { email, password })
+      .post<AuthResponse>(`${this.apiUrl}/auth/login`, {
+        email,
+        password,
+      })
       .pipe(
-        tap((response) => {
-          this.setCurrentUser(response.user, response.token);
-          this.router.navigate([this.redirectUrl || '/home']);
-          this.redirectUrl = null;
-        }),
+        tap((response) => this.completeLogin(response)),
         map((response) => response.user),
         catchError((error: HttpErrorResponse) =>
-          throwError(() => new Error(this.getErrorMessage(error, 'Login failed.')))
+          throwError(
+            () =>
+              new Error(
+                this.getErrorMessage(error, 'Login failed.')
+              )
+          )
+        )
+      );
+  }
+
+  loginAsDemo(): Observable<User> {
+    return this.http
+      .post<AuthResponse>(`${this.apiUrl}/auth/demo`, {})
+      .pipe(
+        tap((response) => this.completeLogin(response)),
+        map((response) => response.user),
+        catchError((error: HttpErrorResponse) =>
+          throwError(
+            () =>
+              new Error(
+                this.getErrorMessage(
+                  error,
+                  'Demo access is temporarily unavailable.'
+                )
+              )
+          )
         )
       );
   }
@@ -97,13 +125,23 @@ export class AuthService {
 
   updateUser(userData: UpdateUser): Observable<User> {
     const currentUser = this.currentUserValue;
+
     if (!currentUser) {
       return throwError(() => new Error('No user is logged in.'));
     }
 
+    if (currentUser.isDemo) {
+      return throwError(
+        () => new Error('Demo account settings are read-only.')
+      );
+    }
+
     if (userData.newPassword && !userData.currentPassword) {
       return throwError(
-        () => new Error('Current password is required to change the password.')
+        () =>
+          new Error(
+            'Current password is required to change the password.'
+          )
       );
     }
 
@@ -113,19 +151,34 @@ export class AuthService {
         map((response) => response.user),
         tap((user) => {
           this.setCurrentUser(user);
-          this.snackBar.open('Profile updated successfully!', 'Close', {
-            duration: 3000,
-          });
+
+          this.snackBar.open(
+            'Profile updated successfully!',
+            'Close',
+            {
+              duration: 3000,
+            }
+          );
         }),
         catchError((error: HttpErrorResponse) => {
           const message = this.getErrorMessage(
             error,
             'Failed to update the profile.'
           );
-          this.snackBar.open(message, 'Close', { duration: 3000 });
+
+          this.snackBar.open(message, 'Close', {
+            duration: 3000,
+          });
+
           return throwError(() => new Error(message));
         })
       );
+  }
+
+  private completeLogin(response: AuthResponse): void {
+    this.setCurrentUser(response.user, response.token);
+    this.router.navigate([this.redirectUrl || '/home']);
+    this.redirectUrl = null;
   }
 
   private setCurrentUser(user: User, token?: string): void {
@@ -135,9 +188,11 @@ export class AuthService {
     };
 
     localStorage.setItem('currentUser', JSON.stringify(safeUser));
+
     if (token) {
       localStorage.setItem('authToken', token);
     }
+
     this.currentUserSubject.next(safeUser);
   }
 
@@ -156,6 +211,7 @@ export class AuthService {
     }
 
     const serverMessage = error.error?.message;
+
     return typeof serverMessage === 'string' && serverMessage.trim()
       ? serverMessage
       : fallbackMessage;

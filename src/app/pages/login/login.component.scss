@@ -1,26 +1,27 @@
 @use "../../scss/_variables" as *;
-@use "sass:color";
 
 .container {
   width: 90%;
-  max-width: 400px;
-  min-height: 450px;
+  max-width: 440px;
+  min-height: 560px;
   margin: 2rem auto;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  background-color: rgba($light-background, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  background-color: rgba($light-background, 0.9);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 
   &:hover {
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
   }
 
   :host-context(.dark-mode) & {
-    background-color: rgba($dark-background, 0.8);
+    background-color: rgba($dark-background, 0.92);
     color: $light-background;
   }
 
@@ -28,8 +29,79 @@
     color: $primary-color;
     font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
     text-align: center;
+  }
+}
+
+.demo-section {
+  text-align: center;
+}
+
+.intro-text {
+  max-width: 330px;
+  margin: 0 auto 1.25rem;
+  line-height: 1.6;
+}
+
+.demo-button {
+  width: 100%;
+  min-height: 52px;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  background-color: $primary-color !important;
+  color: $light-background !important;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background-color: $primary-dark-color !important;
+    transform: translateY(-2px);
+  }
+
+  mat-spinner {
+    margin: 0 auto;
+  }
+}
+
+.demo-note {
+  max-width: 350px;
+  margin: 1rem auto 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  opacity: 0.75;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 2rem 0 1.5rem;
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.16);
+  }
+
+  :host-context(.dark-mode) & {
+    color: rgba(255, 255, 255, 0.65);
+
+    &::before,
+    &::after {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
   }
 }
 
@@ -37,45 +109,38 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 
   mat-form-field {
     width: 100%;
-
-    .mat-form-field-wrapper {
-      padding-bottom: 0;
-    }
-
-    .mat-form-field-outline {
-      background-color: white;
-      border-radius: 4px;
-    }
-  }
-
-  button[type="submit"] {
-    margin-top: 1rem;
-    padding: 0.75rem;
-    background-color: rgba($primary-color, 0.8);
-    color: $light-background;
-    font-weight: 500;
-    font-size: 1rem;
-    border-radius: 4px;
-    transition: all 0.2s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-
-    &:hover {
-      background-color: $primary-dark-color;
-      transform: translateY(-2px);
-    }
-
-    &:active {
-      transform: translateY(0);
-    }
   }
 }
 
-/* Responsive adjustments */
+.owner-button {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba($primary-color, 0.8) !important;
+  color: $light-background !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background-color: $primary-dark-color !important;
+    transform: translateY(-2px);
+  }
+
+  mat-spinner {
+    margin: 0 auto;
+  }
+}
+
 @media screen and (max-width: $screen-md) {
   .container {
     width: 95%;
@@ -86,8 +151,13 @@
 
 @media screen and (max-width: $screen-sm) {
   .container {
-    width: 100%;
-    padding: 1rem;
-    margin: 0 auto;
+    width: calc(100% - 2rem);
+    min-height: auto;
+    padding: 1.25rem;
+    margin: 1rem auto;
+
+    mat-card-title {
+      font-size: 1.65rem;
+    }
   }
 }

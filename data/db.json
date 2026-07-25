@@ -1,39 +1,122 @@
 {
   "users": [
     {
-      "id": "demo-user",
-      "username": "Demo User",
+      "id": "demo-c572944c-f239-43f5-8421-d0c8e6af0b30",
+      "username": "Demo Visitor",
       "email": "demo@positivequotes.app",
-      "passwordHash": "scrypt$af806231334a9e51377c5ae38afb0481$e442130575ecf03f8ccc4fd2001db6583c185b1ecc6740e7ec77f6a169edf4435a5ff959d2e66a16aa584ae38c53eca0c86f6b8609c405440d009b5fd41265c6",
       "isDemo": true,
-      "createdAt": "2026-07-17T13:52:20.077Z",
-      "updatedAt": "2026-07-17T13:52:20.077Z"
-    }
-  ],
-  "favorites": [
+      "createdAt": "2026-07-25T18:40:21.762Z",
+      "updatedAt": "2026-07-25T18:40:21.762Z",
+      "expiresAt": "2026-07-26T18:40:21.762Z"
+    },
     {
-      "id": "15bc7346-20f2-44b6-99ac-188cdf2ff4b0",
-      "userId": "demo-user",
-      "quoteId": "dummy-720",
-      "content": "To Love Another Person Is To See The Face Of God.",
-      "author": "Victor Hugo",
-      "tags": [
-        "positive"
-      ],
-      "favoritedAt": "2026-07-17T14:35:01.634Z"
+      "id": "demo-839524de-003f-4802-aae8-ce26bc3c13be",
+      "username": "Demo Visitor",
+      "email": "demo@positivequotes.app",
+      "isDemo": true,
+      "createdAt": "2026-07-25T18:42:44.464Z",
+      "updatedAt": "2026-07-25T18:42:44.464Z",
+      "expiresAt": "2026-07-26T18:42:44.464Z"
+    },
+    {
+      "id": "c40bb6f7-38f6-4b65-98b3-f51ae9365762",
+      "username": "Acelya",
+      "email": "lejeune@mail.com",
+      "passwordHash": "scrypt$573c62449d9585daf75c40ba7ed23e58$3d4fe5612b33dcb7b5e0b8366ea99fbc2bb34dae165920c6da2bed8e5f8d29f6420e0206773f2306d4960aaf02aa05b78379d4c818ad9305db1840e2e51e0d47",
+      "isDemo": false,
+      "createdAt": "2026-07-25T18:48:58.511Z",
+      "updatedAt": "2026-07-25T18:48:58.511Z"
     }
   ],
+  "favorites": [],
   "history": [
     {
-      "id": "24708d91-522f-43a3-9575-f3cf562f9acb",
-      "userId": "demo-user",
-      "quoteId": "dummy-720",
-      "content": "To Love Another Person Is To See The Face Of God.",
-      "author": "Victor Hugo",
+      "id": "affcbbca-5cba-4189-9bea-de86a1722e56",
+      "userId": "demo-839524de-003f-4802-aae8-ce26bc3c13be",
+      "quoteId": "dummy-1072",
+      "content": "You should not quarrel with your neighbor, for he will remain where he is, but your high handedness will become the talk of the people.",
+      "author": "Abu Bakr (R.A)",
       "tags": [
         "positive"
       ],
-      "viewedAt": "2026-07-17T14:35:00.690Z"
+      "viewedAt": "2026-07-25T18:42:44.643Z"
+    },
+    {
+      "id": "af5f92c9-a51b-4811-993c-a87e225061f2",
+      "userId": "c40bb6f7-38f6-4b65-98b3-f51ae9365762",
+      "quoteId": "dummy-60",
+      "content": "Now you see me, now you don't. George thinks he will, but I know he won't!",
+      "author": "Muhammad Ali",
+      "tags": [
+        "positive"
+      ],
+      "viewedAt": "2026-07-25T18:49:58.577Z"
+    },
+    {
+      "id": "7d51710b-304d-459f-821f-a1dc7d0978dd",
+      "userId": "c40bb6f7-38f6-4b65-98b3-f51ae9365762",
+      "quoteId": "life-3",
+      "content": "Some chapters become meaningful only after you have turned the page.",
+      "author": "Positive Quotes",
+      "tags": [
+        "life"
+      ],
+      "viewedAt": "2026-07-25T18:50:01.421Z"
+    },
+    {
+      "id": "4957f861-a324-4da2-8104-674c4c02ac3d",
+      "userId": "c40bb6f7-38f6-4b65-98b3-f51ae9365762",
+      "quoteId": "friendship-3",
+      "content": "The best company leaves you more yourself, not less.",
+      "author": "Positive Quotes",
+      "tags": [
+        "friendship"
+      ],
+      "viewedAt": "2026-07-25T18:50:02.633Z"
+    },
+    {
+      "id": "88b19094-9ff5-47ab-8e0b-cb96d95a70c5",
+      "userId": "c40bb6f7-38f6-4b65-98b3-f51ae9365762",
+      "quoteId": "friendship-2",
+      "content": "Friendship is built from ordinary moments remembered together.",
+      "author": "Positive Quotes",
+      "tags": [
+        "friendship"
+      ],
+      "viewedAt": "2026-07-25T18:50:04.514Z"
+    },
+    {
+      "id": "7cb14428-d4e2-4ae8-9512-8d51f9ed2a2a",
+      "userId": "c40bb6f7-38f6-4b65-98b3-f51ae9365762",
+      "quoteId": "friendship-1",
+      "content": "A good friend makes honesty feel safer than pretending.",
+      "author": "Positive Quotes",
+      "tags": [
+        "friendship"
+      ],
+      "viewedAt": "2026-07-25T18:50:05.472Z"
+    },
+    {
+      "id": "0e78e8b2-e148-4980-be49-f97f78d88046",
+      "userId": "c40bb6f7-38f6-4b65-98b3-f51ae9365762",
+      "quoteId": "friendship-3",
+      "content": "The best company leaves you more yourself, not less.",
+      "author": "Positive Quotes",
+      "tags": [
+        "friendship"
+      ],
+      "viewedAt": "2026-07-25T18:50:06.305Z"
+    },
+    {
+      "id": "61b327dc-8d41-49a3-a3d7-fb6debd10a50",
+      "userId": "c40bb6f7-38f6-4b65-98b3-f51ae9365762",
+      "quoteId": "friendship-2",
+      "content": "Friendship is built from ordinary moments remembered together.",
+      "author": "Positive Quotes",
+      "tags": [
+        "friendship"
+      ],
+      "viewedAt": "2026-07-25T18:50:06.974Z"
     }
   ],
   "quotes": [
