@@ -1,108 +1,115 @@
-# Positive Quotes
+# Positive Quotes App
 
-Positive Quotes is an Angular 19 portfolio application for discovering, saving, and revisiting uplifting quotations. The production version uses a small same-origin Node.js API, so the Angular frontend and persistent JSON data can be deployed together without CORS or localhost dependencies.
+**Positive Quotes App** is a quote discovery application built with **Angular**, **TypeScript**, **Angular Material** and **SCSS**.
 
-## Features
+This project is part of the personal portfolio of **Açelya Lejeune**. It is published publicly for portfolio review, recruitment evaluation and professional presentation purposes only.
 
-- Random quotes and category filtering
-- User registration and login
-- Password hashing and signed authentication tokens
-- Per-user favorites and viewing history
-- Account settings
-- Responsive Angular Material interface
-- Optional Unsplash backgrounds with a local fallback
-- SPA route fallback for direct links and browser refreshes
+Positive Quotes App is not an open-source project, starter template, tutorial project or reusable application product.
 
-## Technology
+## Portfolio Review Notice
 
-- Angular 19
+This repository is made public so that recruiters, hiring teams and collaborators can review the project structure, interface logic, frontend implementation and product thinking behind Positive Quotes App.
+
+You may view the code and test the live demo provided by the author.
+
+You may not copy, reuse, modify, distribute, publish, deploy, self-host or use this project or any part of it in your own work, portfolio, product, tutorial, template or commercial project.
+
+Installation, setup, deployment and self-hosting instructions are intentionally not provided.
+
+## Project Overview
+
+Positive Quotes App is an Angular application created as a final-year frontend development project.
+
+The application allows users to discover motivational quotes, browse quotes by category, save a limited number of favorites, view quote history and switch between dark and light themes.
+
+The current public version includes a controlled demo experience. Public registration is closed, and visitors can explore the application using the **Continue as Demo** option.
+
+Demo data is intentionally limited and temporary.
+
+## Current Features
+
+The current version includes:
+
+- Angular frontend
+- TypeScript application structure
+- Angular Material UI components
+- SCSS-based styling
+- responsive interface
+- dark and light themes
+- quote categories
+- favorites feature
+- quote history
+- dynamic background images
+- controlled demo access
+- one-click Continue as Demo option
+- public registration disabled
+- private owner account kept separate from demo access
+
+## Tech Stack
+
+Frontend:
+
+- Angular
 - TypeScript
-- SCSS
 - Angular Material
-- Node.js built-in HTTP server
-- Persistent JSON storage
-- Quotable API with local fallback quotes
+- SCSS
+- HTML
+- CSS
 
-## Local development
+Development workflow:
 
-Install dependencies:
+- Git
+- GitHub
+- component-based structure
+- responsive UI design
+- controlled public demo logic
 
-```bash
-npm install
-```
+## Project Purpose
 
-Start the local API in the first terminal:
+Positive Quotes App was created to demonstrate my ability to combine UX/UI design, frontend development and application logic in a complete portfolio project.
 
-```bash
-npm run db
-```
+The project shows how I approach:
 
-Start Angular in a second terminal:
+- designing a calm and focused user interface
+- building a structured Angular application
+- working with TypeScript
+- creating responsive layouts
+- managing user-facing features such as favorites and history
+- planning controlled demo access for public portfolio visitors
+- presenting a real project without exposing private owner access
 
-```bash
-npm start
-```
+## Demo Access
 
-Open `http://localhost:4200`.
+The live demo is available for public portfolio visitors through the **Continue as Demo** option.
 
-## Production build
+Demo access is provided only for testing and review.
 
-```bash
-npm run build
-```
+It does not grant permission to copy, reuse, modify, distribute, self-host or recreate the project.
 
-The Node server automatically serves the Angular build from:
+## Live Preview
 
-```text
-dist/positive-quotes-app/browser
-```
+https://quotes.acelyalejeune.com/
 
-Start the production application:
+## Portfolio Case Study
 
-```bash
-APP_SECRET="replace-with-a-long-random-secret" node server.js
-```
+https://acelyalejeune.com/public/positive-quotes.html
 
-On Windows PowerShell:
+## Author
 
-```powershell
-$env:APP_SECRET="replace-with-a-long-random-secret"
-node server.js
-```
+**Açelya Lejeune**  
+Senior UX/UI Designer · Frontend Developer · AI Application Development
 
-## Environment variables
+GitHub: [LejeuneA](https://github.com/LejeuneA)  
+Portfolio: https://acelyalejeune.com
 
-- `IP`: listening address supplied by the host
-- `PORT`: listening port supplied by the host
-- `APP_SECRET`: long random secret used to sign login tokens
-- `DB_FILE`: optional absolute path to the writable JSON data file
-- `DEMO_EMAIL`: optional demo account email
-- `DEMO_PASSWORD`: optional demo account password
-- `UNSPLASH_ACCESS_KEY`: optional Unsplash access key stored only on the server
+## License
 
-When no Unsplash key is supplied, the app uses its bundled background image.
+Copyright © 2026 Açelya Lejeune. All rights reserved.
 
-## Demo account
+This project is provided publicly for portfolio review purposes only.
 
-```text
-Email: demo@positivequotes.app
-Password: Positive123!
-```
+No permission is granted to copy, reuse, modify, publish, distribute, sublicense, sell, deploy, self-host or use this project or any part of it without prior written permission from the author.
 
-The shared demo account cannot change its profile credentials. Visitors may register their own account.
+The source code, design, structure, interface, visual assets, text content and project concept remain the property of Açelya Lejeune.
 
-## Production data
-
-Runtime data is stored in `data/db.json`. Keep this file writable by the Node process and do not replace it during later code-only deployments unless you intentionally want to reset the demo data.
-
-## Security notes
-
-- Passwords are stored as salted scrypt hashes.
-- The API never exposes password hashes.
-- Favorites and history are isolated by authenticated user.
-- Authentication endpoints include basic rate limiting.
-- The previously client-side Unsplash key has been removed from the Angular bundle.
-
-## Copyright
-
-© Açelya Lejeune. All rights reserved.
+Third-party libraries, frameworks and dependencies used in this project remain subject to their own licenses.
